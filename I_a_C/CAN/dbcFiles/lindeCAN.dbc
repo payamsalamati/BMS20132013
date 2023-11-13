@@ -1,0 +1,183 @@
+VERSION ""
+
+
+NS_ :
+
+BS_:
+
+BU_: Vector__XXX
+
+BO_ 0 module_control: 2 Vector__XXX
+SG_ canopen_nmt_command_specifier : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ canopen_node_id : 8|8@1+ (1,0) [0|127] "" Vector__XXX
+
+
+BO_ 1773 XCP_DTO_LiIoBMS: 8 Vector__XXX
+SG_ xcp_response_data : 0|64@1+ (1,0) [0|1.84467440737096E019] "" Vector__XXX
+
+
+BO_ 1741 XCP_CTO_LiIoBMS: 8 Vector__XXX
+SG_ xcp_command_data : 0|64@1+ (1,0) [0|1.84467440737096E019] "" Vector__XXX
+
+
+BO_ 1549 Traction_SDOreq_LiIoBMS: 8 Vector__XXX
+SG_ Traction_SDOreq_LiIoBMS_Data : 0|64@1+ (1,0) [0|1.84467440737096E019] "" Vector__XXX
+
+
+BO_ 1153 Traction_PDO4: 4 Vector__XXX
+SG_ TruckWorkTime : 0|32@1+ (1,0) [0|4294967295] "s" Vector__XXX
+
+
+BO_ 255 TimeStamp: 4 Vector__XXX
+SG_ DateTime : 0|32@1+ (1,0) [0|4294967295] "s" Vector__XXX
+
+
+BO_ 128 SYNC: 0 Vector__XXX
+
+
+BO_ 1629 LiIoCharger_SDOreq_LiIoBMS: 8 Vector__XXX
+SG_ LiIoCharger_SDOreq_LiIoBMS_Data : 0|64@1+ (1,0) [0|1.84467440737096E019] "" Vector__XXX
+
+
+BO_ 1157 LiIoCharger_PDO1: 8 Vector__XXX
+SG_ LiIoCharger_WorkingHours : 32|32@1+ (1,0) [0|4294967295] "s" Vector__XXX
+SG_ LiIoCharger_ChargingVoltage : 16|16@1+ (0.025,0) [0|1638.375] "V" Vector__XXX
+SG_ LiIoCharger_ChargingCurrent : 0|16@1+ (0.025,0) [0|1638.375] "A" Vector__XXX
+
+
+BO_ 1421 LiIoBMS_SDOresp_Traction: 8 Vector__XXX
+SG_ LiIoBMS_SDOresp_Traction_Data : 0|64@1+ (1,0) [0|1.84467440737096E019] "" Vector__XXX
+
+
+BO_ 1501 LiIoBMS_SDOresp_LiIoCharger: 8 Vector__XXX
+SG_ LiIoBMS_SDOresp_LiIoCharger_Data : 0|64@1+ (1,0) [0|1.84467440737096E019] "" Vector__XXX
+
+
+BO_ 769 LiIoBMS_PDO5: 8 Vector__XXX
+SG_ LiIoBMS_MaxDischargePower2 : 24|16@1+ (10,0) [0|655000] "W" Vector__XXX
+SG_ LiIoBMS_MaxChargePower2 : 40|16@1+ (10,0) [0|655000] "W" Vector__XXX
+SG_ LiIoBMS_OutputVoltage : 0|24@1+ (0.001,0) [0|130] "V" Vector__XXX
+
+
+BO_ 1165 LiIoBMS_PDO4: 8 Vector__XXX
+SG_ LiIoBMS_SOCwithSOH : 56|8@1+ (1,0) [0|100] "%" Vector__XXX
+SG_ LiIoBMS_SOCwithoutSOH : 48|8@1+ (1,0) [0|100] "%" Vector__XXX
+SG_ LiIoBMS_MaxChargeVoltage : 24|24@1+ (0.001,0) [0|16777.215] "V" Vector__XXX
+SG_ LiIoBMS_MinDischargeVoltage : 0|24@1+ (0.001,0) [0|16777.215] "V" Vector__XXX
+
+
+BO_ 909 LiIoBMS_PDO3: 8 Vector__XXX
+SG_ LiIoBMS_DTC4 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+SG_ LiIoBMS_DTC1 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+SG_ LiIoBMS_DTC3 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+SG_ LiIoBMS_DTC2 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+
+BO_ 653 LiIoBMS_PDO2: 8 Vector__XXX
+SG_ LiIoBMS_MaxChargeCurrent2 : 0|16@1+ (0.25,0) [0|16383.75] "A" Vector__XXX
+SG_ LiIoBMS_MaxDischargeCurrent2 : 16|16@1+ (0.25,0) [0|16383.75] "A" Vector__XXX
+SG_ LiIoBMS_MaxDischargeCurrent100 : 48|16@1+ (0.25,0) [0|16383.75] "A" Vector__XXX
+SG_ LiIoBMS_MaxChargeCurrent100 : 32|16@1+ (0.25,0) [0|16383.75] "A" Vector__XXX
+
+
+BO_ 397 LiIoBMS_PDO1: 8 Vector__XXX
+SG_ LiIoBMS_SOH : 56|8@1+ (1,0) [0|100] "%" Vector__XXX
+SG_ LiIoBMS_BatteryCurrent : 0|24@1- (0.001,0) [-3000|3000] "A" Vector__XXX
+SG_ LiIoBMS_BatteryState : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ LiIoBMS_BatteryVoltage : 24|24@1+ (0.001,0) [0|130] "V" Vector__XXX
+
+
+BO_ 1805 LiIoBMS_Heartbeat: 1 Vector__XXX
+SG_ LiIoBMS_State : 0|7@1+ (1,0) [0|127] "" Vector__XXX
+
+
+BO_ 1949 LiIoBMS_DiagResponse: 8 Vector__XXX
+SG_ LiIoBMS_DiagResponse_Data : 8|56@1+ (1,0) [0|7.20575940379279E016] "" Vector__XXX
+SG_ LiIoBMS_DiagResponse_PCI : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 1933 DiagRequest_LiIoBMS: 8 Vector__XXX
+SG_ DiagRequest_LiIoBMS_PCI : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ DiagRequest_LiIoBMS_Data : 8|56@1+ (1,0) [0|7.20575940379279E016] "" Vector__XXX
+
+
+BO_ 1920 DiagRequest_Functional: 8 Vector__XXX
+SG_ DiagRequest_Functional_Data : 8|56@1+ (1,0) [0|7.20575940379279E016] "" Vector__XXX
+SG_ DiagRequest_Functional_PCI : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+CM_ BO_ 0 "network management (NMT)";
+CM_ BO_ 1773 "XCP responses from LIB with Linde BMZ protocol";
+CM_ BO_ 1741 "XCP commands for LIB with Linde BMZ protocol";
+CM_ BO_ 1549 "SDO Rx, node 0x0D (LIB with Linde BMZ protocol)";
+CM_ BO_ 1153 "PDO 4 (Tx), node 0x01 (KMC) (for LIB with Linde BMZ protocol)";
+CM_ BO_ 255 "Linde proprietary timestamp message (for LIB with Linde BMZ protocol)";
+CM_ BO_ 128 "CANopen SYNC message (for LIB with Linde BMZ protocol)";
+CM_ BO_ 1629 "SDO Rx, node 0x5D (LIB with Linde BMZ protocol), SDO clients: OBC, EXC";
+CM_ BO_ 1157 "PDO 1 (Tx), node 0x5D (OBC, EXC)";
+CM_ BO_ 1421 "SDO Tx, node 0x0D (LIB with Linde BMZ protocol), SDO client: KMC";
+CM_ BO_ 1501 "SDO Tx, node 0x5D (LIB with Linde BMZ protocol), SDO client: OBC, EXC";
+CM_ BO_ 769 "PDO5 (Tx), node 0x01 (LIB with Linde BMZ prototol)";
+CM_ BO_ 1165 "PDO4 (Tx), node 0x0D (LIB with Linde BMZ prototol)";
+CM_ BO_ 909 "PDO3 (Tx), node 0x0D (LIB with Linde BMZ prototol)";
+CM_ BO_ 653 "PDO2 (Tx), node 0x0D (LIB with Linde BMZ prototol)";
+CM_ BO_ 397 "PDO1 (Tx), node 0x0D (LIB with Linde BMZ protocol)";
+CM_ SG_ 397 LiIoBMS_BatteryCurrent "positive values = charging, negative values = discharging";
+CM_ BO_ 1805 "heartbeat (NMT error control), node 0x0D (LIB with Linde BMZ protocol)";
+CM_ BO_ 1949 "KWP2000 responses from LIB with Linde BMZ protocol";
+CM_ BO_ 1933 "KWP2000 requests for LIB (with Linde BMZ protocol)";
+CM_ BO_ 1920 "KWP2000 requests from DTU (functional)";
+
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ SG_  "GenSigStartValue" FLOAT -3.4E+038 3.4E+038;
+
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+
+BA_ "BusType" "CAN";
+
+BA_ "GenSigStartValue" SG_ 0 canopen_nmt_command_specifier 0;
+BA_ "GenSigStartValue" SG_ 0 canopen_node_id 0;
+BA_ "GenSigStartValue" SG_ 1773 xcp_response_data 0;
+BA_ "GenSigStartValue" SG_ 1741 xcp_command_data 0;
+BA_ "GenSigStartValue" SG_ 1549 Traction_SDOreq_LiIoBMS_Data 0;
+BA_ "GenSigStartValue" SG_ 1153 TruckWorkTime 0;
+BA_ "GenSigStartValue" SG_ 255 DateTime 0;
+BA_ "GenSigStartValue" SG_ 1629 LiIoCharger_SDOreq_LiIoBMS_Data 0;
+BA_ "GenSigStartValue" SG_ 1157 LiIoCharger_WorkingHours 0;
+BA_ "GenSigStartValue" SG_ 1157 LiIoCharger_ChargingVoltage 0;
+BA_ "GenSigStartValue" SG_ 1157 LiIoCharger_ChargingCurrent 0;
+BA_ "GenSigStartValue" SG_ 1421 LiIoBMS_SDOresp_Traction_Data 0;
+BA_ "GenSigStartValue" SG_ 1501 LiIoBMS_SDOresp_LiIoCharger_Data 0;
+BA_ "GenSigStartValue" SG_ 769 LiIoBMS_MaxDischargePower2 0;
+BA_ "GenSigStartValue" SG_ 769 LiIoBMS_MaxChargePower2 0;
+BA_ "GenSigStartValue" SG_ 769 LiIoBMS_OutputVoltage 0;
+BA_ "GenSigStartValue" SG_ 1165 LiIoBMS_SOCwithSOH 0;
+BA_ "GenSigStartValue" SG_ 1165 LiIoBMS_SOCwithoutSOH 0;
+BA_ "GenSigStartValue" SG_ 1165 LiIoBMS_MaxChargeVoltage 0;
+BA_ "GenSigStartValue" SG_ 1165 LiIoBMS_MinDischargeVoltage 0;
+BA_ "GenSigStartValue" SG_ 909 LiIoBMS_DTC4 0;
+BA_ "GenSigStartValue" SG_ 909 LiIoBMS_DTC1 0;
+BA_ "GenSigStartValue" SG_ 909 LiIoBMS_DTC3 0;
+BA_ "GenSigStartValue" SG_ 909 LiIoBMS_DTC2 0;
+BA_ "GenSigStartValue" SG_ 653 LiIoBMS_MaxChargeCurrent2 0;
+BA_ "GenSigStartValue" SG_ 653 LiIoBMS_MaxDischargeCurrent2 0;
+BA_ "GenSigStartValue" SG_ 653 LiIoBMS_MaxDischargeCurrent100 0;
+BA_ "GenSigStartValue" SG_ 653 LiIoBMS_MaxChargeCurrent100 0;
+BA_ "GenSigStartValue" SG_ 397 LiIoBMS_SOH 0;
+BA_ "GenSigStartValue" SG_ 397 LiIoBMS_BatteryCurrent 0;
+BA_ "GenSigStartValue" SG_ 397 LiIoBMS_BatteryState 0;
+BA_ "GenSigStartValue" SG_ 397 LiIoBMS_BatteryVoltage 0;
+BA_ "GenSigStartValue" SG_ 1805 LiIoBMS_State 0;
+BA_ "GenSigStartValue" SG_ 1949 LiIoBMS_DiagResponse_Data 0;
+BA_ "GenSigStartValue" SG_ 1949 LiIoBMS_DiagResponse_PCI 0;
+BA_ "GenSigStartValue" SG_ 1933 DiagRequest_LiIoBMS_PCI 0;
+BA_ "GenSigStartValue" SG_ 1933 DiagRequest_LiIoBMS_Data 0;
+BA_ "GenSigStartValue" SG_ 1920 DiagRequest_Functional_Data 0;
+BA_ "GenSigStartValue" SG_ 1920 DiagRequest_Functional_PCI 0;
+
+VAL_ 0 canopen_nmt_command_specifier 130 "reset communication" 129 "reset node" 128 "enter pre-operational" 2 "stop remote node" 1 "start remote node" ;
+VAL_ 0 canopen_node_id 81 "obc" 80 "knc" 76 "tci" 74 "exc" 70 "tpi" 68 "kap_r" 40 "kfc" 39 "lib" 38 "tu" 37 "kec" 33 "kcs" 32 "kcu" 31 "kap_k" 29 "lhs_r_b" 28 "lhs_r_a" 22 "dou" 20 "rpb" 18 "kae" 16 "ksc" 13 "kpc_l2" 12 "kpc_l1" 11 "kpc_tr" 10 "kpc_tl" 9 "kpc_u" 5 "kbc" 1 "kmc" 0 "all nodes" ;
+VAL_ 397 LiIoBMS_BatteryState 255 "invalid_1" 143 "manufacturer diagnosis" 136 "error" 130 "KION diagnosis while error" 72 "emergency operation" 34 "KION diagnosis while charging" 32 "charging" 18 "KION diagnosis while driving" 16 "driving" 15 "manufacturer initial operation" 8 "error analysis" 4 "ready" 2 "self-test" 1 "idle" 0 "invalid_0" ;
+VAL_ 1805 LiIoBMS_State 127 "pre-operational" 5 "operational" 4 "stopped" 0 "bootup" ;
+

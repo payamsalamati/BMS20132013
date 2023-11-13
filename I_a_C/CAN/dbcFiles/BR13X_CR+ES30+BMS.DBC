@@ -1,0 +1,383 @@
+VERSION "HIPBNYYYYYYYYYYYYYYYYYYYYYYYYYYYNNNNNNNNNN/4/%%%/4/'%**4NNN///"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Bms Datalogger Function Tester Steering Lift Display
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ LiftRsData : 0|56@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LiftRsPCI : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LiftRqData : 0|56@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LiftRqPCI : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Steer2RsData : 0|56@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Steer2RsPCI : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Steer2RqData : 0|56@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Steer2RqPCI : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ stateSteer2 : 0|7@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1409 FuncPDO5: 8 Function
+ SG_ FuncPDO5_reserved_b7 : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BatterySoc : 48|8@1+ (1,0) [0|0] ""  Display
+ SG_ TurtleFuncOn : 47|1@1+ (1,0) [0|0] ""  Display
+ SG_ HM_ON : 46|1@1+ (1,0) [0|0] ""  Display
+ SG_ OverTemp : 45|1@1- (1,0) [0|0] ""  Display
+ SG_ StopLed : 44|1@1+ (1,0) [0|0] ""  Display
+ SG_ TruckType : 43|1@1+ (1,0) [0|0] ""  Display
+ SG_ WarningBrake : 42|1@1+ (1,0) [0|0] ""  Display
+ SG_ MaintServReq : 41|1@1+ (1,0) [0|0] ""  Display
+ SG_ MaintServBefServ : 40|1@1+ (1,0) [0|0] ""  Display
+ SG_ FuncPDO5_reserved_b4_1bit : 39|1@1+ (1,0) [0|0] ""  Display
+ SG_ FuncPDO5_reserved_b4_3bits : 36|3@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ HMValue : 16|20@1+ (1,0) [0|0] "0.1"  Display
+ SG_ FuncPDO5_reserved_b0_b1 : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 653 BmsPDO2: 8 Bms
+ SG_ BmsPowForDis : 48|16@1+ (10,0) [0|655350] "W"  Function
+ SG_ BmsPowForChar : 32|16@1+ (10,0) [0|655350] "W"  Function
+ SG_ BmsNormCharCurr : 16|16@1+ (0.25,0) [0|16383.75] "A"  Function
+ SG_ BmsMaxCharCurr : 0|16@1+ (0.25,0) [0|16383.75] "A"  Function
+
+BO_ 1549 BmsSDOrx: 8 Function
+ SG_ BmsSDOrxData : 0|64@1+ (1,0) [0|0] ""  Bms
+
+BO_ 1421 BmsSDOtx: 8 Bms
+ SG_ BmsSDOtxData : 0|64@1+ (1,0) [0|0] ""  Function
+
+BO_ 1805 BmsHeartbt: 1 Bms
+ SG_ stateBms : 0|7@1+ (1,0) [0|0] ""  Function
+
+BO_ 769 BmsPDO5: 8 Bms
+ SG_ FaultBatteryCode_6 : 56|8@1+ (1,0) [0|0] ""  Function
+ SG_ FaultBatteryCode_5 : 48|8@1+ (1,0) [0|0] ""  Function
+ SG_ FaultBatteryCode_4 : 40|8@1+ (1,0) [0|0] ""  Function
+ SG_ FaultBatteryCode_3 : 32|8@1+ (1,0) [0|0] ""  Function
+ SG_ FaultBatteryCode_2 : 24|8@1+ (1,0) [0|0] ""  Function
+ SG_ FaultBatteryCode_1 : 16|8@1+ (1,0) [0|0] ""  Function
+ SG_ BmsPDO5_fillbyte1 : 8|8@1+ (1,0) [0|0] ""  Function
+ SG_ BmsBatStat : 0|8@1+ (1,0) [0|0] ""  Function
+
+BO_ 1165 BmsPDO4: 8 Bms
+ SG_ BmsPDO4_fillbyte7 : 56|8@1- (1,0) [0|0] ""  Function
+ SG_ BmsSoh : 48|8@1+ (1,0) [0|100] "%"  Function
+ SG_ BmsSocWithSoh : 40|8@1+ (1,0) [0|100] "%"  Function
+ SG_ BmsSocWoutSoh : 32|8@1+ (1,0) [0|100] "%"  Function
+ SG_ BmsPDO4_fillbytes0_3 : 0|32@1- (1,0) [0|0] ""  Function
+
+BO_ 397 BmsPDO1: 8 Bms
+ SG_ BmsMaxDirCurr : 48|16@1+ (0.25,0) [0|0] "A"  Function
+ SG_ BmsBatVolt : 32|16@1+ (2,0) [0|0] "mV"  Function
+ SG_ BmsBatCurr : 0|32@1- (1,0) [-4000000|4000000] "mA"  Function
+
+BO_ 1798 HeartbtDLog: 8 Datalogger
+ SG_ stateDLog : 0|8@1+ (1,0) [0|0] ""  Function
+
+BO_ 390 DLogPDO1: 8 Datalogger
+ SG_ DLogSpeedLim : 24|8@1+ (0.25,0) [0|0] "km/h"  Function
+ SG_ DLogTracInt : 6|1@1+ (1,0) [0|0] ""  Function
+ SG_ DLogGenEnable : 7|1@1+ (1,0) [0|0] ""  Function
+
+BO_ 1942 DLogDiagResp: 8 Datalogger
+ SG_ DLogDiagResp7 : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DLogDiagResp6 : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DLogDiagResp5 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DLogDiagResp4 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DLogDiagResp3 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DLogDiagResp2 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DLogDiagResp1 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DLogDiagResp0 : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1926 DiagReqDLog: 8 Tester
+ SG_ DiagRqLog7 : 56|8@1+ (1,0) [0|0] ""  Datalogger
+ SG_ DiagRqLog6 : 48|8@1+ (1,0) [0|0] ""  Datalogger
+ SG_ DiagRqLog5 : 40|8@1+ (1,0) [0|0] ""  Datalogger
+ SG_ DiagRqLog4 : 32|8@1+ (1,0) [0|0] ""  Datalogger
+ SG_ DiagRqLog3 : 24|8@1+ (1,0) [0|0] ""  Datalogger
+ SG_ DiagRqLog2 : 16|8@1+ (1,0) [0|0] ""  Datalogger
+ SG_ DiagRqLog1 : 8|8@1+ (1,0) [0|0] ""  Datalogger
+ SG_ DiagRqLog0 : 0|8@1+ (1,0) [0|0] ""  Datalogger
+
+BO_ 906 Steer2PDO3: 8 Vector__XXX
+ SG_ Steer2ErrCodeHB4 : 56|8@1+ (1,0) [0|0] ""  Tester
+ SG_ Steer2ErrCodeLB4 : 48|8@1+ (1,0) [0|0] ""  Tester
+ SG_ Steer2ErrCodeHB3 : 40|8@1+ (1,0) [0|0] ""  Tester
+ SG_ Steer2ErrCodeLB3 : 32|8@1+ (1,0) [0|0] ""  Tester
+ SG_ Steer2ErrCodeHB2 : 24|8@1+ (1,0) [0|0] ""  Tester
+ SG_ Steer2ErrCodeLB2 : 16|8@1+ (1,0) [0|0] ""  Tester
+ SG_ Steer2ErrCodeHB1 : 8|8@1+ (1,0) [0|0] ""  Tester
+ SG_ Steer2ErrCodeLB1 : 0|8@1+ (1,0) [0|0] ""  Tester
+
+BO_ 898 LiftPDO3: 8 Function
+ SG_ LiftErrCodeHB4 : 56|8@1+ (1,0) [0|0] ""  Tester
+ SG_ LiftErrCodeLB4 : 48|8@1+ (1,0) [0|0] ""  Tester
+ SG_ LiftErrCodeHB3 : 40|8@1+ (1,0) [0|0] ""  Tester
+ SG_ LiftErrCodeLB3 : 32|8@1+ (1,0) [0|0] ""  Tester
+ SG_ LiftErrCodeHB2 : 24|8@1+ (1,0) [0|0] ""  Tester
+ SG_ LiftErrCodeLB2 : 16|8@1+ (1,0) [0|0] ""  Tester
+ SG_ LiftErrCodeHB1 : 8|8@1+ (1,0) [0|0] ""  Tester
+ SG_ LiftErrCodeLB1 : 0|8@1+ (1,0) [0|0] ""  Tester
+
+BO_ 899 SteerPDO3: 8 Steering
+ SG_ SteerErrCodeHB4 : 56|8@1+ (1,0) [0|0] ""  Tester
+ SG_ SteerErrCodeLB4 : 48|8@1+ (1,0) [0|0] ""  Tester
+ SG_ SteerErrCodeHB3 : 40|8@1+ (1,0) [0|0] ""  Tester
+ SG_ SteerErrCodeLB3 : 32|8@1+ (1,0) [0|0] ""  Tester
+ SG_ SteerErrCodeHB2 : 24|8@1+ (1,0) [0|0] ""  Tester
+ SG_ SteerErrCodeLB2 : 16|8@1+ (1,0) [0|0] ""  Tester
+ SG_ SteerErrCodeHB1 : 8|8@1+ (1,0) [0|0] ""  Tester
+ SG_ SteerErrCodeLB1 : 0|8@1+ (1,0) [0|0] ""  Tester
+
+BO_ 897 FuncPDO3: 8 Function
+ SG_ TracErrCodeHB4 : 56|8@1+ (1,0) [0|0] ""  Tester
+ SG_ TracErrCodeLB4 : 48|8@1+ (1,0) [0|0] ""  Tester
+ SG_ TracErrCodeHB3 : 40|8@1+ (1,0) [0|0] ""  Tester
+ SG_ TracErrCodeLB3 : 32|8@1+ (1,0) [0|0] ""  Tester
+ SG_ TracErrCodeHB2 : 24|8@1+ (1,0) [0|0] ""  Tester
+ SG_ TracErrCodeLB2 : 16|8@1+ (1,0) [0|0] ""  Tester
+ SG_ TracErrCodeHB1 : 8|8@1+ (1,0) [0|0] ""  Tester
+ SG_ TracErrCodeLB1 : 0|8@1+ (1,0) [0|0] ""  Tester
+
+BO_ 386 LiftPDO1: 8 Function
+ SG_ RI_L_reserved_b5_4bits : 44|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ RI_L_PumpActivation : 42|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ RI_L_InitialLiftingUp : 43|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ RI_L_InitialLowering : 41|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ RI_L_InitialLifting : 40|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LiftPDO1_reserved_b4 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LiftPDO1_reserved_b2_4bits : 20|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BatterySOC : 24|8@1+ (1,0) [0|0] "%"  Datalogger
+ SG_ HourMeter : 0|20@1+ (1,0) [0|0] "0.1"  Datalogger
+ SG_ LiftPDO1Checksum : 56|8@1+ (1,0) [0|0] ""  Steering
+ SG_ LiftPDO1Counter : 48|4@1+ (1,0) [0|0] ""  Steering
+ SG_ LiftFetOverTemp : 52|1@1+ (1,0) [0|0] ""  Datalogger,Display,Steering
+ SG_ LiftMotorOverTemp : 53|1@1+ (1,0) [0|0] ""  Datalogger,Display,Steering
+ SG_ LiftPumpOilLevel : 54|1@1+ (1,0) [0|0] ""  Display,Steering
+ SG_ LiftHourCountingREQ : 55|1@1+ (1,0) [0|0] ""  Datalogger,Display,Steering
+
+BO_ 1826 DDiagReq: 1 Tester
+ SG_ DDiagReqData : 0|8@1+ (1,0) [0|0] ""  Function,Steering,Lift
+
+BO_ 1842 DDiagResp: 8 Steering
+ SG_ DDiagRespData : 0|64@1+ (1,0) [0|0] ""  Tester
+
+BO_ 1155 SteerPDO4: 8 Steering
+ SG_ SteerBrandID : 52|2@1+ (1,0) [0|0] ""  Function
+ SG_ SteerPDO4_reserved_b6_2bits : 54|2@1+ (1,0) [0|0] ""  Function
+ SG_ SteerPDO4_reserved_b2_b5 : 16|32@1+ (1,0) [0|0] ""  Function
+ SG_ SteerPDO4Counter : 48|4@1+ (1,0) [0|0] ""  Function
+ SG_ SteerPDO4Checksum : 56|8@1+ (1,0) [0|0] ""  Function
+ SG_ SteerTruckID : 0|16@1- (1,0) [0|0] ""  Function
+
+BO_ 1153 FuncPDO4: 8 Function
+ SG_ FuncPDO4Counter : 48|4@1+ (1,0) [0|0] ""  Steering
+ SG_ FuncPDO4Checksum : 56|8@1+ (1,0) [0|0] ""  Steering
+ SG_ FuncPDO4_reserved_b6_4bits : 52|4@1+ (1,0) [0|0] ""  Steering
+ SG_ FuncPDO4_reserved_b2_b5 : 16|32@1+ (1,0) [0|0] ""  Steering
+ SG_ TracTruckID : 0|16@1- (1,0) [0|0] ""  Steering
+
+BO_ 1940 DiagRespDisp: 8 Display
+ SG_ DispRsData : 8|56@1+ (1,0) [0|0] ""  Tester
+ SG_ DispRsPCI : 0|8@1+ (1,0) [0|0] ""  Tester
+
+BO_ 1939 DiagRespSteer: 8 Steering
+ SG_ SteerRsData : 8|56@1+ (1,0) [0|0] ""  Tester
+ SG_ SteerRsPCI : 0|8@1+ (1,0) [0|0] ""  Tester
+
+BO_ 1937 DiagRespFunc: 8 Function
+ SG_ TracRsData : 8|56@1+ (1,0) [0|0] ""  Tester
+ SG_ TracRsPCI : 0|8@1+ (1,0) [0|0] ""  Tester
+
+BO_ 1924 DiagReqDisp: 8 Tester
+ SG_ DispRqData : 8|56@1+ (1,0) [0|0] ""  Display
+ SG_ DispRqPCI : 0|8@1+ (1,0) [0|0] ""  Display
+
+BO_ 1923 DiagReqSteer: 8 Tester
+ SG_ SteerRqData : 8|56@1+ (1,0) [0|0] ""  Steering
+ SG_ SteerRqPCI : 0|8@1+ (1,0) [0|0] ""  Steering
+
+BO_ 1921 DiagReqFunc: 8 Tester
+ SG_ TracRqData : 8|56@1+ (1,0) [0|0] ""  Function
+ SG_ TracRqPCI : 0|8@1+ (1,0) [0|0] ""  Function
+
+BO_ 1920 DiagReqFuncAll: 8 Tester
+ SG_ FuncRqData : 8|56@1+ (1,0) [0|0] ""  Function,Steering,Lift,Display
+ SG_ FuncRqPCI : 0|8@1+ (1,0) [0|0] ""  Display,Function,Steering,Lift
+
+BO_ 1796 HeartbtDisp: 1 Display
+ SG_ stateDisp : 0|7@1+ (1,0) [0|0] ""  Function,Steering,Lift
+
+BO_ 1795 HeartbtSteer: 1 Steering
+ SG_ stateSteer : 0|7@1+ (1,0) [0|0] ""  Function,Lift,Display
+
+BO_ 1794 HeartbtLift: 1 Function
+ SG_ stateLift : 0|7@1+ (1,0) [0|0] ""  Function,Steering,Display
+
+BO_ 1793 HeartbtFunc: 1 Function
+ SG_ stateFunction : 0|7@1+ (1,0) [0|0] ""  Steering,Lift,Display
+
+BO_ 388 DispPDO1: 8 Display
+ SG_ DispBiometry : 57|2@1+ (1,0) [0|0] ""  Function
+ SG_ DispStatus : 63|1@1+ (1,0) [0|0] ""  Lift,Steering,Function
+ SG_ DispHourCountingStatus : 56|1@1+ (1,0) [0|0] ""  Lift,Steering,Function
+ SG_ DispBatterySOC : 48|8@1+ (1,0) [0|0] "%"  Lift,Steering,Function
+ SG_ DispDay : 43|5@1+ (1,0) [0|0] ""  Lift,Steering,Function
+ SG_ DispMonth : 39|4@1+ (1,0) [0|0] ""  Lift,Steering,Function
+ SG_ DispYear : 33|6@1+ (1,0) [0|0] ""  Lift,Steering,Function
+ SG_ DispHour : 28|5@1+ (1,0) [0|0] ""  Lift,Steering,Function
+ SG_ DispMinutes : 22|6@1+ (1,0) [0|0] ""  Lift,Steering,Function
+ SG_ DispSeconds : 16|6@1+ (1,0) [0|0] ""  Lift,Steering,Function
+ SG_ DispHourMeterValue : 0|16@1+ (1,0) [0|0] "0.1"  Lift,Steering,Function
+
+BO_ 387 SteerPDO1: 8 Steering
+ SG_ SteerSetAng : 24|16@1- (0.1,0) [0|0] "°"  Function
+ SG_ SteerPDO1Checksum : 56|8@1+ (1,0) [0|0] ""  Function
+ SG_ SteerPDO1Counter : 48|4@1+ (1,0) [0|0] ""  Function
+ SG_ SteerPDO1_reserved_b5 : 40|8@1+ (1,0) [0|0] ""  Function
+ SG_ SteerSRWSDig : 52|1@1+ (1,0) [0|0] ""  Function
+ SG_ SteerFetsOverTemp : 53|1@1+ (1,0) [0|0] ""  Lift,Function,Display
+ SG_ SteerMotorOverTemp : 54|1@1+ (1,0) [0|0] ""  Lift,Function,Display
+ SG_ SteerHourCountingReq : 55|1@1+ (1,0) [0|0] ""  Datalogger,Lift,Function,Display
+ SG_ SteerSpeedStatus : 16|8@1- (1,0) [0|0] ""  Display,Lift,Function
+ SG_ SteerActAng : 0|16@1- (0.1,0) [0|0] "°"  Function,Lift,Display
+
+BO_ 385 FuncPDO1: 8 Function
+ SG_ RI_T_MotorActivated : 36|1@1+ (1,0) [0|0] ""  Tester,Steering
+ SG_ RI_T_CreepSpeed : 37|1@1+ (1,0) [0|0] ""  Tester,Steering
+ SG_ RI_T_BrakeApplied : 38|1@1+ (1,0) [0|0] ""  Tester,Steering
+ SG_ FuncPDO1Checksum : 56|8@1+ (1,0) [0|0] ""  Steering
+ SG_ FuncPDO1Counter : 48|4@1+ (1,0) [0|0] ""  Steering
+ SG_ BatWarn : 39|1@1+ (1,0) [0|0] ""  Steering
+ SG_ TracGuard180cm : 35|1@1+ (1,0) [0|0] ""  Steering
+ SG_ TracTurtleHare : 34|1@1+ (1,0) [0|0] ""  Steering
+ SG_ FuncPDO1_reserved_b2_b3 : 16|16@1+ (1,0) [0|0] ""  Steering
+ SG_ TracDriverPres_13x : 54|1@1+ (1,0) [0|0] ""  Datalogger
+ SG_ TruckID : 41|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ TracBrkWarn : 32|1@1+ (1,0) [0|0] ""  Datalogger
+ SG_ TracFetsOverTemp : 52|1@1+ (1,0) [0|0] ""  Datalogger,Display,Steering
+ SG_ TracMotorOverTemp : 53|1@1+ (1,0) [0|0] ""  Datalogger,Display,Steering
+ SG_ TracActivStabOilLevel : 33|1@1+ (1,0) [0|0] ""  Display,Steering
+ SG_ TracHourCountingReq : 55|1@1+ (1,0) [0|0] ""  Datalogger,Display,Steering
+ SG_ TracBatteryLock : 40|1@1+ (1,0) [0|0] ""  Display,Steering
+ SG_ TracRightGuard : 42|1@1+ (1,0) [0|0] ""  Display,Steering
+ SG_ TracLeftGuard : 43|1@1+ (1,0) [0|0] ""  Display,Steering
+ SG_ TracPlatfmPosition : 44|1@1+ (1,0) [0|0] ""  Display,Steering
+ SG_ TracSeatSw : 45|1@1+ (1,0) [0|0] ""  Display,Steering
+ SG_ TracFootPlatfmSw : 47|1@1+ (1,0) [0|0] ""  Datalogger,Display,Steering
+ SG_ TracTillerFootSw : 46|1@1+ (1,0) [0|0] ""  Display,Steering
+ SG_ TrSpeed : 0|16@1- (0.001,0) [0|0] "km/h"  Datalogger,Steering,Lift,Display
+
+BO_ 128 SYNC: 0 Function
+
+BO_ 0 ModuleCtrl: 2 Function
+ SG_ NodeID : 8|8@1+ (1,0) [0|0] ""  Display,Steering,Lift
+ SG_ ServiceID : 0|8@1+ (1,0) [0|0] ""  Display,Steering,Lift
+
+BO_TX_BU_ 1842 : Function,Steering;
+
+
+CM_ BU_ Datalogger "FDE";
+CM_ BU_ Function "LTC10: Traction Main Controller (Lift Safety Controller)";
+CM_ BU_ Tester "Diagnostic-Tester Controller (CAN-Box)";
+CM_ BU_ Steering "LES40: Steering Main Controller";
+CM_ BU_ Lift "LTC10: Lift Main Controller (Traction Safety Controller)";
+CM_ BU_ Display "Display Controller";
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 653 BmsPowForDis "Power forecasting: charging [W] = BmsPowForChar * 10";
+CM_ SG_ 653 BmsPowForChar "Power forecasting: charging [W] = BmsPowForChar * 10";
+CM_ SG_ 653 BmsNormCharCurr "Normal charge current [A] = BmsNormCharCurr * 0.25";
+CM_ SG_ 653 BmsMaxCharCurr "Maximal charge current [A] = BmsMaxCharCurr * 0.25";
+CM_ BO_ 906 "SteerSafe Transmit PDO #3";
+CM_ BO_ 898 "Lift Transmit PDO #3";
+CM_ BO_ 899 "Steering Transmit PDO #3";
+CM_ BO_ 897 "Traction Transmit PDO #3";
+CM_ BO_ 1826 "Development debug purpose";
+CM_ BO_ 1842 "Development debug purpose";
+CM_ BO_ 1155 "Steering Transmit PDO #4";
+CM_ BO_ 1153 "Traction Transmit PDO #4";
+CM_ BO_ 1940 "Display Diagnostic Response";
+CM_ BO_ 1939 "Steering Diagnostic Response";
+CM_ BO_ 1937 "Traction Diagnostic Response";
+CM_ BO_ 1924 "Display Diagnostic Request, physical addressed";
+CM_ BO_ 1923 "Steering Diagnostic Request, physical addressed";
+CM_ BO_ 1921 "Traction Diagnostic Request, physical addressed";
+CM_ BO_ 1920 "Diagnostic Request, functioal addressed";
+CM_ BO_ 1796 "Network Management, Error Control, Display Heartbeat";
+CM_ BO_ 1795 "Network Management, Error Control, Steering Heartbeat";
+CM_ BO_ 1794 "Network Management, Error Control, Lift Heartbeat";
+CM_ BO_ 1793 "Network Management, Error Control, Traction Heartbeat";
+CM_ BO_ 388 "Display Transmit PDO #1";
+CM_ BO_ 387 "Steering Transmit PDO #1";
+CM_ BO_ 385 "Traction Transmit PDO #1";
+CM_ SG_ 385 TruckID "idendifier (trucktype P30,P50) for Dashboard";
+CM_ BO_ 128 "Synchronization";
+CM_ BO_ 0 "Network Management, Module Control";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "Manufacturer" ENUM  "invalid","invalid","invalid","invalid","invalid","invalid","LINDE","invalid";
+BA_DEF_  "NWM-Typ" ENUM  "invalid","invalid","invalid","invalid","invalid","invalid","invalid","invalid","invalid","invalid","LINDENM";
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "Manufacturer" "LINDE";
+BA_DEF_DEF_  "NWM-Typ" "LINDENM";
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_ "NWM-Typ" 10;
+BA_ "Manufacturer" 6;
+BA_ "DiagRequest" BO_ 1940 0;
+BA_ "DiagResponse" BO_ 1940 1;
+BA_ "DiagResponse" BO_ 1939 1;
+BA_ "DiagRequest" BO_ 1939 0;
+BA_ "DiagRequest" BO_ 1937 0;
+BA_ "DiagResponse" BO_ 1937 1;
+BA_ "DiagRequest" BO_ 1924 1;
+BA_ "DiagResponse" BO_ 1924 0;
+BA_ "DiagResponse" BO_ 1923 0;
+BA_ "DiagRequest" BO_ 1923 1;
+BA_ "DiagRequest" BO_ 1921 1;
+BA_ "DiagResponse" BO_ 1921 0;
+BA_ "DiagResponse" BO_ 1920 0;
+BA_ "DiagRequest" BO_ 1920 1;
+VAL_ 3221225472 stateSteer2 127 "PREOPERATIONAL" 5 "OPERATIONAL" 4 "STOPPED" 0 "BOOTUP" ;
+VAL_ 1805 stateBms 127 "PREOPERATIONAL" 5 "OPERATIONAL" 4 "STOPPED" 0 "BOOTUP" ;
+VAL_ 769 BmsBatStat 9 "-> 0xFF reserved" 8 "Charge mode in regeneration" 7 "Charge- or On-board charge-mode" 6 "After run mode (self-test)" 5 "Safe mode (system disconnected)" 4 "Init mode (before precharge)" 3 "Standby mode" 2 "Pre-charge mode  " 1 "Nominal mode " 0 "Reserved" ;
+VAL_ 1155 SteerBrandID 1 "BrandID Still" 0 "BrandID Linde" ;
+VAL_ 1796 stateDisp 127 "PREOPERATIONAL" 5 "OPERATIONAL" 4 "STOPPED" 0 "BOOTUP" ;
+VAL_ 1795 stateSteer 127 "PREOPERATIONAL" 5 "OPERATIONAL" 4 "STOPPED" 0 "BOOTUP" ;
+VAL_ 1794 stateLift 127 "PREOPERATIONAL" 5 "OPERATIONAL" 4 "STOPPED" 0 "BOOTUP" ;
+VAL_ 1793 stateFunction 127 "PREOPERATIONAL" 5 "OPERATIONAL" 4 "STOPPED" 0 "BOOTUP" ;
+VAL_ 388 DispBiometry 3 "truck immobilization" 2 "speed and acc. reduced" 1 "acc. reduced" 0 "no limitation" ;
+VAL_ 387 SteerSpeedStatus 4 "SPV_RUN" 3 "SPV_CREEP" 2 "SPV_SOFTSTOP" 1 "SPV_STOP" 0 "SPV_STEEROFF" ;
+VAL_ 0 NodeID 6 "Datalogger" 5 "ParticleFilter" 4 "Display" 3 "invalid" 2 "Lift" 1 "Traction" 0 "AllNodes" ;
+VAL_ 0 ServiceID 130 "ResetCommunication" 129 "ResetNode" 128 "EnterPreOperational" 2 "StopRemoteNode" 1 "StartRemoteNode" ;
+

@@ -1,0 +1,262 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: FCT CH BMS CPS
+VAL_TABLE_ HBstate 127 "Pre-OP" 5 "OP" 4 "Stopped" 0 "Bootup" ;
+VAL_TABLE_ OnOffBlocked 2 "blocked" 1 "on" 0 "off" ;
+VAL_TABLE_ BOOL 1 "on" 0 "off" ;
+
+
+BO_ 37 CPS_FCT_IO_Control: 1 CPS
+ SG_ CPS_In2 : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ CPS_In1 : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ CPS_Out2 : 7|1@1+ (1,0) [0|0] ""  FCT
+ SG_ CPS_Out1 : 3|1@1+ (1,0) [0|0] ""  FCT
+
+BO_ 36 FCT_CPS_IO_Control: 1 FCT
+ SG_ FCT_REQ_Out2 : 6|1@1+ (1,0) [0|0] ""  CPS
+ SG_ FCT_REQ_Out1 : 1|1@1+ (1,0) [0|0] ""  CPS
+
+BO_ 1766 CPS_BMS_UDS_RESP: 8 CPS
+ SG_ CPS_UDSData : 0|64@1+ (1,0) [0|0] ""  FCT,BMS
+
+BO_ 2684354559 CH_CPS_WakeUp: 8 CH
+ SG_ CH_Data : 0|64@1- (1,0) [0|0] ""  CPS
+
+BO_ 1759 CPS_VEHICLE_UDS_RESP: 8 BMS
+ SG_ CPS_UDSData : 0|64@1+ (1,0) [0|0] ""  FCT,BMS
+
+BO_ 1664 BMS_CPS_UDS_REQ: 8 BMS
+ SG_ BMS_UDSData : 0|64@1+ (1,0) [0|0] ""  CPS
+
+BO_ 897 BMS_CPS_PDO_TX3: 8 BMS
+ SG_ BMS_INFO_DeepDisImminent : 41|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BMS_INFO_DeepDisPossible : 40|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BMS_INFO_TimeToWakeUp : 24|16@1+ (1,0) [0|0] "s" Vector__XXX
+ SG_ BMS_INFO_RemainingCapacity : 0|24@1+ (1,0) [0|0] "As"  CPS
+ SG_ BMS_RX3_Counter : 44|4@1+ (1,0) [0|0] ""  CPS
+ SG_ BMS_RX3_Checksum : 48|16@1+ (1,0) [0|0] ""  CPS
+
+BO_ 641 BMS_CPS_PDO_TX2: 8 BMS
+ SG_ BMS_REQ_CPSoutBoost_I : 16|16@1+ (0.01,0) [0|0] "A"  CPS
+ SG_ BMS_REQ_CPSout_I : 0|16@1+ (0.01,0) [0|0] "A"  CPS
+ SG_ BMS_RX2_Counter : 44|4@1+ (1,0) [0|0] ""  CPS
+ SG_ BMS_RX2_Checksum : 48|16@1+ (1,0) [0|0] ""  CPS
+
+BO_ 130 CPS_BMS_Emergency: 8 CPS
+ SG_ CPS_UDS_DTC : 24|24@1+ (1,0) [0|0] ""  FCT,BMS
+ SG_ CPS_EMCY_ErrorRegister : 16|8@1+ (1,0) [0|0] ""  FCT,BMS
+ SG_ CPS_EMCY_ErrorCode : 0|16@1+ (1,0) [0|0] ""  FCT,BMS
+
+BO_ 1794 CPS_Heartbeat: 1 CPS
+ SG_ CPS_HBState : 0|8@1+ (1,0) [0|0] ""  FCT,BMS
+
+BO_ 1793 BMS_Heartbeat: 1 BMS
+ SG_ BMS_HBState : 0|8@1+ (1,0) [0|0] ""  CPS
+
+BO_ 256 BMS_TimeStamp: 8 BMS
+ SG_ BMS_CANopen_Days : 32|16@1+ (1,0) [0|0] "days"  CPS
+ SG_ BMS_CANopen_Ms : 0|32@1+ (1,0) [0|0] "ms"  CPS
+
+BO_ 1410 CPS_BMS_SDO_RESP: 8 CPS
+ SG_ CPS_SDO_RX_Data : 0|8@1- (1,0) [0|0] ""  FCT,BMS
+
+BO_ 1538 BMS_CPS_SDO_REQ: 8 BMS
+ SG_ BMS_SDO_TX_Data : 0|64@1+ (1,0) [0|0] ""  CPS
+
+BO_ 0 BMS_ModuleCotrol: 2 BMS
+ SG_ BMS_ServiceID : 0|8@1+ (1,0) [0|0] ""  CPS
+ SG_ BMS_NodeID : 8|8@1+ (1,0) [0|0] ""  CPS
+
+BO_ 385 BMS_CPS_PDO_TX1: 8 BMS
+ SG_ BMS_REQ_Min_V : 24|16@1+ (0.1,0) [0|0] "V"  CPS
+ SG_ BMS_RX1_Counter : 44|4@1+ (1,0) [0|0] ""  CPS
+ SG_ BMS_RX1_Checksum : 48|16@1+ (1,0) [0|0] ""  CPS
+ SG_ BMS_INFO_BMSstate : 8|8@1+ (1,0) [0|0] ""  CPS
+ SG_ BMS_REQ_PowerDown : 5|1@1+ (1,0) [0|0] ""  CPS
+ SG_ BMS_REQ_CPSout : 7|1@1+ (1,0) [0|0] ""  CPS
+
+BO_ 642 CPS_BMS_PDO_TX2: 8 CPS
+ SG_ CPS_Temp2CPSout : 24|8@1+ (1,-40) [-40|215] "°C"  FCT
+ SG_ CPS_Temp1CPSout : 16|8@1+ (1,-40) [-40|215] "°C"  FCT
+ SG_ CPS_CPSout_I : 0|16@1+ (0.01,0) [0|0] "A"  FCT,BMS
+ SG_ CPS_TX2_Counter : 44|4@1+ (1,0) [0|0] ""  FCT,BMS
+ SG_ CPS_TX2_Checksum : 48|16@1+ (1,0) [0|0] ""  FCT,BMS
+
+BO_ 898 CPS_BMS_PDO_TX3: 8 CPS
+ SG_ CPS_CPSoutVoltage : 16|16@1+ (0.025,0) [0|0] "V"  FCT,BMS
+ SG_ CPS_VoltageInput : 0|16@1+ (0.025,0) [0|0] "V"  FCT,BMS
+ SG_ CPS_TX3_Counter : 44|4@1+ (1,0) [0|0] ""  FCT,BMS
+ SG_ CPS_TX3_Checksum : 48|16@1+ (1,0) [0|0] ""  FCT,BMS
+
+BO_ 386 CPS_BMS_PDO_TX1: 8 CPS
+ SG_ CPS_StartupAfterPowerdown : 20|1@1+ (1,0) [0|0] ""  FCT
+ SG_ CPS_Emergency : 21|1@1+ (1,0) [0|0] ""  FCT,BMS
+ SG_ CPS_CPSoutLimitation : 23|1@1+ (1,0) [0|0] ""  FCT,BMS
+ SG_ CPS_CPSoutBoost : 12|2@1+ (1,0) [0|0] ""  FCT,BMS
+ SG_ CPS_CPSout : 14|2@1+ (1,0) [0|0] ""  FCT,BMS
+ SG_ CPS_TX1_Checksum : 48|16@1+ (1,0) [0|0] ""  FCT,BMS
+ SG_ CPS_TX1_Counter : 44|4@1+ (1,0) [0|0] ""  FCT,BMS
+ SG_ CPS_Error : 24|16@1+ (1,0) [0|0] ""  FCT,BMS
+
+
+
+CM_ BU_ CH "Charger / Ladegerät
+";
+CM_ SG_ 1766 CPS_UDSData "Voltage input of CPS (from Battery).";
+CM_ SG_ 1759 CPS_UDSData "Voltage input of CPS (from Battery).";
+CM_ SG_ 1664 BMS_UDSData "Voltage input of CPS (from Battery).";
+CM_ SG_ 897 BMS_INFO_DeepDisImminent "time to the next BMS wakeup";
+CM_ SG_ 897 BMS_INFO_DeepDisPossible "time to the next BMS wakeup";
+CM_ SG_ 897 BMS_INFO_TimeToWakeUp "time to the next BMS wakeup";
+CM_ SG_ 897 BMS_INFO_RemainingCapacity "remaining capacity of battery";
+CM_ SG_ 641 BMS_REQ_CPSoutBoost_I "requested CPS out boost current (vehicle supply)";
+CM_ SG_ 641 BMS_REQ_CPSout_I "requested CPS out current (vehicle supply)";
+CM_ SG_ 385 BMS_REQ_Min_V "requested heating current";
+CM_ SG_ 385 BMS_INFO_BMSstate "BMS indicates that it is ready to sleep / for regular power down.";
+CM_ SG_ 385 BMS_REQ_PowerDown " initiate a CPS power down (deep-discharge protection)
+";
+CM_ SG_ 385 BMS_REQ_CPSout "control CPS out (vehicle supply)";
+CM_ SG_ 642 CPS_Temp2CPSout "temperature of CPS power path";
+CM_ SG_ 642 CPS_Temp1CPSout "temperature of CPS power path";
+CM_ SG_ 642 CPS_CPSout_I "current consumption of vehicle";
+CM_ SG_ 898 CPS_CPSoutVoltage "voltage output of CPS out (vehicle supply)";
+CM_ SG_ 898 CPS_VoltageInput "voltage input of CPS (Battery)";
+CM_ SG_ 386 CPS_StartupAfterPowerdown "CPS emergency wakeup";
+CM_ SG_ 386 CPS_Emergency "CPS emergency wakeup";
+CM_ SG_ 386 CPS_CPSoutLimitation "state of current limitation for CPS out (vehicle supply)";
+CM_ SG_ 386 CPS_CPSoutBoost "state of CPS out boost (vehicle supply)";
+CM_ SG_ 386 CPS_CPSout "state of CPS out boost (vehicle supply)";
+BA_DEF_ BU_  "NmStationAddress" HEX 0 2047;
+BA_DEF_  "Baudrate" INT 0 1000000;
+BA_DEF_  "DiagMessageCount" HEX 0 255;
+BA_DEF_  "TpBaseAddress" HEX 0 2047;
+BA_DEF_  "DiagBaseAddress" HEX 0 2047;
+BA_DEF_  "Manufacturer" STRING ;
+BA_DEF_  "VersionYear" INT 0 99;
+BA_DEF_  "VersionMonth" INT 1 12;
+BA_DEF_  "VersionDay" INT 0 31;
+BA_DEF_  "ProtocolType" STRING ;
+BA_DEF_  "CANopenApplProfile" INT 0 0;
+BA_DEF_ BU_  "TpTargetAddress" INT 0 0;
+BA_DEF_ BU_  "TpNodeBaseAddress" HEX 0 2047;
+BA_DEF_ BU_  "DiagStationAddress" INT 0 0;
+BA_DEF_ BU_  "TpAddressingMode" INT 0 0;
+BA_DEF_ BU_  "CO_DCF" STRING ;
+BA_DEF_ BU_  "CO_ID" INT 0 0;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ SG_  "GenSigStartValue" INT 0 2147483647;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepitition","IfActive","IfActiveWithRepitition","NoSigSendType","OnChangeAndIfActive","OnChangeAndIfActiveWithRepitition";
+BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 18000;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "Baudrate" 500000;
+BA_DEF_DEF_  "DiagMessageCount" 96;
+BA_DEF_DEF_  "TpBaseAddress" 1664;
+BA_DEF_DEF_  "DiagBaseAddress" 1664;
+BA_DEF_DEF_  "Manufacturer" "KION Battery Systems";
+BA_DEF_DEF_  "VersionYear" 21;
+BA_DEF_DEF_  "VersionMonth" 10;
+BA_DEF_DEF_  "VersionDay" 29;
+BA_DEF_DEF_  "ProtocolType" "";
+BA_DEF_DEF_  "CANopenApplProfile" 301;
+BA_DEF_DEF_  "TpTargetAddress" 0;
+BA_DEF_DEF_  "TpNodeBaseAddress" 1664;
+BA_DEF_DEF_  "DiagStationAddress" 0;
+BA_DEF_DEF_  "TpAddressingMode" 1;
+BA_DEF_DEF_  "CO_DCF" "";
+BA_DEF_DEF_  "CO_ID" 1;
+BA_DEF_DEF_  "NodeLayerModules" "CANoeILNLVector.dll, OSEK_TP.dll";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigSendType" "NoSigSendType";
+BA_DEF_DEF_  "DiagState" "No";
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "NmStationAddress" BU_ FCT 130;
+BA_ "NmStationAddress" BU_ BMS 130;
+BA_ "CO_ID" BU_ BMS 130;
+BA_ "NmStationAddress" BU_ CPS 2;
+BA_ "CO_ID" BU_ CPS 2;
+BA_ "DiagResponse" BO_ 1766 1;
+BA_ "DiagRequest" BO_ 2684354559 1;
+BA_ "DiagResponse" BO_ 1759 1;
+BA_ "DiagRequest" BO_ 1664 1;
+BA_ "GenMsgSendType" BO_ 897 0;
+BA_ "GenMsgCycleTime" BO_ 897 100;
+BA_ "GenMsgSendType" BO_ 641 0;
+BA_ "GenMsgCycleTime" BO_ 641 100;
+BA_ "GenMsgCycleTime" BO_ 1794 40;
+BA_ "GenMsgSendType" BO_ 1794 0;
+BA_ "GenMsgSendType" BO_ 1793 0;
+BA_ "GenMsgCycleTime" BO_ 1793 40;
+BA_ "GenMsgSendType" BO_ 256 0;
+BA_ "GenMsgCycleTime" BO_ 256 100;
+BA_ "DiagResponse" BO_ 1410 1;
+BA_ "DiagRequest" BO_ 1538 1;
+BA_ "GenMsgSendType" BO_ 0 1;
+BA_ "GenMsgSendType" BO_ 385 0;
+BA_ "GenMsgCycleTime" BO_ 385 100;
+BA_ "GenMsgSendType" BO_ 642 0;
+BA_ "GenMsgCycleTime" BO_ 642 100;
+BA_ "GenMsgSendType" BO_ 898 0;
+BA_ "GenMsgCycleTime" BO_ 898 100;
+BA_ "GenMsgSendType" BO_ 386 0;
+BA_ "GenMsgCycleTime" BO_ 386 100;
+VAL_ 37 CPS_In2 1 "on" 0 "off" ;
+VAL_ 37 CPS_In1 1 "on" 0 "off" ;
+VAL_ 37 CPS_Out2 1 "on" 0 "off" ;
+VAL_ 37 CPS_Out1 1 "on" 0 "off" ;
+VAL_ 36 FCT_REQ_Out2 1 "on" 0 "off" ;
+VAL_ 36 FCT_REQ_Out1 1 "on" 0 "off" ;
+VAL_ 1794 CPS_HBState 127 "Pre-OP" 5 "OP" 4 "Stopped" 0 "Bootup" ;
+VAL_ 1793 BMS_HBState 127 "Pre-OP" 5 "OP" 4 "Stopped" 0 "Bootup" ;
+VAL_ 385 BMS_INFO_BMSstate 4 "BMS_OPERATION" 1 "BMS_SHUTDOWN" ;
+VAL_ 385 BMS_REQ_PowerDown 1 "on" 0 "off" ;
+VAL_ 385 BMS_REQ_CPSout 1 "on" 0 "off" ;
+VAL_ 386 CPS_StartupAfterPowerdown 1 "on" 0 "off" ;
+VAL_ 386 CPS_Emergency 1 "on" 0 "off" ;
+VAL_ 386 CPS_CPSoutLimitation 1 "on" 0 "off" ;
+VAL_ 386 CPS_CPSoutBoost 2 "blocked" 1 "on" 0 "off" ;
+VAL_ 386 CPS_CPSout 2 "blocked" 1 "on" 0 "off" ;
+

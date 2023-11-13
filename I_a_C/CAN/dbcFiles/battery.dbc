@@ -1,0 +1,1357 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: tci obc lib kwpc exc LiionCharger Bms
+
+
+BO_ 2633957629 xcp_broadcast: 8 Vector__XXX
+ SG_ xcp_broadcast_data : 0|64@1+ (1,0) [0|0] ""  lib
+
+BO_ 256 time: 6 obc
+ SG_ canopen_time_of_day_ms : 0|28@1+ (1,0) [0|268435455] "ms"  lib
+ SG_ canopen_time_of_day_days : 32|16@1+ (1,0) [0|65535] "d"  lib
+
+BO_ 1484 tci_sdo_tx: 8 tci
+ SG_ canopen_sdo_download_subindex m3 : 24|8@1+ (1,0) [0|0] ""  obc,exc
+ SG_ canopen_sdo_transfer_type m2 : 1|1@1+ (1,0) [0|0] ""  obc,exc
+ SG_ canopen_sdo_size_indicator m2 : 0|1@1+ (1,0) [0|0] ""  exc,obc
+ SG_ canopen_sdo_data m2 : 32|32@1+ (1,0) [0|0] ""  exc,obc
+ SG_ canopen_sdo_scs M : 5|3@1+ (1,0) [0|0] ""  obc,exc
+ SG_ canopen_sdo_abort_subindex m4 : 24|8@1+ (1,0) [0|0] ""  obc,exc
+ SG_ canopen_sdo_seg_data m0 : 8|56@1+ (1,0) [0|0] ""  obc,exc
+ SG_ canopen_sdo_continue m0 : 0|1@1+ (1,0) [0|0] ""  obc,exc
+ SG_ canopen_sdo_number_of_bytes_3 m0 : 1|3@1+ (1,0) [0|0] ""  obc,exc
+ SG_ canopen_sdo_abort_index m4 : 8|16@1+ (1,0) [0|0] ""  exc,obc
+ SG_ canopen_sdo_upload_subindex m2 : 24|8@1+ (1,0) [0|0] ""  obc,exc
+ SG_ canopen_sdo_abort_code m4 : 32|32@1+ (1,0) [0|0] ""  obc,exc
+ SG_ canopen_sdo_download_index m3 : 8|16@1+ (1,0) [0|0] ""  exc,obc
+ SG_ canopen_sdo_download_toggle_bit m1 : 4|1@1+ (1,0) [0|0] ""  obc,exc
+ SG_ canopen_sdo_upload_index m2 : 8|16@1+ (1,0) [0|0] ""  obc,exc
+ SG_ canopen_sdo_upload_toggle_bit m0 : 4|1@1+ (1,0) [0|0] ""  exc,obc
+ SG_ canopen_sdo_number_of_bytes_2 m2 : 2|2@1+ (1,0) [0|0] ""  exc,obc
+
+BO_ 1612 tci_sdo_rx: 8 obc
+ SG_ canopen_sdo_abort_subindex m4 : 24|8@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_download_subindex m1 : 24|8@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_data m1 : 32|32@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_number_of_bytes_3 m0 : 1|3@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_download_toggle_bit m0 : 4|1@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_upload_toggle_bit m3 : 4|1@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_abort_code m4 : 32|32@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_size_indicator m1 : 0|1@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_download_index m1 : 8|16@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_seg_data m0 : 8|56@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_upload_subindex m2 : 24|8@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_ccs M : 5|3@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_number_of_bytes_2 m1 : 2|2@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_abort_index m4 : 8|16@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_continue m0 : 0|1@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_transfer_type m1 : 1|1@1+ (1,0) [0|0] ""  tci
+ SG_ canopen_sdo_upload_index m2 : 8|16@1+ (1,0) [0|0] ""  tci
+
+BO_ 1228 tci_pdo_tx4: 8 tci
+ SG_ tci_truck_operating_hours_mode : 32|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ tci_truck_power_consumption_avg : 36|12@1+ (0.05,-102.3) [-102.3|102.25] "kW"  obc,exc
+ SG_ tci_truck_operating_hours : 0|32@1+ (1,-36000) [-36000|4294931295] "s" Vector__XXX
+
+BO_ 460 tci_pdo_tx1: 8 tci
+ SG_ tci_charger_output_power_limit : 0|19@1+ (1,0) [0|524283] "W"  obc,exc
+ SG_ tci_charge_disable : 38|2@1+ (1,0) [0|3] ""  exc,obc
+ SG_ tci_request_charge_time_calculat : 40|2@1+ (1,0) [0|3] ""  exc,obc
+ SG_ tci_charger_ac_power_limit : 19|19@1+ (1,0) [0|524283] "W"  obc,exc
+
+BO_ 1100 tci_pdo_rx3: 8 obc
+ SG_ tci_soc_without_soh : 16|8@1+ (0.5,0) [0|100] "%"  tci
+ SG_ tci_battery_temperature : 0|8@1+ (1,-40) [-40|211] "°C"  tci
+ SG_ tci_soc_with_soh : 8|8@1+ (0.5,0) [0|100] "%"  tci
+
+BO_ 844 tci_pdo_rx2: 8 obc
+ SG_ tci_charger_output_voltage : 0|18@1+ (0.01,0) [0|2621.39] "V"  tci
+ SG_ tci_charger_output_current : 18|16@1+ (0.01,0) [0|655.31] "A"  tci
+ SG_ tci_charger_output_power : 34|19@1+ (1,0) [0|524283] "W"  tci
+
+BO_ 588 tci_pdo_rx1: 8 obc
+ SG_ tci_charge_cancelled : 16|2@1+ (1,0) [0|3] ""  tci
+ SG_ tci_battery_current : 36|19@1+ (0.01,-2621.42) [-2621.42|2621.41] "A"  tci
+ SG_ tci_battery_voltage : 18|18@1+ (0.01,0) [0|2621.39] "V"  tci
+ SG_ tci_mains_power_detected : 2|2@1+ (1,0) [0|3] ""  tci
+ SG_ tci_charge_status : 8|4@1+ (1,0) [0|15] ""  tci
+ SG_ tci_charge_plug_present : 4|2@1+ (1,0) [0|3] ""  tci
+ SG_ tci_error : 12|2@1+ (1,0) [0|3] ""  tci
+
+BO_ 1868 tci_heartbeat: 1 tci
+ SG_ canopen_state_tci : 0|7@1+ (1,0) [0|127] ""  exc,obc
+
+BO_ 1873 obc_heartbeat: 1 obc
+ SG_ canopen_state_obc : 1|7@1+ (1,0) [0|127] ""  lib,kwpc,tci
+
+BO_ 116 nmt_master_indication: 0 kwpc
+
+BO_ 117 nmt_master_detection: 0 exc
+
+BO_ 118 nmt_force_master_negotiation: 0 obc
+
+BO_ 114 nmt_flying_master_negotiation: 0 kwpc
+
+BO_ 113 nmt_active_master_indication: 2 exc
+ SG_ flying_master_priority_level : 0|8@1+ (1,0) [0|255] ""  obc,kwpc,exc
+ SG_ flying_master_node_id : 8|8@1+ (1,0) [0|127] ""  kwpc,exc,obc
+
+BO_ 115 nmt_active_master_detection: 0 exc
+
+BO_ 0 module_control: 2 obc
+ SG_ canopen_nmt_command_specifier : 0|8@1+ (1,0) [0|0] ""  Bms,tci,lib
+ SG_ canopen_node_id : 8|8@1+ (1,0) [0|127] ""  Bms,lib,tci
+
+BO_ 2634000381 lib_xcp_res: 8 lib
+ SG_ xcp_response_data : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2633967613 lib_xcp_cmd: 8 Vector__XXX
+ SG_ xcp_command_data : 0|64@1+ (1,0) [0|0] ""  lib
+
+BO_ 1703 lib_uds: 8 lib
+ SG_ isotp_bs m3 : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ isotp_sn m2 : 11|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ isotp_fs m3 : 11|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ isotp_ff_dl m1 : 11|12@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ isotp_n_pcitype M : 15|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ isotp_n_ta : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ isotp_n_data_sf m0 : 23|48@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ isotp_sf_dl m0 : 11|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ isotp_n_data_fc m3 : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ isotp_stmin m3 : 31|8@0+ (1,0) [0|0] "ms" Vector__XXX
+ SG_ isotp_n_data_cf m2 : 23|48@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ isotp_n_data_ff m1 : 31|40@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1447 lib_sdo_tx: 8 lib
+ SG_ canopen_sdo_abort_code m4 : 32|32@1+ (1,0) [0|0] ""  obc,exc,kwpc
+ SG_ canopen_sdo_upload_toggle_bit m0 : 4|1@1+ (1,0) [0|0] ""  kwpc,exc,obc
+ SG_ canopen_sdo_download_index m3 : 8|16@1+ (1,0) [0|0] ""  kwpc,exc,obc
+ SG_ canopen_sdo_upload_index m2 : 8|16@1+ (1,0) [0|0] ""  obc,kwpc,exc
+ SG_ canopen_sdo_seg_data m0 : 8|56@1+ (1,0) [0|0] ""  kwpc,obc,exc
+ SG_ canopen_sdo_scs M : 5|3@1+ (1,0) [0|0] ""  kwpc,obc,exc
+ SG_ canopen_sdo_size_indicator m2 : 0|1@1+ (1,0) [0|0] ""  kwpc,exc,obc
+ SG_ canopen_sdo_continue m0 : 0|1@1+ (1,0) [0|0] ""  kwpc,obc,exc
+ SG_ canopen_sdo_data m2 : 32|32@1+ (1,0) [0|0] ""  exc,obc,kwpc
+ SG_ canopen_sdo_transfer_type m2 : 1|1@1+ (1,0) [0|0] ""  obc,kwpc,exc
+ SG_ canopen_sdo_number_of_bytes_2 m2 : 2|2@1+ (1,0) [0|0] ""  exc,kwpc,obc
+ SG_ canopen_sdo_abort_index m4 : 8|16@1+ (1,0) [0|0] ""  kwpc,exc,obc
+ SG_ canopen_sdo_download_toggle_bit m1 : 4|1@1+ (1,0) [0|0] ""  obc,exc,kwpc
+ SG_ canopen_sdo_number_of_bytes_3 m0 : 1|3@1+ (1,0) [0|0] ""  obc,kwpc,exc
+ SG_ canopen_sdo_abort_subindex m4 : 24|8@1+ (1,0) [0|0] ""  obc,exc,kwpc
+ SG_ canopen_sdo_upload_subindex m2 : 24|8@1+ (1,0) [0|0] ""  kwpc,obc,exc
+ SG_ canopen_sdo_download_subindex m3 : 24|8@1+ (1,0) [0|0] ""  obc,exc,kwpc
+
+BO_ 1575 lib_sdo_rx: 8 obc
+ SG_ canopen_sdo_size_indicator m1 : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ canopen_sdo_abort_code m4 : 32|32@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_number_of_bytes_2 m1 : 2|2@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_download_index m1 : 8|16@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_upload_index m2 : 8|16@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_transfer_type m1 : 1|1@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_seg_data m0 : 8|56@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_abort_index m4 : 8|16@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_upload_subindex m2 : 24|8@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_number_of_bytes_3 m0 : 1|3@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_data m1 : 32|32@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_continue m0 : 0|1@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_upload_toggle_bit m3 : 4|1@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_download_toggle_bit m0 : 4|1@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_abort_subindex m4 : 24|8@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_ccs M : 5|3@1+ (1,0) [0|0] ""  lib
+ SG_ canopen_sdo_download_subindex m1 : 24|8@1+ (1,0) [0|0] ""  lib
+
+BO_ 1015 lib_pdo_tx7: 8 lib
+ SG_ lib_pdo_tx7_checksum : 48|16@1+ (1,0) [0|0] ""  kwpc,obc,exc
+ SG_ lib_pdo_tx7_message_counter : 44|4@1+ (1,0) [0|0] ""  obc,kwpc,exc
+ SG_ lib_powerpath_ok : 0|2@1+ (1,0) [0|3] ""  exc,obc,kwpc
+
+BO_ 759 lib_pdo_tx6: 8 lib
+ SG_ lib_max_charging_current_2s : 0|18@1+ (0.01,0) [0|2621.39] "A"  exc,obc,kwpc
+ SG_ lib_max_charging_current_100s : 18|18@1+ (0.01,0) [0|2621.39] "A"  obc,exc,kwpc
+
+BO_ 503 lib_pdo_tx5: 8 lib
+ SG_ lib_max_discharging_current_2s : 0|18@1+ (0.01,0) [0|2621.39] "A"  exc,obc,kwpc
+ SG_ lib_max_discharging_current_100s : 18|18@1+ (0.01,0) [0|2621.39] "A"  kwpc,obc,exc
+
+BO_ 1191 lib_pdo_tx4: 8 lib
+ SG_ lib_max_charging_power_100s : 37|19@1+ (1,0) [0|524283] "W"  obc,kwpc,exc
+ SG_ lib_max_charging_power_2s : 18|19@1+ (1,0) [0|524283] "W"  exc,kwpc,obc
+ SG_ lib_soc_without_soh : 56|8@1+ (0.5,0) [0|100] "%"  obc,kwpc,exc
+ SG_ lib_max_charging_voltage : 0|18@1+ (0.01,0) [0|2621.39] "V"  kwpc,exc,obc
+
+BO_ 935 lib_pdo_tx3: 8 lib
+ SG_ lib_max_discharging_power_2s : 18|19@1+ (1,0) [0|524283] "W"  exc,obc,kwpc
+ SG_ lib_max_discharging_power_100s : 37|19@1+ (1,0) [0|524283] "W"  exc,obc,kwpc
+ SG_ lib_min_discharging_voltage : 0|18@1+ (0.01,0) [0|2621.39] "V"  obc,exc,kwpc
+ SG_ lib_soc_with_soh : 56|8@1+ (0.5,0) [0|100] "%"  exc,obc,kwpc
+
+BO_ 679 lib_pdo_tx2: 8 lib
+ SG_ lib_power : 36|20@1+ (1,-524286) [-524286|524285] "W"  exc,kwpc,obc
+ SG_ lib_voltage_after_contactor : 18|18@1+ (0.01,0) [0|2621.39] "V"  exc,kwpc,obc
+ SG_ lib_state_of_health : 56|8@1+ (0.5,0) [0|100] "%"  obc,kwpc,exc
+ SG_ lib_voltage_in_front_of_contacto : 0|18@1+ (0.01,0) [0|2621.39] "V"  kwpc,obc,exc
+
+BO_ 423 lib_pdo_tx1: 8 lib
+ SG_ lib_temperature : 24|8@1+ (1,-40) [-40|211] "°C"  kwpc,exc,obc
+ SG_ lib_in_charging_mode : 6|2@1+ (1,0) [0|3] ""  obc,exc,kwpc
+ SG_ lib_ready : 2|2@1+ (1,0) [0|3] ""  kwpc,obc,exc
+ SG_ lib_init_complete : 0|2@1+ (1,0) [0|3] ""  exc,obc,kwpc
+ SG_ lib_error : 8|2@1+ (1,0) [0|3] ""  exc,obc,kwpc
+ SG_ lib_current_limited : 10|2@1+ (1,0) [0|3] ""  obc,exc,kwpc
+ SG_ lib_in_driving_mode : 4|2@1+ (1,0) [0|3] ""  obc,exc,kwpc
+ SG_ lib_emergency_operation : 12|2@1+ (1,0) [0|3] ""  exc,kwpc,obc
+ SG_ lib_temperature_too_high : 20|2@1+ (1,0) [0|3] ""  obc,kwpc,exc
+ SG_ lib_temperature_too_low : 18|2@1+ (1,0) [0|3] ""  exc,obc,kwpc
+ SG_ lib_shock_warning : 14|2@1+ (1,0) [0|3] ""  obc,exc,kwpc
+ SG_ lib_fatal_error : 16|2@1+ (1,0) [0|3] ""  kwpc,exc,obc
+ SG_ lib_service_required : 22|2@1+ (1,0) [0|3] ""  kwpc,obc,exc
+ SG_ lib_current : 32|19@1+ (0.01,-2621.42) [-2621.42|2621.41] "A"  obc,kwpc,exc
+
+BO_ 1319 lib_pdo_rx4: 8 obc
+ SG_ lib_power_consumption_average : 36|12@1+ (0.05,-102.3) [-102.3|102.25] "kW"  lib
+ SG_ truck_operating_hours_mode : 32|4@1+ (1,0) [0|15] ""  lib
+ SG_ truck_operating_hours : 0|32@1+ (1,-36000) [-36000|4294931295] "s"  lib
+
+BO_ 551 lib_pdo_rx1: 8 obc
+ SG_ lib_charging_voltage : 16|18@1+ (0.01,0) [0|2621.39] "V"  lib
+ SG_ lib_charging_current : 0|16@1+ (0.01,0) [0|655.31] "A"  lib
+ SG_ lib_charging_power : 34|19@1+ (1,0) [0|524283] "W"  lib
+
+BO_ 1831 lib_heartbeat: 1 lib
+ SG_ canopen_state_lib : 0|7@1+ (1,0) [0|127] ""  obc,exc,kwpc
+
+BO_ 167 lib_emergency: 8 lib
+ SG_ error_register_object_lib : 16|8@1+ (1,0) [0|0] ""  kwpc
+ SG_ uds_dtc_lib : 24|24@1+ (1,0) [0|16777215] ""  kwpc
+ SG_ emergency_error_code_lib : 0|16@1+ (1,0) [0|0] ""  kwpc
+
+BO_ 2163147005 lib_deep_discharge_wakeup: 8 exc
+ SG_ lib_deep_discharge_wakeup_data : 0|64@1+ (1,0) [0|0] ""  lib
+
+BO_ 1793 kwpc_heartbeat: 1 kwpc
+ SG_ canopen_state_kwpc : 1|7@1+ (1,0) [0|127] ""  lib
+
+BO_ 1866 exc_heartbeat: 1 exc
+ SG_ canopen_state_exc : 0|7@1+ (1,0) [0|127] ""  kwpc,lib,tci
+
+BO_ 1664 dtu_uds: 8 kwpc
+ SG_ isotp_n_data_fc m3 : 39|32@0+ (1,0) [0|0] ""  lib
+ SG_ isotp_sf_dl m0 : 11|4@0+ (1,0) [0|0] ""  lib
+ SG_ isotp_n_data_sf m0 : 23|48@0+ (1,0) [0|0] ""  lib
+ SG_ isotp_fs m3 : 11|4@0+ (1,0) [0|0] ""  lib
+ SG_ isotp_sn m2 : 11|4@0+ (1,0) [0|0] ""  lib
+ SG_ isotp_stmin m3 : 31|8@0+ (1,0) [0|0] "ms"  lib
+ SG_ isotp_n_data_ff m1 : 31|40@0+ (1,0) [0|0] ""  lib
+ SG_ isotp_n_pcitype M : 15|4@0+ (1,0) [0|15] ""  lib
+ SG_ isotp_bs m3 : 23|8@0+ (1,0) [0|0] ""  lib
+ SG_ isotp_ff_dl m1 : 11|12@0+ (1,0) [0|0] ""  lib
+ SG_ isotp_n_ta : 7|8@0+ (1,0) [0|0] ""  lib
+ SG_ isotp_n_data_cf m2 : 23|48@0+ (1,0) [0|0] ""  lib
+
+BO_ 1759 cps_uds: 8 lib
+ SG_ isotp_fs m3 : 11|4@0+ (1,0) [0|0] ""  kwpc
+ SG_ isotp_bs m3 : 23|8@0+ (1,0) [0|0] ""  kwpc
+ SG_ isotp_ff_dl m1 : 11|12@0+ (1,0) [0|0] ""  kwpc
+ SG_ isotp_sf_dl m0 : 11|4@0+ (1,0) [0|0] ""  kwpc
+ SG_ isotp_n_data_cf m2 : 23|48@0+ (1,0) [0|0] ""  kwpc
+ SG_ isotp_n_pcitype M : 15|4@0+ (1,0) [0|15] ""  kwpc
+ SG_ isotp_n_ta : 7|8@0+ (1,0) [0|0] ""  kwpc
+ SG_ isotp_n_data_sf m0 : 23|48@0+ (1,0) [0|0] ""  kwpc
+ SG_ isotp_sn m2 : 11|4@0+ (1,0) [0|0] ""  kwpc
+ SG_ isotp_n_data_ff m1 : 31|40@0+ (1,0) [0|0] ""  kwpc
+ SG_ isotp_n_data_fc m3 : 39|32@0+ (1,0) [0|0] ""  kwpc
+ SG_ isotp_stmin m3 : 31|8@0+ (1,0) [0|0] "ms"  kwpc
+
+BO_ 1773 XCP_DTO_LiIoBMS: 8 Vector__XXX
+ SG_ xcp_response_data : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1741 XCP_CTO_LiIoBMS: 8 Vector__XXX
+ SG_ xcp_command_data : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 255 TimeStamp: 4 kwpc
+ SG_ DateTime : 0|32@1+ (1,0) [0|4294967295] "s"  Bms
+
+BO_ 128 SYNC: 0 exc
+
+BO_ 1797 HeartbtLiionCharger: 1 LiionCharger
+ SG_ stateLiionCharger : 0|7@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1805 HeartbtBms: 1 Bms
+ SG_ stateBms : 0|7@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 385 FuncPDO1: 8 kwpc
+ SG_ HMValue : 16|20@1+ (0.1,0) [0|0] "h"  Bms
+
+BO_ 386 FuncLiftPDO1: 8 kwpc
+ SG_ HourMeterValue : 0|20@1+ (0.1,0) [0|0] "h"  Bms
+
+BO_ 388 DispPDO1: 8 kwpc
+ SG_ DispPdo1_reserved_b7_bit3 : 59|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DispMonth : 39|4@1+ (1,0) [0|0] ""  Bms
+ SG_ DispYear : 33|6@1+ (1,0) [0|0] ""  Bms
+ SG_ DispMinutes : 22|6@1+ (1,0) [0|0] ""  Bms
+ SG_ DispStatus : 63|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DispPdo1_reserved_b0_b1 : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DispBrandID : 60|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DispPdo1_reserved_b7_bit6 : 62|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DispPdo1_reserved_b6 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DispDay : 43|5@1+ (1,0) [0|0] ""  Bms
+ SG_ DispPdo1_reserved_b7_bit0 : 56|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DispBiometry : 57|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DispSeconds : 16|6@1+ (1,0) [0|0] ""  Bms
+ SG_ DispHour : 28|5@1+ (1,0) [0|0] ""  Bms
+
+BO_ 1949 DiagRespBms: 8 Bms
+ SG_ BmsRsData : 8|56@1+ (1,0) [0|0] ""  kwpc
+ SG_ BmsRsPCI : 0|8@1+ (1,0) [0|0] ""  kwpc
+
+BO_ 1920 DiagReqFuncAll: 8 kwpc
+ SG_ FuncRqData : 8|56@1+ (1,0) [0|0] ""  Bms
+ SG_ FuncRqPCI : 0|8@1+ (1,0) [0|0] ""  Bms
+
+BO_ 1933 DiagReqBms: 8 Vector__XXX
+ SG_ BmsRqData : 8|56@1+ (1,0) [0|0] ""  Bms
+ SG_ BmsRqPCI : 0|8@1+ (1,0) [0|0] ""  Bms
+
+BO_ 1421 BmsSDOtx: 8 Bms
+ SG_ BmsSDOtxData : 0|64@1+ (1,0) [0|0] ""  kwpc
+
+BO_ 1549 BmsSDOrx: 8 kwpc
+ SG_ BmsSDOrxData : 0|64@1+ (1,0) [0|0] ""  Bms
+
+BO_ 769 BmsPDO5: 8 Bms
+ SG_ FaultBatteryCode_3 : 32|8@1+ (1,0) [0|0] ""  kwpc
+ SG_ FaultBatteryCode_6 : 56|8@1+ (1,0) [0|0] ""  kwpc
+ SG_ FaultBatteryCode_2 : 24|8@1+ (1,0) [0|0] ""  kwpc
+ SG_ FaultBatteryCode_1 : 16|8@1+ (1,0) [0|0] ""  kwpc
+ SG_ FaultBatteryCode_5 : 48|8@1+ (1,0) [0|0] ""  kwpc
+ SG_ FaultBatteryCode_4 : 40|8@1+ (1,0) [0|0] ""  kwpc
+ SG_ BmsBatStat : 0|8@1+ (1,0) [0|0] ""  kwpc
+ SG_ BmsPDO5_fillbyte1 : 8|8@1+ (1,0) [0|0] ""  kwpc
+
+BO_ 1165 BmsPDO4: 8 Bms
+ SG_ BmsDisVoltMin : 0|16@1+ (25,0) [0|0] "mV"  kwpc,exc,obc
+ SG_ BmsSoh : 48|8@1+ (1,0) [0|100] "%"  obc,exc,kwpc
+ SG_ BmsSocWoutSoh : 32|8@1+ (1,0) [0|100] "%"  kwpc,exc,obc
+ SG_ BmsPDO4_fillbyte7 : 56|8@1- (1,0) [0|0] ""  kwpc,obc,exc
+ SG_ BmsCharVoltHigh : 16|16@1+ (25,0) [0|0] "mV"  obc,kwpc,exc
+ SG_ BmsSocWithSoh : 40|8@1+ (1,0) [0|100] "%"  kwpc,obc,exc
+
+BO_ 909 BmsPDO3: 8 Bms
+ SG_ BmsErrCodeLB3 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BmsErrCodeLB4 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BmsErrCodeHB1 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BmsErrCodeHB4 : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BmsErrCodeLB2 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BmsErrCodeLB1 : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BmsErrCodeHB2 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BmsErrCodeHB3 : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 653 BmsPDO2: 8 Bms
+ SG_ BmsPowForChar : 32|16@1+ (10,0) [0|655350] "W"  kwpc,obc,exc
+ SG_ BmsPowForDis : 48|16@1+ (10,0) [0|655350] "W"  obc,exc,kwpc
+ SG_ BmsNormCharCurr : 16|16@1+ (0.25,0) [0|16383.75] "A"  obc,exc,kwpc
+ SG_ BmsMaxCharCurr : 0|16@1+ (0.25,0) [0|16383.75] "A"  obc,kwpc,exc
+
+BO_ 397 BmsPDO1: 8 Bms
+ SG_ BmsMaxDirCurr : 48|16@1+ (0.25,0) [0|0] "A"  kwpc
+ SG_ BmsBatCurr : 0|32@1- (1,0) [-4000000|4000000] "mA"  kwpc
+ SG_ BmsBatVolt : 32|16@1+ (2,0) [0|0] "mV"  kwpc
+
+BO_TX_BU_ 256 : exc,kwpc,obc;
+BO_TX_BU_ 1612 : exc,obc;
+BO_TX_BU_ 1100 : exc,obc;
+BO_TX_BU_ 844 : exc,obc;
+BO_TX_BU_ 588 : exc,obc;
+BO_TX_BU_ 116 : exc,obc,kwpc;
+BO_TX_BU_ 117 : obc,kwpc,exc;
+BO_TX_BU_ 118 : exc,kwpc,obc;
+BO_TX_BU_ 114 : obc,exc,kwpc;
+BO_TX_BU_ 113 : kwpc,obc,exc;
+BO_TX_BU_ 115 : kwpc,obc,exc;
+BO_TX_BU_ 0 : exc,kwpc,obc;
+BO_TX_BU_ 1575 : exc,kwpc,obc;
+BO_TX_BU_ 1319 : kwpc,exc,obc;
+BO_TX_BU_ 551 : kwpc,exc,obc;
+BO_TX_BU_ 2163147005 : obc,exc;
+BO_TX_BU_ 128 : obc,kwpc,exc;
+
+
+CM_ BU_ tci "Truck/Charger Interface";
+CM_ BU_ obc "On-Board Charger";
+CM_ BU_ lib "Lithium-Ion Battery Management System (KION Protocol)";
+CM_ BU_ kwpc "Kion warehouse  power control (05/06 for warehouse -> power + logic)";
+CM_ BU_ exc "External Charger";
+CM_ BU_ LiionCharger "Liion battery charger";
+CM_ BU_ Bms "battery managment system (liion-battery)";
+CM_ BO_ 2633957629 "XCP broadcast request";
+CM_ BO_ 256 "time stamp (TIME)";
+CM_ BO_ 1484 "SDO Tx, node 0x4C (Truck Charger Interface), SDO client: OBC, EXC";
+CM_ BO_ 1612 "SDO Rx, node 0x4C (Truck Charger Interface), SDO client: OBC, EXC";
+CM_ BO_ 1228 "PDO 4 (Tx), node 0x4C (Truck Charger Interface)";
+CM_ SG_ 1228 tci_truck_operating_hours_mode "main truck hour meter counting mode";
+CM_ SG_ 1228 tci_truck_power_consumption_avg "for estimation of remaining charging time until end of shift";
+CM_ SG_ 1228 tci_truck_operating_hours "main truck hour meter";
+CM_ BO_ 460 "PDO 1 (Tx), node 0x4C (Truck Charger Interface)";
+CM_ SG_ 460 tci_charger_output_power_limit "max. output power of charger permitted by <TCI>";
+CM_ SG_ 460 tci_charger_ac_power_limit "max. A/C power of charger permitted by <TCI>";
+CM_ BO_ 1100 "PDO 3 (Rx), node 0x4C (Truck Charger Interface)";
+CM_ SG_ 1100 tci_soc_without_soh "as reported by <LIB>";
+CM_ SG_ 1100 tci_battery_temperature "as reported by <LIB>";
+CM_ SG_ 1100 tci_soc_with_soh "as reported by <LIB>";
+CM_ BO_ 844 "PDO 2 (Rx), node 0x4C (Truck Charger Interface)";
+CM_ BO_ 588 "PDO 1 (Rx), node 0x4C (Truck Charger Interface)";
+CM_ SG_ 588 tci_battery_current "as reported by <LIB>";
+CM_ SG_ 588 tci_battery_voltage "as reported by <LIB>";
+CM_ SG_ 588 tci_charge_status "value table matches [obc_charge_status]";
+CM_ BO_ 1868 "heartbeat (NMT error control), node 0x4C (Truck Charger Interface)";
+CM_ SG_ 1868 canopen_state_tci "CANopen node status of truck-charger-interface";
+CM_ BO_ 1873 "heartbeat (NMT error control), node 0x51 (OBC)";
+CM_ SG_ 1873 canopen_state_obc "CANopen node status of on-board charger";
+CM_ BO_ 116 "CANopen flying master response message for service 'NMT master detection'";
+CM_ BO_ 117 "CANopen flying master request message for service 'NMT master detection'";
+CM_ BO_ 118 "CANopen flying master request message for service 'force NMT flying master negotiation'";
+CM_ BO_ 114 "CANopen flying master request message for 'NMT flying master negotiation'";
+CM_ BO_ 113 "CANopen flying master response message for services 'active NMT master detection' and 'NMT flying master negotiation'";
+CM_ BO_ 115 "CANopen flying master request message for service 'NMT active master detection'";
+CM_ BO_ 0 "network management (NMT)
+";
+CM_ BO_ 2634000381 "XCP responses from LIB with KION protocol";
+CM_ BO_ 2633967613 "XCP commands for LIB with KION protocol";
+CM_ BO_ 1703 "UDS responses from LIB with KION protocol";
+CM_ SG_ 1703 isotp_bs "FlowControl BlockSize (ISO-TP extended addressing)";
+CM_ SG_ 1703 isotp_sn "ConsecutiveFrame SequenceNumber (ISO-TP extended addressing)";
+CM_ SG_ 1703 isotp_fs "FlowControl FlowStatus (ISO-TP extended addressing)";
+CM_ SG_ 1703 isotp_ff_dl "FirstFrame DataLength (ISO-TP extended addressing)";
+CM_ SG_ 1703 isotp_n_pcitype "network protocol control information type (ISO-TP extended addressing)";
+CM_ SG_ 1703 isotp_n_ta "network target address (ISO-TP extended addressing)";
+CM_ SG_ 1703 isotp_n_data_sf "SingleFrame Data Field (ISO-TP extended addressing)";
+CM_ SG_ 1703 isotp_sf_dl "SingleFrame DataLength (ISO-TP extended addressing)";
+CM_ SG_ 1703 isotp_n_data_fc "FlowControl Data Field (ISO-TP extended addressing)";
+CM_ SG_ 1703 isotp_stmin "FlowControl SeparationTime minimum (ISO-TP extended addressing)";
+CM_ SG_ 1703 isotp_n_data_cf "Consecutive Frame Data Field (ISO-TP extended addressing)";
+CM_ SG_ 1703 isotp_n_data_ff "FirstFrame Data Field (ISO-TP extended addressing)";
+CM_ BO_ 1447 "SDO Tx, node 0x27 (LIB with KION protocol), SDO clients: KMC, OBC, EXC
+";
+CM_ BO_ 1575 "SDO Rx, node 0x27 (LIB with KION protocol), SDO clients: KMC, OBC, EXC";
+CM_ BO_ 1015 "PDO 7 (Tx), node 0x77 (LIB with KION protocol)";
+CM_ BO_ 759 "PDO 6 (Tx), node 0x77 (LIB with KION protocol)";
+CM_ BO_ 503 "PDO 5 (Tx), node 0x77 (LIB with KION protocol)";
+CM_ BO_ 1191 "PDO 4 (Tx), node 0x27 (LIB with KION protocol)";
+CM_ BO_ 935 "PDO 3 (Tx), node 0x27 (LIB with KION protocol)";
+CM_ BO_ 679 "PDO 2 (Tx), node 0x27 (LIB with KION protocol)";
+CM_ SG_ 679 lib_power "positive values = charging, negative values = discharging";
+CM_ SG_ 679 lib_voltage_after_contactor "voltage after battery contactor (as seen from battery), i.e. truck side of contactor";
+CM_ SG_ 679 lib_voltage_in_front_of_contacto "voltage in front of battery contactor (as seen from battery), i.e. battery side of contactor";
+CM_ BO_ 423 "PDO 1 (Tx), node 0x27 (LIB with KION protocol)";
+CM_ SG_ 423 lib_temperature "temperature of hottest module in battery";
+CM_ SG_ 423 lib_current "positive values = charging, negative values = discharging";
+CM_ BO_ 1319 "PDO 4 (Rx), node 0x27 (LIB with KION protocol)";
+CM_ SG_ 1319 lib_power_consumption_average "for estimation of remaining charging time until end of shift";
+CM_ SG_ 1319 truck_operating_hours_mode "main truck hour meter counting mode";
+CM_ SG_ 1319 truck_operating_hours "main truck hour meter";
+CM_ BO_ 551 "PDO 1 (Rx), node 0x27 (LIB with KION protocol)";
+CM_ SG_ 551 lib_charging_voltage "output voltage of charger";
+CM_ SG_ 551 lib_charging_current "output current of charger";
+CM_ SG_ 551 lib_charging_power "output power of charger";
+CM_ BO_ 1831 "heartbeat (NMT error control), node 0x27 (LIB with KION protocol)";
+CM_ SG_ 1831 canopen_state_lib "CANopen node status of lithium-ion battery (KION protocol)";
+CM_ BO_ 167 "emergency (EMCY), node 0x27 (LIB with KION protocol)";
+CM_ BO_ 2163147005 "special message for waking up deep discharged LIBs";
+CM_ BO_ 1793 "heartbeat (NMT error control), node 0x01 (KWPC)";
+CM_ SG_ 1793 canopen_state_kwpc "CANopen node status of KION Motion Controller";
+CM_ BO_ 1866 "heartbeat (NMT error control), node 0x4A (EXC)";
+CM_ SG_ 1866 canopen_state_exc "CANopen node status of the external battery charger";
+CM_ BO_ 1664 "UDS requests from DTU";
+CM_ SG_ 1664 isotp_n_data_fc "FlowControl Data Field (ISO-TP extended addressing)";
+CM_ SG_ 1664 isotp_sf_dl "SingleFrame DataLength (ISO-TP extended addressing)";
+CM_ SG_ 1664 isotp_n_data_sf "SingleFrame Data Field (ISO-TP extended addressing)";
+CM_ SG_ 1664 isotp_fs "FlowControl FlowStatus (ISO-TP extended addressing)";
+CM_ SG_ 1664 isotp_sn "ConsecutiveFrame SequenceNumber (ISO-TP extended addressing)";
+CM_ SG_ 1664 isotp_stmin "FlowControl SeparationTime minimum (ISO-TP extended addressing)";
+CM_ SG_ 1664 isotp_n_data_ff "FirstFrame Data Field (ISO-TP extended addressing)";
+CM_ SG_ 1664 isotp_n_pcitype "network protocol control information type (ISO-TP extended addressing)";
+CM_ SG_ 1664 isotp_bs "FlowControl BlockSize (ISO-TP extended addressing)";
+CM_ SG_ 1664 isotp_ff_dl "FirstFrame DataLength (ISO-TP extended addressing)";
+CM_ SG_ 1664 isotp_n_ta "network target address (ISO-TP extended addressing)";
+CM_ SG_ 1664 isotp_n_data_cf "Consecutive Frame Data Field (ISO-TP extended addressing)";
+CM_ BO_ 1759 "UDS responses from CPS in LIB with KION protocol";
+CM_ SG_ 1759 isotp_fs "FlowControl FlowStatus (ISO-TP extended addressing)";
+CM_ SG_ 1759 isotp_bs "FlowControl BlockSize (ISO-TP extended addressing)";
+CM_ SG_ 1759 isotp_ff_dl "FirstFrame DataLength (ISO-TP extended addressing)";
+CM_ SG_ 1759 isotp_sf_dl "SingleFrame DataLength (ISO-TP extended addressing)";
+CM_ SG_ 1759 isotp_n_data_cf "Consecutive Frame Data Field (ISO-TP extended addressing)";
+CM_ SG_ 1759 isotp_n_pcitype "network protocol control information type (ISO-TP extended addressing)";
+CM_ SG_ 1759 isotp_n_ta "network target address (ISO-TP extended addressing)";
+CM_ SG_ 1759 isotp_n_data_sf "SingleFrame Data Field (ISO-TP extended addressing)";
+CM_ SG_ 1759 isotp_sn "ConsecutiveFrame SequenceNumber (ISO-TP extended addressing)";
+CM_ SG_ 1759 isotp_n_data_ff "FirstFrame Data Field (ISO-TP extended addressing)";
+CM_ SG_ 1759 isotp_n_data_fc "FlowControl Data Field (ISO-TP extended addressing)";
+CM_ SG_ 1759 isotp_stmin "FlowControl SeparationTime minimum (ISO-TP extended addressing)";
+CM_ BO_ 1773 "XCP responses from LIB with Linde BMZ protocol";
+CM_ BO_ 1741 "XCP commands for LIB with Linde BMZ protocol";
+CM_ BO_ 255 "Linde proprietary timestamp message (for LIB with Linde SAFT protocol)";
+CM_ BO_ 128 "CANopen SYNC message (for LIB with Linde BMZ protocol)";
+CM_ BO_ 1797 "Network Management, Error Control,  liion battery charger Heartbeat";
+CM_ BO_ 1805 "Network Management, Error Control, Battery management system Heartbeat";
+CM_ BO_ 385 "Lift Transmit PDO #1 (for LIB with Linde SAFT protocol)";
+CM_ SG_ 385 HMValue "counted hours of active truck [0.1h]";
+CM_ BO_ 386 "Lift Transmit PDO #1 (for LIB with Linde SAFT protocol)";
+CM_ SG_ 386 HourMeterValue "counted hours of active truck [0.1h]";
+CM_ BO_ 388 "Display Transmit PDO #1  (for LIB with Linde SAFT protocol)";
+CM_ SG_ 388 DispPdo1_reserved_b7_bit3 "place holder to reserve signal position for future use   ";
+CM_ SG_ 388 DispPdo1_reserved_b0_b1 "place holder to reserve signal position for future use   ";
+CM_ SG_ 388 DispPdo1_reserved_b7_bit6 "place holder to reserve signal position for future use   ";
+CM_ SG_ 388 DispPdo1_reserved_b6 "place holder to reserve signal position for future use   ";
+CM_ SG_ 388 DispPdo1_reserved_b7_bit0 "place holder to reserve signal position for future use   ";
+CM_ SG_ 388 DispBiometry "Speed regulation and Immobilization by biometry of display";
+CM_ BO_ 1920 "Diagnostic Request, functional addressed";
+CM_ BO_ 1421 "CAN Open: Data for Service data object (SDO) send by BMS
+";
+CM_ SG_ 1421 BmsSDOtxData "CAN Open: Data for Service data object (SDO) send by BMS";
+CM_ BO_ 1549 "CAN Open: Service data object (SDO) send by KWPC";
+CM_ SG_ 1549 BmsSDOrxData "CAN Open: Data for Service data object (SDO) send by LAC";
+CM_ SG_ 769 FaultBatteryCode_3 "Fault Battery Code # 3";
+CM_ SG_ 769 FaultBatteryCode_6 "Fault Battery Code # 6";
+CM_ SG_ 769 FaultBatteryCode_2 "Fault Battery Code # 2";
+CM_ SG_ 769 FaultBatteryCode_1 "Fault Battery Code # 1";
+CM_ SG_ 769 FaultBatteryCode_5 "Fault Battery Code # 5";
+CM_ SG_ 769 FaultBatteryCode_4 "Fault Battery Code # 4";
+CM_ SG_ 769 BmsPDO5_fillbyte1 "place holder to reserve signal position for future use   ";
+CM_ SG_ 1165 BmsDisVoltMin "Minimum allowed voltage during discharge";
+CM_ SG_ 1165 BmsPDO4_fillbyte7 "place holder to reserve signal position for future use   ";
+CM_ SG_ 1165 BmsCharVoltHigh "Highest allowed voltage during charging";
+CM_ SG_ 909 BmsErrCodeLB3 "BmsErrorCode3 (unsigned16, low byte)";
+CM_ SG_ 909 BmsErrCodeLB4 "BmsErrorCode4 (unsigned16, low byte)";
+CM_ SG_ 909 BmsErrCodeHB1 "BmsErrorCode1 (unsigned16, high byte)";
+CM_ SG_ 909 BmsErrCodeHB4 "BmsErrorCode4 (unsigned16, high byte)";
+CM_ SG_ 909 BmsErrCodeLB2 "BmsErrorCode2 (unsigned16, low byte)";
+CM_ SG_ 909 BmsErrCodeLB1 "BmsErrorCode1 (unsigned16, low byte)";
+CM_ SG_ 909 BmsErrCodeHB2 "BmsErrorCode2 (unsigned16, high byte)";
+CM_ SG_ 909 BmsErrCodeHB3 "BmsErrorCode3 (unsigned16, high byte)";
+CM_ SG_ 653 BmsPowForChar "Power forecasting: charging [W] = BmsPowForChar * 10";
+CM_ SG_ 653 BmsPowForDis "Power forecasting: charging [W] = BmsPowForChar * 10";
+CM_ SG_ 653 BmsNormCharCurr "Normal charge current [A] = BmsNormCharCurr * 0.25";
+CM_ SG_ 653 BmsMaxCharCurr "Maximal charge current [A] = BmsMaxCharCurr * 0.25";
+BA_DEF_ SG_  "GenSigStartValue" INT 0 0;
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ SG_  "GenSigCycleTimeActive" INT 0 0;
+BA_DEF_ SG_  "GenSigCycleTime" INT 0 0;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed";
+BA_DEF_  "Baudrate" INT 0 1000000;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "NmType" STRING ;
+BA_DEF_  "Manufacturer" STRING ;
+BA_DEF_  "VersionYear" INT 0 99;
+BA_DEF_  "VersionMonth" INT 0 12;
+BA_DEF_  "VersionDay" INT 0 31;
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG";
+BA_DEF_  "TpBaseAddress" HEX 0 2047;
+BA_DEF_ SG_  "SPN" INT 0 524287;
+BA_DEF_ BO_  "RoutedMessage" ENUM  "No","Yes";
+BA_DEF_  "ProtocolType" STRING ;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "NmStationAddress" HEX 0 255;
+BA_DEF_ BU_  "NmJ1939SystemInstance" INT 0 15;
+BA_DEF_ BU_  "NmJ1939System" INT 0 127;
+BA_DEF_ BU_  "NmJ1939ManufacturerCode" INT 0 2047;
+BA_DEF_ BU_  "NmJ1939IndustryGroup" INT 0 7;
+BA_DEF_ BU_  "NmJ1939IdentityNumber" INT 0 2097151;
+BA_DEF_ BU_  "NmJ1939FunctionInstance" INT 0 7;
+BA_DEF_ BU_  "NmJ1939Function" INT 0 255;
+BA_DEF_ BU_  "NmJ1939ECUInstance" INT 0 3;
+BA_DEF_ BU_  "NmJ1939AAC" INT 0 1;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_  "DiagMessageCount" HEX 0 255;
+BA_DEF_  "DiagBaseAddress" HEX 0 2047;
+BA_DEF_ BU_  "CO_ID" INT 1 127;
+BA_DEF_ BU_  "CO_DCF" STRING ;
+BA_DEF_  "CANopenApplProfile" INT 0 0;
+BA_DEF_ SG_  "SystemSignalLongSymbol" STRING ;
+BA_DEF_REL_ BU_BO_REL_  "GenMsgStartDelayTime" INT 0 0;
+BA_DEF_REL_ BU_BO_REL_  "GenMsgDelayTime" INT 0 0;
+BA_DEF_REL_ BU_BO_REL_  "GenMsgNrOfRepetition" INT 0 0;
+BA_DEF_REL_ BU_BO_REL_  "GenMsgCycleTimeFast" INT 0 0;
+BA_DEF_REL_ BU_BO_REL_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_REL_ BU_BO_REL_  "GenMsgSendType" ENUM  "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenSigCycleTimeActive" 0;
+BA_DEF_DEF_  "GenSigCycleTime" 0;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "Baudrate" 500000;
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "NmType" "";
+BA_DEF_DEF_  "Manufacturer" "Vector";
+BA_DEF_DEF_  "VersionYear" 0;
+BA_DEF_DEF_  "VersionMonth" 1;
+BA_DEF_DEF_  "VersionDay" 1;
+BA_DEF_DEF_  "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_  "TpBaseAddress" 1664;
+BA_DEF_DEF_  "SPN" 0;
+BA_DEF_DEF_  "RoutedMessage" "No";
+BA_DEF_DEF_  "ProtocolType" "";
+BA_DEF_DEF_  "NodeLayerModules" "CANoeILNLVector.dll, OSEK_TP.dll";
+BA_DEF_DEF_  "NmStationAddress" 1;
+BA_DEF_DEF_  "NmJ1939SystemInstance" 0;
+BA_DEF_DEF_  "NmJ1939System" 0;
+BA_DEF_DEF_  "NmJ1939ManufacturerCode" 0;
+BA_DEF_DEF_  "NmJ1939IndustryGroup" 0;
+BA_DEF_DEF_  "NmJ1939IdentityNumber" 0;
+BA_DEF_DEF_  "NmJ1939FunctionInstance" 0;
+BA_DEF_DEF_  "NmJ1939Function" 0;
+BA_DEF_DEF_  "NmJ1939ECUInstance" 0;
+BA_DEF_DEF_  "NmJ1939AAC" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "No";
+BA_DEF_DEF_  "DiagState" "No";
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_DEF_DEF_  "DiagMessageCount" 96;
+BA_DEF_DEF_  "DiagBaseAddress" 1664;
+BA_DEF_DEF_  "CO_ID" 1;
+BA_DEF_DEF_  "CO_DCF" "";
+BA_DEF_DEF_  "CANopenApplProfile" 301;
+BA_DEF_DEF_REL_ "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_REL_ "GenMsgDelayTime" 0;
+BA_DEF_DEF_REL_ "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_REL_ "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_REL_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_REL_ "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "SystemSignalLongSymbol" "";
+BA_ "Manufacturer" "Vector";
+BA_ "NmType" "";
+BA_ "BusType" "CAN";
+BA_ "Baudrate" 500000;
+BA_ "VersionDay" 28;
+BA_ "VersionMonth" 1;
+BA_ "VersionYear" 21;
+BA_ "CO_ID" BU_ tci 76;
+BA_ "NmStationAddress" BU_ tci 76;
+BA_ "CO_ID" BU_ obc 81;
+BA_ "NmStationAddress" BU_ obc 81;
+BA_ "CO_ID" BU_ lib 39;
+BA_ "NmStationAddress" BU_ lib 39;
+BA_ "CO_ID" BU_ exc 74;
+BA_ "NmStationAddress" BU_ exc 74;
+BA_ "NmStationAddress" BU_ LiionCharger 5;
+BA_ "NmStationAddress" BU_ Bms 13;
+BA_ "VFrameFormat" BO_ 2633957629 1;
+BA_ "GenMsgILSupport" BO_ 256 1;
+BA_ "RoutedMessage" BO_ 256 1;
+BA_ "GenMsgILSupport" BO_ 1228 1;
+BA_ "GenMsgILSupport" BO_ 460 1;
+BA_ "GenMsgILSupport" BO_ 1100 1;
+BA_ "GenMsgILSupport" BO_ 844 1;
+BA_ "GenMsgILSupport" BO_ 588 1;
+BA_ "GenMsgILSupport" BO_ 1868 1;
+BA_ "GenMsgILSupport" BO_ 1873 1;
+BA_ "VFrameFormat" BO_ 2634000381 1;
+BA_ "VFrameFormat" BO_ 2633967613 1;
+BA_ "DiagResponse" BO_ 1703 1;
+BA_ "GenMsgILSupport" BO_ 1015 1;
+BA_ "GenMsgILSupport" BO_ 759 1;
+BA_ "GenMsgILSupport" BO_ 503 1;
+BA_ "GenMsgILSupport" BO_ 1191 1;
+BA_ "GenMsgILSupport" BO_ 935 1;
+BA_ "GenMsgILSupport" BO_ 679 1;
+BA_ "GenMsgILSupport" BO_ 423 1;
+BA_ "GenMsgILSupport" BO_ 1319 1;
+BA_ "GenMsgILSupport" BO_ 551 1;
+BA_ "GenMsgILSupport" BO_ 1831 1;
+BA_ "VFrameFormat" BO_ 2163147005 1;
+BA_ "GenMsgILSupport" BO_ 1793 1;
+BA_ "GenMsgILSupport" BO_ 1866 1;
+BA_ "DiagRequest" BO_ 1664 1;
+BA_ "DiagState" BO_ 1664 1;
+BA_ "RoutedMessage" BO_ 1664 1;
+BA_ "DiagResponse" BO_ 1759 1;
+BA_ "GenMsgILSupport" BO_ 255 1;
+BA_ "GenMsgILSupport" BO_ 128 1;
+BA_ "GenMsgILSupport" BO_ 1797 1;
+BA_ "GenMsgILSupport" BO_ 1805 1;
+BA_ "GenMsgILSupport" BO_ 385 1;
+BA_ "GenMsgILSupport" BO_ 386 1;
+BA_ "GenMsgILSupport" BO_ 388 1;
+BA_ "DiagRequest" BO_ 1920 1;
+BA_ "DiagResponse" BO_ 1920 0;
+BA_ "GenMsgILSupport" BO_ 769 1;
+BA_ "GenMsgILSupport" BO_ 1165 1;
+BA_ "GenMsgILSupport" BO_ 653 1;
+BA_ "GenMsgILSupport" BO_ 397 1;
+BA_ "GenSigSendType" SG_ 2633957629 xcp_broadcast_data 7;
+BA_ "GenSigSendType" SG_ 256 canopen_time_of_day_ms 7;
+BA_ "GenSigSendType" SG_ 256 canopen_time_of_day_days 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_download_subindex 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_transfer_type 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_size_indicator 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_data 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_scs 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_abort_subindex 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_seg_data 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_continue 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_number_of_bytes_3 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_abort_index 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_upload_subindex 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_abort_code 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_download_index 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_download_toggle_bit 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_upload_index 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_upload_toggle_bit 7;
+BA_ "GenSigSendType" SG_ 1484 canopen_sdo_number_of_bytes_2 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_abort_subindex 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_download_subindex 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_data 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_number_of_bytes_3 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_download_toggle_bit 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_upload_toggle_bit 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_abort_code 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_size_indicator 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_download_index 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_seg_data 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_upload_subindex 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_ccs 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_number_of_bytes_2 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_abort_index 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_continue 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_transfer_type 7;
+BA_ "GenSigSendType" SG_ 1612 canopen_sdo_upload_index 7;
+BA_ "GenSigSendType" SG_ 1228 tci_truck_operating_hours_mode 0;
+BA_ "GenSigCycleTime" SG_ 1228 tci_truck_operating_hours_mode 100;
+BA_ "GenSigCycleTimeActive" SG_ 1228 tci_truck_operating_hours_mode 100;
+BA_ "GenSigSendType" SG_ 1228 tci_truck_power_consumption_avg 7;
+BA_ "GenSigInactiveValue" SG_ 1228 tci_truck_power_consumption_avg 4095;
+BA_ "GenSigStartValue" SG_ 1228 tci_truck_power_consumption_avg 4094;
+BA_ "GenSigSendType" SG_ 1228 tci_truck_operating_hours 0;
+BA_ "GenSigCycleTime" SG_ 1228 tci_truck_operating_hours 100;
+BA_ "GenSigCycleTimeActive" SG_ 1228 tci_truck_operating_hours 100;
+BA_ "GenSigSendType" SG_ 460 tci_charger_output_power_limit 7;
+BA_ "GenSigInactiveValue" SG_ 460 tci_charger_output_power_limit 524287;
+BA_ "GenSigStartValue" SG_ 460 tci_charger_output_power_limit 524287;
+BA_ "GenSigSendType" SG_ 460 tci_charge_disable 7;
+BA_ "GenSigInactiveValue" SG_ 460 tci_charge_disable 3;
+BA_ "GenSigStartValue" SG_ 460 tci_charge_disable 3;
+BA_ "GenSigSendType" SG_ 460 tci_request_charge_time_calculat 7;
+BA_ "GenSigInactiveValue" SG_ 460 tci_request_charge_time_calculat 3;
+BA_ "GenSigStartValue" SG_ 460 tci_request_charge_time_calculat 3;
+BA_ "SystemSignalLongSymbol" SG_ 460 tci_request_charge_time_calculat "tci_request_charge_time_calculation";
+BA_ "GenSigSendType" SG_ 460 tci_charger_ac_power_limit 7;
+BA_ "GenSigInactiveValue" SG_ 460 tci_charger_ac_power_limit 524287;
+BA_ "GenSigStartValue" SG_ 460 tci_charger_ac_power_limit 524287;
+BA_ "GenSigSendType" SG_ 1100 tci_soc_without_soh 7;
+BA_ "GenSigInactiveValue" SG_ 1100 tci_soc_without_soh 255;
+BA_ "GenSigStartValue" SG_ 1100 tci_soc_without_soh 255;
+BA_ "GenSigSendType" SG_ 1100 tci_battery_temperature 7;
+BA_ "GenSigInactiveValue" SG_ 1100 tci_battery_temperature 255;
+BA_ "GenSigStartValue" SG_ 1100 tci_battery_temperature 255;
+BA_ "GenSigSendType" SG_ 1100 tci_soc_with_soh 7;
+BA_ "GenSigInactiveValue" SG_ 1100 tci_soc_with_soh 255;
+BA_ "GenSigStartValue" SG_ 1100 tci_soc_with_soh 255;
+BA_ "GenSigSendType" SG_ 844 tci_charger_output_voltage 7;
+BA_ "GenSigInactiveValue" SG_ 844 tci_charger_output_voltage 262143;
+BA_ "GenSigStartValue" SG_ 844 tci_charger_output_voltage 262143;
+BA_ "GenSigSendType" SG_ 844 tci_charger_output_current 7;
+BA_ "GenSigInactiveValue" SG_ 844 tci_charger_output_current 65535;
+BA_ "GenSigStartValue" SG_ 844 tci_charger_output_current 65535;
+BA_ "GenSigSendType" SG_ 844 tci_charger_output_power 7;
+BA_ "GenSigInactiveValue" SG_ 844 tci_charger_output_power 524287;
+BA_ "GenSigStartValue" SG_ 844 tci_charger_output_power 524287;
+BA_ "GenSigSendType" SG_ 588 tci_charge_cancelled 7;
+BA_ "GenSigInactiveValue" SG_ 588 tci_charge_cancelled 3;
+BA_ "GenSigStartValue" SG_ 588 tci_charge_cancelled 3;
+BA_ "GenSigSendType" SG_ 588 tci_battery_current 7;
+BA_ "GenSigInactiveValue" SG_ 588 tci_battery_current 524287;
+BA_ "GenSigStartValue" SG_ 588 tci_battery_current 524287;
+BA_ "GenSigSendType" SG_ 588 tci_battery_voltage 7;
+BA_ "GenSigInactiveValue" SG_ 588 tci_battery_voltage 262143;
+BA_ "GenSigStartValue" SG_ 588 tci_battery_voltage 262143;
+BA_ "GenSigSendType" SG_ 588 tci_mains_power_detected 7;
+BA_ "GenSigInactiveValue" SG_ 588 tci_mains_power_detected 3;
+BA_ "GenSigStartValue" SG_ 588 tci_mains_power_detected 3;
+BA_ "GenSigSendType" SG_ 588 tci_charge_status 7;
+BA_ "GenSigInactiveValue" SG_ 588 tci_charge_status 15;
+BA_ "GenSigStartValue" SG_ 588 tci_charge_status 15;
+BA_ "GenSigSendType" SG_ 588 tci_charge_plug_present 7;
+BA_ "GenSigInactiveValue" SG_ 588 tci_charge_plug_present 3;
+BA_ "GenSigStartValue" SG_ 588 tci_charge_plug_present 3;
+BA_ "GenSigSendType" SG_ 588 tci_error 7;
+BA_ "GenSigInactiveValue" SG_ 588 tci_error 3;
+BA_ "GenSigStartValue" SG_ 588 tci_error 3;
+BA_ "GenSigSendType" SG_ 1868 canopen_state_tci 7;
+BA_ "GenSigSendType" SG_ 1873 canopen_state_obc 7;
+BA_ "GenSigSendType" SG_ 113 flying_master_priority_level 7;
+BA_ "GenSigInactiveValue" SG_ 113 flying_master_priority_level 255;
+BA_ "GenSigStartValue" SG_ 113 flying_master_priority_level 255;
+BA_ "GenSigSendType" SG_ 113 flying_master_node_id 7;
+BA_ "GenSigSendType" SG_ 0 canopen_nmt_command_specifier 7;
+BA_ "GenSigSendType" SG_ 0 canopen_node_id 7;
+BA_ "GenSigSendType" SG_ 2634000381 xcp_response_data 7;
+BA_ "GenSigSendType" SG_ 2633967613 xcp_command_data 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_bs 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_sn 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_fs 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_ff_dl 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_n_pcitype 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_n_ta 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_n_data_sf 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_sf_dl 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_n_data_fc 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_stmin 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_n_data_cf 7;
+BA_ "GenSigSendType" SG_ 1703 isotp_n_data_ff 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_abort_code 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_upload_toggle_bit 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_download_index 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_upload_index 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_seg_data 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_scs 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_size_indicator 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_continue 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_data 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_transfer_type 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_number_of_bytes_2 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_abort_index 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_download_toggle_bit 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_number_of_bytes_3 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_abort_subindex 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_upload_subindex 7;
+BA_ "GenSigSendType" SG_ 1447 canopen_sdo_download_subindex 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_size_indicator 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_abort_code 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_number_of_bytes_2 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_download_index 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_upload_index 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_transfer_type 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_seg_data 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_abort_index 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_upload_subindex 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_number_of_bytes_3 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_data 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_continue 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_upload_toggle_bit 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_download_toggle_bit 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_abort_subindex 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_ccs 7;
+BA_ "GenSigSendType" SG_ 1575 canopen_sdo_download_subindex 7;
+BA_ "GenSigSendType" SG_ 1015 lib_pdo_tx7_checksum 7;
+BA_ "GenSigSendType" SG_ 1015 lib_pdo_tx7_message_counter 7;
+BA_ "GenSigSendType" SG_ 1015 lib_powerpath_ok 7;
+BA_ "GenSigInactiveValue" SG_ 1015 lib_powerpath_ok 3;
+BA_ "GenSigStartValue" SG_ 1015 lib_powerpath_ok 3;
+BA_ "GenSigSendType" SG_ 759 lib_max_charging_current_2s 7;
+BA_ "GenSigInactiveValue" SG_ 759 lib_max_charging_current_2s 262143;
+BA_ "GenSigStartValue" SG_ 759 lib_max_charging_current_2s 262143;
+BA_ "GenSigSendType" SG_ 759 lib_max_charging_current_100s 7;
+BA_ "GenSigInactiveValue" SG_ 759 lib_max_charging_current_100s 262143;
+BA_ "GenSigStartValue" SG_ 759 lib_max_charging_current_100s 262143;
+BA_ "GenSigSendType" SG_ 503 lib_max_discharging_current_2s 7;
+BA_ "GenSigInactiveValue" SG_ 503 lib_max_discharging_current_2s 262143;
+BA_ "GenSigStartValue" SG_ 503 lib_max_discharging_current_2s 262143;
+BA_ "GenSigSendType" SG_ 503 lib_max_discharging_current_100s 7;
+BA_ "GenSigInactiveValue" SG_ 503 lib_max_discharging_current_100s 262143;
+BA_ "GenSigStartValue" SG_ 503 lib_max_discharging_current_100s 262143;
+BA_ "GenSigSendType" SG_ 1191 lib_max_charging_power_100s 7;
+BA_ "GenSigInactiveValue" SG_ 1191 lib_max_charging_power_100s 524287;
+BA_ "GenSigStartValue" SG_ 1191 lib_max_charging_power_100s 524287;
+BA_ "GenSigSendType" SG_ 1191 lib_max_charging_power_2s 7;
+BA_ "GenSigInactiveValue" SG_ 1191 lib_max_charging_power_2s 524287;
+BA_ "GenSigStartValue" SG_ 1191 lib_max_charging_power_2s 524287;
+BA_ "GenSigSendType" SG_ 1191 lib_soc_without_soh 7;
+BA_ "GenSigInactiveValue" SG_ 1191 lib_soc_without_soh 255;
+BA_ "GenSigStartValue" SG_ 1191 lib_soc_without_soh 255;
+BA_ "GenSigSendType" SG_ 1191 lib_max_charging_voltage 7;
+BA_ "GenSigInactiveValue" SG_ 1191 lib_max_charging_voltage 262143;
+BA_ "GenSigStartValue" SG_ 1191 lib_max_charging_voltage 262143;
+BA_ "GenSigSendType" SG_ 935 lib_max_discharging_power_2s 7;
+BA_ "GenSigInactiveValue" SG_ 935 lib_max_discharging_power_2s 524287;
+BA_ "GenSigStartValue" SG_ 935 lib_max_discharging_power_2s 524287;
+BA_ "GenSigSendType" SG_ 935 lib_max_discharging_power_100s 7;
+BA_ "GenSigInactiveValue" SG_ 935 lib_max_discharging_power_100s 524287;
+BA_ "GenSigStartValue" SG_ 935 lib_max_discharging_power_100s 524287;
+BA_ "GenSigSendType" SG_ 935 lib_min_discharging_voltage 7;
+BA_ "GenSigInactiveValue" SG_ 935 lib_min_discharging_voltage 262143;
+BA_ "GenSigStartValue" SG_ 935 lib_min_discharging_voltage 262143;
+BA_ "GenSigSendType" SG_ 935 lib_soc_with_soh 7;
+BA_ "GenSigInactiveValue" SG_ 935 lib_soc_with_soh 255;
+BA_ "GenSigStartValue" SG_ 935 lib_soc_with_soh 255;
+BA_ "GenSigSendType" SG_ 679 lib_power 7;
+BA_ "GenSigInactiveValue" SG_ 679 lib_power 1048575;
+BA_ "GenSigStartValue" SG_ 679 lib_power 1048575;
+BA_ "GenSigSendType" SG_ 679 lib_voltage_after_contactor 7;
+BA_ "GenSigInactiveValue" SG_ 679 lib_voltage_after_contactor 262143;
+BA_ "GenSigStartValue" SG_ 679 lib_voltage_after_contactor 262143;
+BA_ "GenSigSendType" SG_ 679 lib_state_of_health 7;
+BA_ "GenSigInactiveValue" SG_ 679 lib_state_of_health 255;
+BA_ "GenSigStartValue" SG_ 679 lib_state_of_health 255;
+BA_ "GenSigSendType" SG_ 679 lib_voltage_in_front_of_contacto 7;
+BA_ "GenSigInactiveValue" SG_ 679 lib_voltage_in_front_of_contacto 262143;
+BA_ "GenSigStartValue" SG_ 679 lib_voltage_in_front_of_contacto 262143;
+BA_ "SystemSignalLongSymbol" SG_ 679 lib_voltage_in_front_of_contacto "lib_voltage_in_front_of_contactor";
+BA_ "GenSigSendType" SG_ 423 lib_temperature 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_temperature 255;
+BA_ "GenSigStartValue" SG_ 423 lib_temperature 255;
+BA_ "GenSigSendType" SG_ 423 lib_in_charging_mode 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_in_charging_mode 3;
+BA_ "GenSigStartValue" SG_ 423 lib_in_charging_mode 3;
+BA_ "GenSigSendType" SG_ 423 lib_ready 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_ready 3;
+BA_ "GenSigStartValue" SG_ 423 lib_ready 3;
+BA_ "GenSigSendType" SG_ 423 lib_init_complete 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_init_complete 3;
+BA_ "GenSigStartValue" SG_ 423 lib_init_complete 3;
+BA_ "GenSigSendType" SG_ 423 lib_error 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_error 3;
+BA_ "GenSigStartValue" SG_ 423 lib_error 3;
+BA_ "GenSigSendType" SG_ 423 lib_current_limited 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_current_limited 3;
+BA_ "GenSigStartValue" SG_ 423 lib_current_limited 3;
+BA_ "GenSigSendType" SG_ 423 lib_in_driving_mode 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_in_driving_mode 3;
+BA_ "GenSigStartValue" SG_ 423 lib_in_driving_mode 3;
+BA_ "GenSigSendType" SG_ 423 lib_emergency_operation 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_emergency_operation 3;
+BA_ "GenSigStartValue" SG_ 423 lib_emergency_operation 3;
+BA_ "GenSigSendType" SG_ 423 lib_temperature_too_high 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_temperature_too_high 3;
+BA_ "GenSigStartValue" SG_ 423 lib_temperature_too_high 3;
+BA_ "GenSigSendType" SG_ 423 lib_temperature_too_low 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_temperature_too_low 3;
+BA_ "GenSigStartValue" SG_ 423 lib_temperature_too_low 3;
+BA_ "GenSigSendType" SG_ 423 lib_shock_warning 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_shock_warning 3;
+BA_ "GenSigStartValue" SG_ 423 lib_shock_warning 3;
+BA_ "GenSigSendType" SG_ 423 lib_fatal_error 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_fatal_error 3;
+BA_ "GenSigStartValue" SG_ 423 lib_fatal_error 3;
+BA_ "GenSigSendType" SG_ 423 lib_service_required 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_service_required 3;
+BA_ "GenSigStartValue" SG_ 423 lib_service_required 3;
+BA_ "GenSigSendType" SG_ 423 lib_current 7;
+BA_ "GenSigInactiveValue" SG_ 423 lib_current 524287;
+BA_ "GenSigStartValue" SG_ 423 lib_current 524287;
+BA_ "GenSigSendType" SG_ 1319 lib_power_consumption_average 7;
+BA_ "GenSigInactiveValue" SG_ 1319 lib_power_consumption_average 4095;
+BA_ "GenSigStartValue" SG_ 1319 lib_power_consumption_average 4094;
+BA_ "GenSigSendType" SG_ 1319 truck_operating_hours_mode 7;
+BA_ "GenSigInactiveValue" SG_ 1319 truck_operating_hours_mode 15;
+BA_ "GenSigStartValue" SG_ 1319 truck_operating_hours_mode 15;
+BA_ "GenSigSendType" SG_ 1319 truck_operating_hours 7;
+BA_ "GenSigSendType" SG_ 551 lib_charging_voltage 7;
+BA_ "GenSigInactiveValue" SG_ 551 lib_charging_voltage 262143;
+BA_ "GenSigStartValue" SG_ 551 lib_charging_voltage 262143;
+BA_ "GenSigSendType" SG_ 551 lib_charging_current 7;
+BA_ "GenSigInactiveValue" SG_ 551 lib_charging_current 65535;
+BA_ "GenSigStartValue" SG_ 551 lib_charging_current 65535;
+BA_ "GenSigSendType" SG_ 551 lib_charging_power 7;
+BA_ "GenSigInactiveValue" SG_ 551 lib_charging_power 524287;
+BA_ "GenSigStartValue" SG_ 551 lib_charging_power 524287;
+BA_ "GenSigSendType" SG_ 1831 canopen_state_lib 7;
+BA_ "GenSigInactiveValue" SG_ 1831 canopen_state_lib 127;
+BA_ "GenSigStartValue" SG_ 1831 canopen_state_lib 127;
+BA_ "GenSigSendType" SG_ 167 error_register_object_lib 7;
+BA_ "GenSigSendType" SG_ 167 uds_dtc_lib 7;
+BA_ "GenSigSendType" SG_ 167 emergency_error_code_lib 7;
+BA_ "GenSigSendType" SG_ 2163147005 lib_deep_discharge_wakeup_data 7;
+BA_ "GenSigSendType" SG_ 1793 canopen_state_kwpc 0;
+BA_ "GenSigCycleTime" SG_ 1793 canopen_state_kwpc 100;
+BA_ "GenSigCycleTimeActive" SG_ 1793 canopen_state_kwpc 100;
+BA_ "GenSigSendType" SG_ 1866 canopen_state_exc 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_n_data_fc 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_sf_dl 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_n_data_sf 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_fs 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_sn 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_stmin 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_n_data_ff 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_n_pcitype 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_bs 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_ff_dl 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_n_ta 7;
+BA_ "GenSigSendType" SG_ 1664 isotp_n_data_cf 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_fs 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_bs 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_ff_dl 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_sf_dl 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_n_data_cf 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_n_pcitype 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_n_ta 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_n_data_sf 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_sn 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_n_data_ff 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_n_data_fc 7;
+BA_ "GenSigSendType" SG_ 1759 isotp_stmin 7;
+BA_ "GenSigSendType" SG_ 1773 xcp_response_data 7;
+BA_ "GenSigSendType" SG_ 1741 xcp_command_data 7;
+BA_ "GenSigSendType" SG_ 255 DateTime 7;
+BA_ "GenSigSendType" SG_ 1797 stateLiionCharger 0;
+BA_ "GenSigSendType" SG_ 1805 stateBms 0;
+BA_ "GenSigSendType" SG_ 385 HMValue 0;
+BA_ "GenSigCycleTime" SG_ 385 HMValue 100;
+BA_ "GenSigCycleTimeActive" SG_ 385 HMValue 100;
+BA_ "GenSigSendType" SG_ 386 HourMeterValue 0;
+BA_ "GenSigSendType" SG_ 388 DispPdo1_reserved_b7_bit3 0;
+BA_ "GenSigSendType" SG_ 388 DispMonth 0;
+BA_ "GenSigSendType" SG_ 388 DispYear 0;
+BA_ "GenSigSendType" SG_ 388 DispMinutes 0;
+BA_ "GenSigSendType" SG_ 388 DispStatus 0;
+BA_ "GenSigSendType" SG_ 388 DispPdo1_reserved_b0_b1 0;
+BA_ "GenSigSendType" SG_ 388 DispBrandID 0;
+BA_ "GenSigSendType" SG_ 388 DispPdo1_reserved_b7_bit6 0;
+BA_ "GenSigSendType" SG_ 388 DispPdo1_reserved_b6 0;
+BA_ "GenSigSendType" SG_ 388 DispDay 0;
+BA_ "GenSigSendType" SG_ 388 DispPdo1_reserved_b7_bit0 0;
+BA_ "GenSigSendType" SG_ 388 DispBiometry 0;
+BA_ "GenSigSendType" SG_ 388 DispSeconds 0;
+BA_ "GenSigSendType" SG_ 388 DispHour 0;
+BA_ "GenSigSendType" SG_ 1949 BmsRsData 0;
+BA_ "GenSigSendType" SG_ 1949 BmsRsPCI 0;
+BA_ "GenSigSendType" SG_ 1920 FuncRqData 0;
+BA_ "GenSigSendType" SG_ 1920 FuncRqPCI 0;
+BA_ "GenSigSendType" SG_ 1933 BmsRqData 0;
+BA_ "GenSigSendType" SG_ 1933 BmsRqPCI 0;
+BA_ "GenSigSendType" SG_ 1421 BmsSDOtxData 0;
+BA_ "GenSigSendType" SG_ 1549 BmsSDOrxData 0;
+BA_ "GenSigSendType" SG_ 769 FaultBatteryCode_3 0;
+BA_ "GenSigSendType" SG_ 769 FaultBatteryCode_6 0;
+BA_ "GenSigSendType" SG_ 769 FaultBatteryCode_2 0;
+BA_ "GenSigSendType" SG_ 769 FaultBatteryCode_1 0;
+BA_ "GenSigSendType" SG_ 769 FaultBatteryCode_5 0;
+BA_ "GenSigSendType" SG_ 769 FaultBatteryCode_4 0;
+BA_ "GenSigSendType" SG_ 769 BmsBatStat 0;
+BA_ "GenSigSendType" SG_ 769 BmsPDO5_fillbyte1 0;
+BA_ "GenSigSendType" SG_ 1165 BmsDisVoltMin 0;
+BA_ "GenSigSendType" SG_ 1165 BmsSoh 0;
+BA_ "GenSigSendType" SG_ 1165 BmsSocWoutSoh 0;
+BA_ "GenSigSendType" SG_ 1165 BmsPDO4_fillbyte7 0;
+BA_ "GenSigSendType" SG_ 1165 BmsCharVoltHigh 0;
+BA_ "GenSigCycleTime" SG_ 1165 BmsCharVoltHigh 100;
+BA_ "GenSigCycleTimeActive" SG_ 1165 BmsCharVoltHigh 100;
+BA_ "GenSigSendType" SG_ 1165 BmsSocWithSoh 0;
+BA_ "GenSigSendType" SG_ 909 BmsErrCodeLB3 0;
+BA_ "GenSigSendType" SG_ 909 BmsErrCodeLB4 0;
+BA_ "GenSigSendType" SG_ 909 BmsErrCodeHB1 0;
+BA_ "GenSigSendType" SG_ 909 BmsErrCodeHB4 0;
+BA_ "GenSigSendType" SG_ 909 BmsErrCodeLB2 0;
+BA_ "GenSigSendType" SG_ 909 BmsErrCodeLB1 0;
+BA_ "GenSigSendType" SG_ 909 BmsErrCodeHB2 0;
+BA_ "GenSigSendType" SG_ 909 BmsErrCodeHB3 0;
+BA_ "GenSigSendType" SG_ 653 BmsPowForChar 0;
+BA_ "GenSigSendType" SG_ 653 BmsPowForDis 0;
+BA_ "GenSigSendType" SG_ 653 BmsNormCharCurr 0;
+BA_ "GenSigSendType" SG_ 653 BmsMaxCharCurr 0;
+BA_ "GenSigSendType" SG_ 397 BmsMaxDirCurr 0;
+BA_ "GenSigSendType" SG_ 397 BmsBatCurr 0;
+BA_ "GenSigSendType" SG_ 397 BmsBatVolt 0;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 256 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ exc 256 1000;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 256 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ kwpc 256 1000;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 256 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ obc 256 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ tci 1484 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 1612 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 1612 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ tci 1228 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ tci 1228 500;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ tci 460 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ tci 460 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 1100 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ exc 1100 500;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 1100 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ obc 1100 500;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 844 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ exc 844 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 844 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ obc 844 40;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 588 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ exc 588 40;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 588 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ obc 588 40;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ tci 1868 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ tci 1868 40;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 1873 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ obc 1873 40;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 116 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 116 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 116 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 117 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 117 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 117 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 118 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 118 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 118 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 114 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 114 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 114 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 113 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 113 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 113 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 115 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 115 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 115 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 0 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 0 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 0 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 2634000381 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 1703 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 1447 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 1575 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 1575 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 1575 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 1015 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ lib 1015 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 759 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ lib 759 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 503 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ lib 503 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 1191 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ lib 1191 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 935 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ lib 935 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 679 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ lib 679 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 423 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ lib 423 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 1319 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ kwpc 1319 500;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 1319 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ exc 1319 500;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 1319 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ obc 1319 500;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 551 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ kwpc 551 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 551 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ exc 551 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 551 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ obc 551 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 1831 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ lib 1831 40;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 167 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 2163147005 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 2163147005 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 1793 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ kwpc 1793 40;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 1866 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ exc 1866 40;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 1664 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ lib 1759 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 255 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ kwpc 255 1000;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ obc 128 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ obc 128 10;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 128 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ kwpc 128 10;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ exc 128 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ exc 128 10;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ LiionCharger 1797 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ LiionCharger 1797 40;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ Bms 1805 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ Bms 1805 40;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 385 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ kwpc 385 10;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 386 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ kwpc 386 10;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 388 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ kwpc 388 1000;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ Bms 1949 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 1920 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ Bms 1421 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ kwpc 1549 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ Bms 769 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ Bms 769 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ Bms 1165 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ Bms 1165 1000;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ Bms 909 8;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ Bms 653 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ Bms 653 100;
+BA_REL_ "GenMsgSendType" BU_BO_REL_ Bms 397 0;
+BA_REL_ "GenMsgCycleTime" BU_BO_REL_ Bms 397 100;
+VAL_ 1484 canopen_sdo_transfer_type 1 "expedited transfer" 0 "normal transfer" ;
+VAL_ 1484 canopen_sdo_size_indicator 1 "data set size is indicated" 0 "data set size is not indicated" ;
+VAL_ 1484 canopen_sdo_scs 7 "reserved" 6 "block upload" 5 "block download" 4 "abort transfer request" 3 "initiate download response" 2 "initiate upload response" 1 "download segment response" 0 "upload segment response" ;
+VAL_ 1484 canopen_sdo_continue 1 "no more segments to be downloaded" 0 "more segments to be downloaded" ;
+VAL_ 1484 canopen_sdo_number_of_bytes_3 7 "data length 0 byte" 6 "data length 1 byte" 5 "data length 2 byte" 4 "data length 3 byte" 3 "data length 4 byte" 2 "data length 5 byte" 1 "data length 6 byte" 0 "data length 7 byte" ;
+VAL_ 1484 canopen_sdo_abort_code 134217764 "no data available" 134217763 "object dictionary dynamic generation fails or no dictionary present" 134217762 "data cannot be stored to the application because of the present device state" 134217761 "data cannot be stored to the application because of local control" 134217760 "data cannot be stored to the application" 134217728 "general error" 101318691 "resource not available: SDO connection" 101253174 "maximum value is less than minimum value" 101253170 "value of parameter written too low" 101253169 "value of parameter written too high" 101253168 "invalid value for parameter" 101253137 "subindex does not exist" 101122067 "data type mismatch, length of parameter too low" 101122066 "data type mismatch, length of parameter too high" 101122064 "data type mismatch, length of parameter does not match" 101056512 "access failed due to an hardware error" 100925511 "general internal incompatibility in the device" 100925507 "general parameter incompatibility reason" 100925506 "PDO length exceeded by mapping" 100925505 "object cannot be mapped to the PDO" 100794368 "object does not exist in the object dictionary" 100728834 "attempt to write a read only object" 100728833 "attempt to read a write only object" 100728832 "unsupported access to an object" 84148229 "out of memory" 84148228 "CRC error" 84148227 "invalid sequence number" 84148226 "invalid block size" 84148225 "client/server command specifier not valid or unknown" 84148224 "SDO protocol timed out" 84082688 "toggle bit not alternated" ;
+VAL_ 1484 canopen_sdo_number_of_bytes_2 3 "data length 1 byte" 2 "data length 2 byte" 1 "data length 3 byte" 0 "data length 4 byte" ;
+VAL_ 1612 canopen_sdo_number_of_bytes_3 7 "data length 0 byte" 6 "data length 1 byte" 5 "data length 2 byte" 4 "data length 3 byte" 3 "data length 4 byte" 2 "data length 5 byte" 1 "data length 6 byte" 0 "data length 7 byte" ;
+VAL_ 1612 canopen_sdo_abort_code 134217764 "no data available" 134217763 "object dictionary dynamic generation fails or no dictionary present" 134217762 "data cannot be stored to the application because of the present device state" 134217761 "data cannot be stored to the application because of local control" 134217760 "data cannot be stored to the application" 134217728 "general error" 101318691 "resource not available: SDO connection" 101253174 "maximum value is less than minimum value" 101253170 "value of parameter written too low" 101253169 "value of parameter written too high" 101253168 "invalid value for parameter" 101253137 "subindex does not exist" 101122067 "data type mismatch, length of parameter too low" 101122066 "data type mismatch, length of parameter too high" 101122064 "data type mismatch, length of parameter does not match" 101056512 "access failed due to an hardware error" 100925511 "general internal incompatibility in the device" 100925507 "general parameter incompatibility reason" 100925506 "PDO length exceeded by mapping" 100925505 "object cannot be mapped to the PDO" 100794368 "object does not exist in the object dictionary" 100728834 "attempt to write a read only object" 100728833 "attempt to read a write only object" 100728832 "unsupported access to an object" 84148229 "out of memory" 84148228 "CRC error" 84148227 "invalid sequence number" 84148226 "invalid block size" 84148225 "client/server command specifier not valid or unknown" 84148224 "SDO protocol timed out" 84082688 "toggle bit not alternated" ;
+VAL_ 1612 canopen_sdo_size_indicator 1 "data set size is indicated" 0 "data set size is not indicated" ;
+VAL_ 1612 canopen_sdo_ccs 7 "reserved" 6 "block download" 5 "block upload" 4 "abort transfer request" 3 "upload segment request" 2 "initiate upload request" 1 "initiate download request" 0 "download segment request" ;
+VAL_ 1612 canopen_sdo_number_of_bytes_2 3 "data length 1 byte" 2 "data length 2 byte" 1 "data length 3 byte" 0 "data length 4 byte" ;
+VAL_ 1612 canopen_sdo_continue 1 "no more segments to be downloaded" 0 "more segments to be downloaded" ;
+VAL_ 1612 canopen_sdo_transfer_type 1 "expedited transfer" 0 "normal transfer" ;
+VAL_ 1228 tci_truck_operating_hours_mode 15 "signal not available" 14 "signal error" 13 "reserved 2" 12 "reserved 1" 8 "LIB charger operating hours" 7 "mode h engine running" 6 "mode g traction or lift motor active except lowering" 5 "mode f more than 50 W" 4 "mode e traction or lift motor active" 3 "mode d lift motor active" 2 "mode c traction motor active" 1 "mode b key switch" 0 "mode a key and seat switch" ;
+VAL_ 1228 tci_truck_power_consumption_avg 4095 "signal not available" 4094 "signal error" 4093 "reserved 2" 4092 "reserved 1" ;
+VAL_ 1228 tci_truck_operating_hours -1 "signal not available" -2 "signal error" -3 "reserved 2" -4 "reserved 1" ;
+VAL_ 460 tci_charger_output_power_limit 524287 "signal not available" 524286 "signal error" 524285 "reserved 2" 524284 "reserved 1" ;
+VAL_ 460 tci_charge_disable 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 460 tci_request_charge_time_calculat 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 460 tci_charger_ac_power_limit 524287 "signal not available" 524286 "signal error" 524285 "reserved 2" 524284 "reserved 1" ;
+VAL_ 1100 tci_soc_without_soh 255 "signal not available" 254 "signal error" 253 "reserved 2" 252 "reserved 1" ;
+VAL_ 1100 tci_battery_temperature 255 "signal not available" 254 "signal error" 253 "reserved 2" 252 "reserved 1" ;
+VAL_ 1100 tci_soc_with_soh 255 "signal not available" 254 "signal error" 253 "reserved 2" 252 "reserved 1" ;
+VAL_ 844 tci_charger_output_voltage 262143 "signal not available" 262142 "signal error" 262141 "reserved 2" 262140 "reserved 1" ;
+VAL_ 844 tci_charger_output_current 65535 "signal not available" 65534 "signal error" 65533 "reserved 2" 65532 "reserved 1" ;
+VAL_ 844 tci_charger_output_power 524287 "signal not available" 524286 "signal error" 524285 "reserved 2" 524284 "reserved 1" ;
+VAL_ 588 tci_charge_cancelled 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 588 tci_battery_current 524287 "signal not available" 524286 "signal error" 524285 "reserved 2" 524284 "reserved 1" ;
+VAL_ 588 tci_battery_voltage 262143 "signal not available" 262142 "signal error" 262141 "reserved 2" 262140 "reserved 1" ;
+VAL_ 588 tci_mains_power_detected 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 588 tci_charge_status 15 "signal not available" 14 "signal error" 13 "reserved 2" 12 "reserved 1" 9 "reserved for LAB 4" 8 "charge successfully completed" 7 "reserved for LAB 3" 6 "charge almost done (LIB only)" 5 "normal charge" 4 "reserved for LAB 2" 3 "reserved for LAB 1" 2 "charge prohibited by truck" 1 "initializing charge" 0 "inactive" ;
+VAL_ 588 tci_charge_plug_present 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 588 tci_error 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 1868 canopen_state_tci 127 "pre-operational" 5 "operational" 4 "stopped" 0 "bootup" ;
+VAL_ 1873 canopen_state_obc 127 "pre-operational" 5 "operational" 4 "stopped" 0 "bootup" ;
+VAL_ 113 flying_master_priority_level 255 "reserved" 2 "low" 1 "medium" 0 "high" ;
+VAL_ 113 flying_master_node_id 81 "obc" 80 "knc" 76 "tci" 74 "exc" 70 "tpi" 68 "kap_r" 39 "lib" 38 "tu" 37 "kec" 33 "kcs" 32 "kcu" 31 "kap_k" 29 "lhs_r_b" 28 "lhs_r_a" 22 "dou" 20 "rpb" 18 "kae" 16 "ksc" 13 "kpc_l2" 12 "kpc_l1" 11 "kpc_tr" 10 "kpc_tl" 9 "kpc_u" 5 "kbc" 1 "kmc" 0 "all nodes" ;
+VAL_ 0 canopen_nmt_command_specifier 130 "reset communication" 129 "reset node" 128 "enter pre-operational" 2 "stop remote node" 1 "start remote node" ;
+VAL_ 0 canopen_node_id 81 "obc" 80 "knc" 76 "tci" 74 "exc" 70 "tpi" 68 "kap_r" 39 "lib" 38 "tu" 37 "kec" 33 "kcs" 32 "kcu" 31 "kap_k" 29 "lhs_r_b" 28 "lhs_r_a" 22 "dou" 20 "rpb" 18 "kae" 16 "ksc" 13 "kpc_l2" 12 "kpc_l1" 11 "kpc_tr" 10 "kpc_tl" 9 "kpc_u" 5 "kbc" 1 "kmc" 0 "all nodes" ;
+VAL_ 1703 isotp_fs 15 "reserved 13" 14 "reserved 12" 13 "reserved 11" 12 "reserved 10" 11 "reserved 9" 10 "reserved 8" 9 "reserved 7" 8 "reserved 6" 7 "reserved 5" 6 "reserved 4" 5 "reserved 3" 4 "reserved 2" 3 "reserved 1" 2 "overflow" 1 "wait" 0 "continue to send" ;
+VAL_ 1703 isotp_n_pcitype 7 "reserved 4" 6 "reserved 3" 5 "reserved 2" 4 "reserved 1" 3 "flow control" 2 "consecutive frame" 1 "first frame" 0 "single frame" ;
+VAL_ 1703 isotp_n_ta 254 "functional address" 95 "cps" 81 "obc" 80 "knc" 72 "kwc_b" 70 "tpi" 68 "kap_r" 39 "lib" 38 "tu" 37 "kec" 33 "kcs" 32 "kcu" 31 "kap_k" 22 "dou" 20 "rpb" 19 "kwc_a" 18 "kae" 16 "ksc" 13 "kpc_l2" 12 "kpc_l1" 11 "kpc_tr" 10 "kpc_tl" 9 "kpc_u" 5 "kbc" 1 "kmc/kwpc" 0 "dtu" ;
+VAL_ 1447 canopen_sdo_abort_code 134217764 "no data available" 134217763 "object dictionary dynamic generation fails or no dictionary present" 134217762 "data cannot be stored to the application because of the present device state" 134217761 "data cannot be stored to the application because of local control" 134217760 "data cannot be stored to the application" 134217728 "general error" 101318691 "resource not available: SDO connection" 101253174 "maximum value is less than minimum value" 101253170 "value of parameter written too low" 101253169 "value of parameter written too high" 101253168 "invalid value for parameter" 101253137 "subindex does not exist" 101122067 "data type mismatch, length of parameter too low" 101122066 "data type mismatch, length of parameter too high" 101122064 "data type mismatch, length of parameter does not match" 101056512 "access failed due to an hardware error" 100925511 "general internal incompatibility in the device" 100925507 "general parameter incompatibility reason" 100925506 "PDO length exceeded by mapping" 100925505 "object cannot be mapped to the PDO" 100794368 "object does not exist in the object dictionary" 100728834 "attempt to write a read only object" 100728833 "attempt to read a write only object" 100728832 "unsupported access to an object" 84148229 "out of memory" 84148228 "CRC error" 84148227 "invalid sequence number" 84148226 "invalid block size" 84148225 "client/server command specifier not valid or unknown" 84148224 "SDO protocol timed out" 84082688 "toggle bit not alternated" ;
+VAL_ 1447 canopen_sdo_scs 7 "reserved" 6 "block upload" 5 "block download" 4 "abort transfer request" 3 "initiate download response" 2 "initiate upload response" 1 "download segment response" 0 "upload segment response" ;
+VAL_ 1447 canopen_sdo_size_indicator 1 "data set size is indicated" 0 "data set size is not indicated" ;
+VAL_ 1447 canopen_sdo_continue 1 "no more segments to be downloaded" 0 "more segments to be downloaded" ;
+VAL_ 1447 canopen_sdo_transfer_type 1 "expedited transfer" 0 "normal transfer" ;
+VAL_ 1447 canopen_sdo_number_of_bytes_2 3 "data length 1 byte" 2 "data length 2 byte" 1 "data length 3 byte" 0 "data length 4 byte" ;
+VAL_ 1447 canopen_sdo_number_of_bytes_3 7 "data length 0 byte" 6 "data length 1 byte" 5 "data length 2 byte" 4 "data length 3 byte" 3 "data length 4 byte" 2 "data length 5 byte" 1 "data length 6 byte" 0 "data length 7 byte" ;
+VAL_ 1575 canopen_sdo_size_indicator 1 "data set size is indicated" 0 "data set size is not indicated" ;
+VAL_ 1575 canopen_sdo_abort_code 134217764 "no data available" 134217763 "object dictionary dynamic generation fails or no dictionary present" 134217762 "data cannot be stored to the application because of the present device state" 134217761 "data cannot be stored to the application because of local control" 134217760 "data cannot be stored to the application" 134217728 "general error" 101318691 "resource not available: SDO connection" 101253174 "maximum value is less than minimum value" 101253170 "value of parameter written too low" 101253169 "value of parameter written too high" 101253168 "invalid value for parameter" 101253137 "subindex does not exist" 101122067 "data type mismatch, length of parameter too low" 101122066 "data type mismatch, length of parameter too high" 101122064 "data type mismatch, length of parameter does not match" 101056512 "access failed due to an hardware error" 100925511 "general internal incompatibility in the device" 100925507 "general parameter incompatibility reason" 100925506 "PDO length exceeded by mapping" 100925505 "object cannot be mapped to the PDO" 100794368 "object does not exist in the object dictionary" 100728834 "attempt to write a read only object" 100728833 "attempt to read a write only object" 100728832 "unsupported access to an object" 84148229 "out of memory" 84148228 "CRC error" 84148227 "invalid sequence number" 84148226 "invalid block size" 84148225 "client/server command specifier not valid or unknown" 84148224 "SDO protocol timed out" 84082688 "toggle bit not alternated" ;
+VAL_ 1575 canopen_sdo_number_of_bytes_2 3 "data length 1 byte" 2 "data length 2 byte" 1 "data length 3 byte" 0 "data length 4 byte" ;
+VAL_ 1575 canopen_sdo_transfer_type 1 "expedited transfer" 0 "normal transfer" ;
+VAL_ 1575 canopen_sdo_number_of_bytes_3 7 "data length 0 byte" 6 "data length 1 byte" 5 "data length 2 byte" 4 "data length 3 byte" 3 "data length 4 byte" 2 "data length 5 byte" 1 "data length 6 byte" 0 "data length 7 byte" ;
+VAL_ 1575 canopen_sdo_continue 1 "no more segments to be downloaded" 0 "more segments to be downloaded" ;
+VAL_ 1575 canopen_sdo_ccs 7 "reserved" 6 "block download" 5 "block upload" 4 "abort transfer request" 3 "upload segment request" 2 "initiate upload request" 1 "initiate download request" 0 "download segment request" ;
+VAL_ 1015 lib_powerpath_ok 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 759 lib_max_charging_current_2s 262143 "signal not available" 262142 "signal error" 262141 "reserved 2" 262140 "reserved 1" ;
+VAL_ 759 lib_max_charging_current_100s 262143 "signal not available" 262142 "signal error" 262141 "reserved 2" 262140 "reserved 1" ;
+VAL_ 503 lib_max_discharging_current_2s 262143 "signal not available" 262142 "signal error" 262141 "reserved 2" 262140 "reserved 1" ;
+VAL_ 503 lib_max_discharging_current_100s 262143 "signal not available" 262142 "signal error" 262141 "reserved 2" 262140 "reserved 1" ;
+VAL_ 1191 lib_max_charging_power_100s 524287 "signal not available" 524286 "signal error" 524285 "reserved 2" 524284 "reserved 1" ;
+VAL_ 1191 lib_max_charging_power_2s 524287 "signal not available" 524286 "signal error" 524285 "reserved 2" 524284 "reserved 1" ;
+VAL_ 1191 lib_soc_without_soh 255 "signal not available" 254 "signal error" 253 "reserved 2" 252 "reserved 1" ;
+VAL_ 1191 lib_max_charging_voltage 262143 "signal not available" 262142 "signal error" 262141 "reserved 2" 262140 "reserved 1" ;
+VAL_ 935 lib_max_discharging_power_2s 524287 "signal not available" 524286 "signal error" 524285 "reserved 2" 524284 "reserved 1" ;
+VAL_ 935 lib_max_discharging_power_100s 524287 "signal not available" 524286 "signal error" 524285 "reserved 2" 524284 "reserved 1" ;
+VAL_ 935 lib_min_discharging_voltage 262143 "signal not available" 262142 "signal error" 262141 "reserved 2" 262140 "reserved 1" ;
+VAL_ 935 lib_soc_with_soh 255 "signal not available" 254 "signal error" 253 "reserved 2" 252 "reserved 1" ;
+VAL_ 679 lib_power 1048575 "signal not available" 1048574 "signal error" 1048573 "reserved 2" 1048572 "reserved 1" ;
+VAL_ 679 lib_voltage_after_contactor 262143 "signal not available" 262142 "signal error" 262141 "reserved 2" 262140 "reserved 1" ;
+VAL_ 679 lib_state_of_health 255 "signal not available" 254 "signal error" 253 "reserved 2" 252 "reserved 1" ;
+VAL_ 679 lib_voltage_in_front_of_contacto 262143 "signal not available" 262142 "signal error" 262141 "reserved 2" 262140 "reserved 1" ;
+VAL_ 423 lib_temperature 255 "signal not available" 254 "signal error" 253 "reserved 2" 252 "reserved 1" ;
+VAL_ 423 lib_in_charging_mode 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_ready 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_init_complete 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_error 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_current_limited 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_in_driving_mode 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_emergency_operation 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_temperature_too_high 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_temperature_too_low 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_shock_warning 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_fatal_error 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_service_required 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 423 lib_current 524287 "signal not available" 524286 "signal error" 524285 "reserved 2" 524284 "reserved 1" ;
+VAL_ 1319 lib_power_consumption_average 4095 "signal not available" 4094 "signal error" 4093 "reserved 2" 4092 "reserved 1" ;
+VAL_ 1319 truck_operating_hours_mode 15 "signal not available" 14 "signal error" 13 "reserved 2" 12 "reserved 1" 8 "LIB charger operating hours" 7 "mode h engine running" 6 "mode g traction or lift motor active except lowering" 5 "mode f more than 50 W" 4 "mode e traction or lift motor active" 3 "mode d lift motor active" 2 "mode c traction motor active" 1 "mode b key switch" 0 "mode a key and seat switch" ;
+VAL_ 1319 truck_operating_hours -1 "signal not available" -2 "signal error" -3 "reserved 2" -4 "reserved 1" ;
+VAL_ 551 lib_charging_voltage 262143 "signal not available" 262142 "signal error" 262141 "reserved 2" 262140 "reserved 1" ;
+VAL_ 551 lib_charging_current 65535 "signal not available" 65534 "signal error" 65533 "reserved 2" 65532 "reserved 1" ;
+VAL_ 551 lib_charging_power 524287 "signal not available" 524286 "signal error" 524285 "reserved 2" 524284 "reserved 1" ;
+VAL_ 1831 canopen_state_lib 127 "pre-operational" 5 "operational" 4 "stopped" 0 "bootup" ;
+VAL_ 2163147005 lib_deep_discharge_wakeup_data 0 "wakeup command" ;
+VAL_ 1793 canopen_state_kwpc 127 "pre-operational" 5 "operational" 4 "stopped" 0 "bootup" ;
+VAL_ 1866 canopen_state_exc 127 "pre-operational" 5 "operational" 4 "stopped" 0 "bootup" ;
+VAL_ 1664 isotp_fs 15 "reserved 13" 14 "reserved 12" 13 "reserved 11" 12 "reserved 10" 11 "reserved 9" 10 "reserved 8" 9 "reserved 7" 8 "reserved 6" 7 "reserved 5" 6 "reserved 4" 5 "reserved 3" 4 "reserved 2" 3 "reserved 1" 2 "overflow" 1 "wait" 0 "continue to send" ;
+VAL_ 1664 isotp_n_pcitype 7 "reserved 4" 6 "reserved 3" 5 "reserved 2" 4 "reserved 1" 3 "flow control" 2 "consecutive frame" 1 "first frame" 0 "single frame" ;
+VAL_ 1664 isotp_n_ta 254 "functional address" 95 "cps" 81 "obc" 80 "knc" 72 "kwc_b" 70 "tpi" 68 "kap_r" 39 "lib" 38 "tu" 37 "kec" 33 "kcs" 32 "kcu" 31 "kap_k" 22 "dou" 20 "rpb" 19 "kwc_a" 18 "kae" 16 "ksc" 13 "kpc_l2" 12 "kpc_l1" 11 "kpc_tr" 10 "kpc_tl" 9 "kpc_u" 5 "kbc" 1 "kmc/kwpc" 0 "dtu" ;
+VAL_ 1759 isotp_fs 15 "reserved 13" 14 "reserved 12" 13 "reserved 11" 12 "reserved 10" 11 "reserved 9" 10 "reserved 8" 9 "reserved 7" 8 "reserved 6" 7 "reserved 5" 6 "reserved 4" 5 "reserved 3" 4 "reserved 2" 3 "reserved 1" 2 "overflow" 1 "wait" 0 "continue to send" ;
+VAL_ 1759 isotp_n_pcitype 7 "reserved 4" 6 "reserved 3" 5 "reserved 2" 4 "reserved 1" 3 "flow control" 2 "consecutive frame" 1 "first frame" 0 "single frame" ;
+VAL_ 1759 isotp_n_ta 254 "functional address" 95 "cps" 81 "obc" 80 "knc" 72 "kwc_b" 70 "tpi" 68 "kap_r" 39 "lib" 38 "tu" 37 "kec" 33 "kcs" 32 "kcu" 31 "kap_k" 22 "dou" 20 "rpb" 19 "kwc_a" 18 "kae" 16 "ksc" 13 "kpc_l2" 12 "kpc_l1" 11 "kpc_tr" 10 "kpc_tl" 9 "kpc_u" 5 "kbc" 1 "kmc/kwpc" 0 "dtu" ;
+VAL_ 1797 stateLiionCharger 127 "PREOPERATIONAL" 5 "OPERATIONAL" 4 "STOPPED" 0 "BOOTUP" ;
+VAL_ 1805 stateBms 127 "PREOPERATIONAL" 5 "OPERATIONAL" 4 "STOPPED" 0 "BOOTUP" ;
+VAL_ 388 DispBiometry 3 "truck immobilization" 2 "speed and acceleration reduced" 1 "acceleration reduced" 0 "no limitation" ;
+VAL_ 769 FaultBatteryCode_3 7 "fault code status n° 24" 6 "fault code status n° 23" 5 "fault code status n° 22" 4 "fault code status n° 21" 3 "fault code status n° 20" 2 "fault code status n° 19" 1 "fault code status n° 18" 0 "fault code status n° 17" ;
+VAL_ 769 FaultBatteryCode_6 7 "fault code status n° 48" 6 "fault code status n° 47" 5 "fault code status n° 46" 4 "fault code status n° 45" 3 "fault code status n° 44" 2 "fault code status n° 43" 1 "fault code status n° 42" 0 "fault code status n° 41" ;
+VAL_ 769 FaultBatteryCode_2 7 "fault code status n° 16" 6 "fault code status n° 15" 5 "fault code status n° 14" 4 "fault code status n° 13" 3 "fault code status n° 12" 2 "fault code status n° 11" 1 "fault code status n° 10" 0 "fault code status n° 9" ;
+VAL_ 769 FaultBatteryCode_1 7 "fault code status n° 8" 6 "fault code status n° 7" 5 "fault code status n° 6" 4 "fault code status n° 5" 3 "fault code status n° 4" 2 "fault code status n° 3" 1 "fault code status n° 2" 0 "fault code status n° 1" ;
+VAL_ 769 FaultBatteryCode_5 7 "fault code status n° 40" 6 "fault code status n° 39" 5 "fault code status n° 38" 4 "fault code status n° 37" 3 "fault code status n° 36" 2 "fault code status n° 35" 1 "fault code status n° 34" 0 "fault code status n° 33" ;
+VAL_ 769 FaultBatteryCode_4 7 "fault code status n° 32" 6 "fault code status n° 31" 5 "fault code status n° 30" 4 "fault code status n° 29" 3 "fault code status n° 28" 2 "fault code status n° 27" 1 "fault code status n° 26" 0 "fault code status n° 25" ;
+VAL_ 769 BmsBatStat 9 "-> 0xFF reserved" 8 "Charge mode in regeneration" 7 "Charge- or On-board charge-mode" 6 "After run mode (self-test)" 5 "Safe mode (system disconnected)" 4 "Init mode (before precharge)" 3 "Standby mode" 2 "Pre-charge mode  " 1 "Nominal mode " 0 "Reserved" ;
+SIG_GROUP_ 256 canopen_time_of_day 1 : canopen_time_of_day_ms canopen_time_of_day_days;
+SIG_GROUP_ 1484 sdo_download_segment_response 1 : canopen_sdo_download_toggle_bit;
+SIG_GROUP_ 1484 sdo_upload_segment_response 1 : canopen_sdo_seg_data canopen_sdo_continue canopen_sdo_number_of_bytes_3 canopen_sdo_upload_toggle_bit;
+SIG_GROUP_ 1484 sdo_initiate_download_response 1 : canopen_sdo_download_subindex canopen_sdo_download_index;
+SIG_GROUP_ 1484 sdo_initiate_upload_response 1 : canopen_sdo_transfer_type canopen_sdo_size_indicator canopen_sdo_data canopen_sdo_upload_subindex canopen_sdo_upload_index canopen_sdo_number_of_bytes_2;
+SIG_GROUP_ 1484 sdo_abort_transfer 1 : canopen_sdo_abort_subindex canopen_sdo_abort_index canopen_sdo_abort_code;
+SIG_GROUP_ 1612 sdo_upload_segment 1 : canopen_sdo_upload_toggle_bit;
+SIG_GROUP_ 1612 sdo_abort_transfer 1 : canopen_sdo_abort_subindex canopen_sdo_abort_code canopen_sdo_abort_index;
+SIG_GROUP_ 1612 sdo_initiate_download_request 1 : canopen_sdo_download_subindex canopen_sdo_data canopen_sdo_size_indicator canopen_sdo_download_index canopen_sdo_number_of_bytes_2 canopen_sdo_transfer_type;
+SIG_GROUP_ 1612 sdo_download_segment_request 1 : canopen_sdo_number_of_bytes_3 canopen_sdo_download_toggle_bit canopen_sdo_seg_data canopen_sdo_continue;
+SIG_GROUP_ 1612 sdo_initiate_upload_request 1 : canopen_sdo_upload_subindex canopen_sdo_upload_index;
+SIG_GROUP_ 1228 tci_operating_hours_group 1 : tci_truck_operating_hours_mode tci_truck_operating_hours;
+SIG_GROUP_ 113 canopen_flying_master_indication 1 : flying_master_priority_level flying_master_node_id;
+SIG_GROUP_ 0 canopen_module_control 1 : canopen_nmt_command_specifier canopen_node_id;
+SIG_GROUP_ 1703 iso_tp_consecutive_frame 1 : isotp_sn isotp_n_data_cf;
+SIG_GROUP_ 1703 iso_tp_flow_control 1 : isotp_bs isotp_fs isotp_n_data_fc isotp_stmin;
+SIG_GROUP_ 1703 iso_tp_single_frame 1 : isotp_n_data_sf isotp_sf_dl;
+SIG_GROUP_ 1703 iso_tp_first_frame 1 : isotp_ff_dl isotp_n_data_ff;
+SIG_GROUP_ 1447 sdo_upload_segment_response 1 : canopen_sdo_upload_toggle_bit canopen_sdo_seg_data canopen_sdo_continue canopen_sdo_number_of_bytes_3;
+SIG_GROUP_ 1447 sdo_abort_transfer 1 : canopen_sdo_abort_code canopen_sdo_abort_index canopen_sdo_abort_subindex;
+SIG_GROUP_ 1447 sdo_download_segment_response 1 : canopen_sdo_download_toggle_bit;
+SIG_GROUP_ 1447 sdo_initiate_upload_response 1 : canopen_sdo_upload_index canopen_sdo_size_indicator canopen_sdo_data canopen_sdo_transfer_type canopen_sdo_number_of_bytes_2 canopen_sdo_upload_subindex;
+SIG_GROUP_ 1447 sdo_initiate_download_response 1 : canopen_sdo_download_index canopen_sdo_download_subindex;
+SIG_GROUP_ 1575 sdo_initiate_download_request 1 : canopen_sdo_size_indicator canopen_sdo_number_of_bytes_2 canopen_sdo_download_index canopen_sdo_transfer_type canopen_sdo_data canopen_sdo_download_subindex;
+SIG_GROUP_ 1575 sdo_upload_segment 1 : canopen_sdo_upload_toggle_bit;
+SIG_GROUP_ 1575 sdo_initiate_upload_request 1 : canopen_sdo_upload_index canopen_sdo_upload_subindex;
+SIG_GROUP_ 1575 sdo_abort_transfer 1 : canopen_sdo_abort_code canopen_sdo_abort_index canopen_sdo_abort_subindex;
+SIG_GROUP_ 1575 sdo_download_segment_request 1 : canopen_sdo_seg_data canopen_sdo_number_of_bytes_3 canopen_sdo_continue canopen_sdo_download_toggle_bit;
+SIG_GROUP_ 1015 lib_pdo_tx7_safety 1 : lib_pdo_tx7_checksum lib_pdo_tx7_message_counter;
+SIG_GROUP_ 1319 operating_hours_group 1 : truck_operating_hours_mode truck_operating_hours;
+SIG_GROUP_ 167 emergency_lib 1 : error_register_object_lib uds_dtc_lib emergency_error_code_lib;
+SIG_GROUP_ 1664 iso_tp_single_frame 1 : isotp_sf_dl isotp_n_data_sf;
+SIG_GROUP_ 1664 iso_tp_first_frame 1 : isotp_n_data_ff isotp_ff_dl;
+SIG_GROUP_ 1664 iso_tp_flow_control 1 : isotp_n_data_fc isotp_fs isotp_stmin isotp_bs;
+SIG_GROUP_ 1664 iso_tp_consecutive_frame 1 : isotp_sn isotp_n_data_cf;
+SIG_GROUP_ 1759 iso_tp_single_frame 1 : isotp_sf_dl isotp_n_data_sf;
+SIG_GROUP_ 1759 iso_tp_first_frame 1 : isotp_ff_dl isotp_n_data_ff;
+SIG_GROUP_ 1759 iso_tp_flow_control 1 : isotp_fs isotp_bs isotp_n_data_fc isotp_stmin;
+SIG_GROUP_ 1759 iso_tp_consecutive_frame 1 : isotp_n_data_cf isotp_sn;
+

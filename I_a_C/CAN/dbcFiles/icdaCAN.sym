@@ -1,0 +1,42 @@
+FormatVersion=5.0 // Do not edit this line!
+Title="kionInterCAN"
+
+{ENUMS}
+enum ICDA_Status(0="no issue", 1="OCS", 2="measurement error", 
+  4="system error")
+
+{RECEIVE}
+
+[ICDA_BMS_Result]
+ID=502h
+DLC=8
+Var=MessageCounter unsigned 4,4
+Var=Status ICDA_Status 0,4
+Var=Result_I signed 8,32 -m
+Var=Result_Ubat unsigned 40,16 -m
+
+[ICDA_BMS_Response]
+ID=501h
+DLC=8
+Var=MUX_ID unsigned 0,8 -h
+Var=P0 unsigned 8,8
+Var=P1 unsigned 16,8
+Var=P2 unsigned 24,8
+Var=P3 unsigned 32,8
+Var=P4 unsigned 40,8
+Var=P5 unsigned 48,8
+Var=P6 unsigned 56,8
+
+{SENDRECEIVE}
+
+[BMS_ICDA_Request]
+ID=500h
+Var=MUX unsigned 0,8 -h
+Var=P0 unsigned 8,8
+Var=P1 unsigned 16,8
+Var=P2 unsigned 24,8
+Var=P3 unsigned 32,8
+Var=P4 unsigned 40,8
+Var=P5 unsigned 48,8
+Var=P6 unsigned 56,8
+

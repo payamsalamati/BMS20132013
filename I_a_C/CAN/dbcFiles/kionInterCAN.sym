@@ -1,0 +1,171 @@
+FormatVersion=5.0 // Do not edit this line!
+Title="kionInterCAN"
+
+{ENUMS}
+enum VtSig_CPS_HBState(127="Pre-OP", 5="OP", 4="Stopped", 0="Bootup")
+enum VtSig_BMS_INFO_BMSstate(4="BMS_OPERATION", 1="BMS_SHUTDOWN")
+enum VtSig_BMS_REQ_PowerDown(1="on", 0="off")
+enum VtSig_CPS_CPSoutBoost(2="blocked", 1="on", 0="off")
+enum ICDA_Status(0="no issue", 1="OCS", 2="measurement error", 
+  4="system error")
+
+{SEND}
+
+[BMS_CPS_UDS_REQ]
+ID=680h
+DLC=8
+Var=BMS_UDSData unsigned 0,64	// Voltage input of CPS (from Battery).
+
+[BMS_CPS_PDO_TX3]
+ID=381h
+DLC=8
+CycleTime=100
+Var=BMS_INFO_DeepDisImminent bit 41,1	// time to the next BMS wakeup
+Var=BMS_INFO_DeepDisPossible bit 40,1	// time to the next BMS wakeup
+Var=BMS_INFO_TimeToWakeUp unsigned 24,16 /u:s	// time to the next BMS wakeup
+Var=BMS_INFO_RemainingCapacity unsigned 0,24 /u:As	// remaining capacity of battery
+Var=BMS_RX3_Counter unsigned 44,4
+Var=BMS_RX3_Checksum unsigned 48,16
+
+[BMS_CPS_PDO_TX2]
+ID=281h
+DLC=8
+CycleTime=100
+Var=BMS_REQ_CPSoutBoost_I unsigned 16,16 /u:A /f:0.01	// requested CPS out boost current (vehicle supply)
+Var=BMS_REQ_CPSout_I unsigned 0,16 /u:A /f:0.01	// requested CPS out current (vehicle supply)
+Var=BMS_RX2_Counter unsigned 44,4
+Var=BMS_RX2_Checksum unsigned 48,16
+
+[BMS_Heartbeat]
+ID=701h
+DLC=1
+CycleTime=40
+Var=BMS_HBState unsigned 0,8 /e:VtSig_CPS_HBState
+
+[BMS_TimeStamp]
+ID=100h
+DLC=8
+CycleTime=100
+Var=BMS_CANopen_Days unsigned 32,16 /u:days
+Var=BMS_CANopen_Ms unsigned 0,32 /u:ms
+
+[BMS_CPS_SDO_REQ]
+ID=602h
+DLC=8
+Var=BMS_SDO_TX_Data unsigned 0,64
+
+[BMS_ModuleCotrol]
+ID=000h
+DLC=2
+Var=BMS_ServiceID unsigned 0,8
+Var=BMS_NodeID unsigned 8,8
+
+[BMS_CPS_PDO_TX1]
+ID=181h
+DLC=8
+CycleTime=100
+Var=BMS_REQ_Min_V unsigned 24,16 /u:V /f:0.1	// requested heating current
+Var=BMS_RX1_Counter unsigned 44,4
+Var=BMS_RX1_Checksum unsigned 48,16
+Var=BMS_INFO_BMSstate unsigned 8,8 /e:VtSig_BMS_INFO_BMSstate	// BMS indicates that it is ready to sleep / for regular power down.
+Var=BMS_REQ_PowerDown bit 5,1 /e:VtSig_BMS_REQ_PowerDown	// initiate a CPS power down (deep-discharge protection)
+Var=BMS_REQ_CPSout bit 7,1 /e:VtSig_BMS_REQ_PowerDown	// control CPS out (vehicle supply)
+
+[BMS_ICDA_Request]
+ID=500h
+Var=MUX unsigned 0,8
+Var=P0 unsigned 8,8
+Var=P1 unsigned 16,8
+Var=P2 unsigned 24,8
+Var=P3 unsigned 32,8
+Var=P4 unsigned 40,8
+Var=P5 unsigned 48,8
+Var=P6 unsigned 56,8
+
+{RECEIVE}
+
+[CPS_BMS_UDS_RESP]
+ID=6E6h
+DLC=8
+Var=CPS_UDSData unsigned 0,64	// Voltage input of CPS (from Battery).
+
+[CH_CPS_WakeUp]
+ID=1FFFFFFFh
+Type=Extended
+DLC=8
+Var=CH_Data signed 0,64
+
+[CPS_VEHICLE_UDS_RESP]
+ID=6DFh
+DLC=8
+Var=CPS_UDSData unsigned 0,64	// Voltage input of CPS (from Battery).
+
+[CPS_BMS_Emergency]
+ID=082h
+DLC=8
+Var=CPS_EMCY_ErrorField unsigned 24,40
+Var=CPS_EMCY_ErrorRegister unsigned 16,8
+Var=CPS_EMCY_ErrorCode unsigned 0,16
+
+[CPS_Heartbeat]
+ID=702h
+DLC=1
+CycleTime=40
+Var=CPS_HBState unsigned 0,8 /e:VtSig_CPS_HBState
+
+[CPS_BMS_SDO_RESP]
+ID=582h
+DLC=8
+Var=CPS_SDO_RX_Data signed 0,8
+
+[CPS_BMS_PDO_TX2]
+ID=282h
+DLC=8
+CycleTime=100
+Var=CPS_Temp2CPSout signed 24,8 /u:°C /o:-40 /min:-40	// temperature of CPS power path
+Var=CPS_Temp1CPSout signed 16,8 /u:°C /o:-40 /min:-40	// temperature of CPS power path
+Var=CPS_CPSout_I unsigned 0,16 /u:A /f:0.01	// current consumption of vehicle
+Var=CPS_TX2_Counter unsigned 44,4
+Var=CPS_TX2_Checksum unsigned 48,16
+
+[CPS_BMS_PDO_TX3]
+ID=382h
+DLC=8
+CycleTime=100
+Var=CPS_CPSoutVoltage unsigned 12,12 /u:V /f:0.025	// voltage output of CPS out (vehicle supply)
+Var=CPS_VoltageInput unsigned 0,12 /u:V /f:0.025	// voltage input of CPS (Battery)
+Var=CPS_TX3_Counter unsigned 44,4
+Var=CPS_TX3_Checksum unsigned 48,16
+
+[CPS_BMS_PDO_TX1]
+ID=182h
+DLC=8
+CycleTime=100
+Var=CPS_StartupAfterPowerdown bit 20,1 /e:VtSig_BMS_REQ_PowerDown	// CPS emergency wakeup
+Var=CPS_Emergency bit 21,1 /e:VtSig_BMS_REQ_PowerDown	// CPS emergency wakeup
+Var=CPS_CPSoutLimitation bit 23,1 /e:VtSig_BMS_REQ_PowerDown	// state of current limitation for CPS out (vehicle supply)
+Var=CPS_CPSoutBoost unsigned 12,2 /e:VtSig_CPS_CPSoutBoost	// state of CPS out boost (vehicle supply)
+Var=CPS_CPSout unsigned 14,2 /e:VtSig_CPS_CPSoutBoost	// state of CPS out boost (vehicle supply)
+Var=CPS_TX1_Checksum unsigned 48,16
+Var=CPS_TX1_Counter unsigned 44,4
+Var=CPS_Error unsigned 24,16
+
+[ICDA_BMS_Result]
+ID=502h
+DLC=8
+Var=MessageCounter unsigned 4,4
+Var=Status ICDA_Status 0,4
+Var=Result_I signed 8,32 -m
+Var=Result_Ubat unsigned 40,16 -m
+
+[ICDA_BMS_Response]
+ID=501h
+DLC=8
+Var=MUX_ID unsigned 0,8
+Var=P0 unsigned 8,8
+Var=P1 unsigned 16,8
+Var=P2 unsigned 24,8
+Var=P3 unsigned 32,8
+Var=P4 unsigned 40,8
+Var=P5 unsigned 48,8
+Var=P6 unsigned 56,8

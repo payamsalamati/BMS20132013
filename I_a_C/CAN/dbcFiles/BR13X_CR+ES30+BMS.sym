@@ -1,0 +1,368 @@
+FormatVersion=5.0 // Do not edit this line!
+Title="BR13X_CR+ES30+BMS"
+
+{ENUMS}
+enum VtSig_stateBms(127="PREOPERATIONAL", 5="OPERATIONAL", 4="STOPPED", 
+  0="BOOTUP")
+enum VtSig_BmsBatStat(9="-> 0xFF reserved", 8="Charge mode in regeneration", 
+  7="Charge- or On-board charge-mode", 6="After run mode (self-test)", 
+  5="Safe mode (system disconnected)", 4="Init mode (before precharge)", 
+  3="Standby mode", 2="Pre-charge mode  ", 1="Nominal mode ", 0="Reserved")
+enum VtSig_SteerBrandID(1="BrandID Still", 0="BrandID Linde")
+enum VtSig_DispBiometry(3="truck immobilization", 2="speed and acc. reduced", 
+  1="acc. reduced", 0="no limitation")
+enum VtSig_SteerSpeedStatus(4="SPV_RUN", 3="SPV_CREEP", 2="SPV_SOFTSTOP", 
+  1="SPV_STOP", 0="SPV_STEEROFF")
+enum VtSig_NodeID(6="Datalogger", 5="ParticleFilter", 4="Display", 3="invalid", 
+  2="Lift", 1="Traction", 0="AllNodes")
+enum VtSig_ServiceID(130="ResetCommunication", 129="ResetNode", 
+  128="EnterPreOperational", 2="StopRemoteNode", 1="StartRemoteNode")
+
+{SEND}
+
+[BmsPDO2]
+ID=28Dh
+DLC=8
+Var=BmsPowForDis unsigned 48,16 /u:W /f:10	// Power forecasting: charging [W] = BmsPowForChar * 10
+Var=BmsPowForChar unsigned 32,16 /u:W /f:10	// Power forecasting: charging [W] = BmsPowForChar * 10
+Var=BmsNormCharCurr unsigned 16,16 /u:A /f:0.25	// Normal charge current [A] = BmsNormCharCurr * 0.25
+Var=BmsMaxCharCurr unsigned 0,16 /u:A /f:0.25	// Maximal charge current [A] = BmsMaxCharCurr * 0.25
+
+[BmsSDOtx]
+ID=58Dh
+DLC=8
+Var=BmsSDOtxData unsigned 0,64
+
+[BmsHeartbt]
+ID=70Dh
+DLC=1
+Var=stateBms unsigned 0,7 /e:VtSig_stateBms
+
+[BmsPDO5]
+ID=301h
+DLC=8
+Var=FaultBatteryCode_6 unsigned 56,8
+Var=FaultBatteryCode_5 unsigned 48,8
+Var=FaultBatteryCode_4 unsigned 40,8
+Var=FaultBatteryCode_3 unsigned 32,8
+Var=FaultBatteryCode_2 unsigned 24,8
+Var=FaultBatteryCode_1 unsigned 16,8
+Var=BmsPDO5_fillbyte1 unsigned 8,8
+Var=BmsBatStat unsigned 0,8 /e:VtSig_BmsBatStat
+
+[BmsPDO4]
+ID=48Dh
+DLC=8
+Var=BmsPDO4_fillbyte7 signed 56,8
+Var=BmsSoh unsigned 48,8 /u:% /max:100
+Var=BmsSocWithSoh unsigned 40,8 /u:% /max:100
+Var=BmsSocWoutSoh unsigned 32,8 /u:% /max:100
+Var=BmsPDO4_fillbytes0_3 signed 0,32
+
+[BmsPDO1]
+ID=18Dh
+DLC=8
+Var=BmsMaxDirCurr unsigned 48,16 /u:A /f:0.25
+Var=BmsBatVolt unsigned 32,16 /u:mV /f:2
+Var=BmsBatCurr signed 0,32 /u:mA /min:-4000000 /max:4000000
+
+[DLogDiagResp]
+ID=796h
+DLC=8
+Var=DLogDiagResp7 unsigned 56,8
+Var=DLogDiagResp6 unsigned 40,8
+Var=DLogDiagResp5 unsigned 32,8
+Var=DLogDiagResp4 unsigned 16,8
+Var=DLogDiagResp3 unsigned 48,8
+Var=DLogDiagResp2 unsigned 24,8
+Var=DLogDiagResp1 unsigned 8,8
+Var=DLogDiagResp0 unsigned 0,8
+
+[DDiagResp]
+ID=732h	// Development debug purpose
+DLC=8
+Var=DDiagRespData unsigned 0,64
+
+[DiagRespDisp]
+ID=794h	// Display Diagnostic Response
+DLC=8
+Var=DispRsData unsigned 8,56
+Var=DispRsPCI unsigned 0,8
+
+[DiagRespSteer]
+ID=793h	// Steering Diagnostic Response
+DLC=8
+Var=SteerRsData unsigned 8,56
+Var=SteerRsPCI unsigned 0,8
+
+[DiagRespFunc]
+ID=791h	// Traction Diagnostic Response
+DLC=8
+Var=TracRsData unsigned 8,56
+Var=TracRsPCI unsigned 0,8
+
+{RECEIVE}
+
+[BmsSDOrx]
+ID=60Dh
+DLC=8
+Var=BmsSDOrxData unsigned 0,64
+
+[SYNC]
+ID=080h	// Synchronization
+DLC=0
+
+[ModuleCtrl]
+ID=000h	// Network Management, Module Control
+DLC=2
+Var=NodeID unsigned 8,8 /e:VtSig_NodeID
+Var=ServiceID unsigned 0,8 /e:VtSig_ServiceID
+
+[FuncPDO5]
+ID=581h
+DLC=8
+Var=FuncPDO5_reserved_b7 unsigned 56,8
+Var=BatterySoc unsigned 48,8
+Var=TurtleFuncOn bit 47,1
+Var=HM_ON bit 46,1
+Var=OverTemp bit 45,1
+Var=StopLed bit 44,1
+Var=TruckType bit 43,1
+Var=WarningBrake bit 42,1
+Var=MaintServReq bit 41,1
+Var=MaintServBefServ bit 40,1
+Var=FuncPDO5_reserved_b4_1bit bit 39,1
+Var=FuncPDO5_reserved_b4_3bits unsigned 36,3
+Var=HMValue unsigned 16,20 /u:0.1
+Var=FuncPDO5_reserved_b0_b1 unsigned 0,16
+
+[HeartbtDLog]
+ID=706h
+DLC=8
+Var=stateDLog unsigned 0,8
+
+[DLogPDO1]
+ID=186h
+DLC=8
+Var=DLogSpeedLim unsigned 24,8 /u:km/h /f:0.25
+Var=DLogTracInt bit 6,1
+Var=DLogGenEnable bit 7,1
+
+[DiagReqDLog]
+ID=786h
+DLC=8
+Var=DiagRqLog7 unsigned 56,8
+Var=DiagRqLog6 unsigned 48,8
+Var=DiagRqLog5 unsigned 40,8
+Var=DiagRqLog4 unsigned 32,8
+Var=DiagRqLog3 unsigned 24,8
+Var=DiagRqLog2 unsigned 16,8
+Var=DiagRqLog1 unsigned 8,8
+Var=DiagRqLog0 unsigned 0,8
+
+[LiftPDO3]
+ID=382h	// Lift Transmit PDO #3
+DLC=8
+Var=LiftErrCodeHB4 unsigned 56,8
+Var=LiftErrCodeLB4 unsigned 48,8
+Var=LiftErrCodeHB3 unsigned 40,8
+Var=LiftErrCodeLB3 unsigned 32,8
+Var=LiftErrCodeHB2 unsigned 24,8
+Var=LiftErrCodeLB2 unsigned 16,8
+Var=LiftErrCodeHB1 unsigned 8,8
+Var=LiftErrCodeLB1 unsigned 0,8
+
+[SteerPDO3]
+ID=383h	// Steering Transmit PDO #3
+DLC=8
+Var=SteerErrCodeHB4 unsigned 56,8
+Var=SteerErrCodeLB4 unsigned 48,8
+Var=SteerErrCodeHB3 unsigned 40,8
+Var=SteerErrCodeLB3 unsigned 32,8
+Var=SteerErrCodeHB2 unsigned 24,8
+Var=SteerErrCodeLB2 unsigned 16,8
+Var=SteerErrCodeHB1 unsigned 8,8
+Var=SteerErrCodeLB1 unsigned 0,8
+
+[FuncPDO3]
+ID=381h	// Traction Transmit PDO #3
+DLC=8
+Var=TracErrCodeHB4 unsigned 56,8
+Var=TracErrCodeLB4 unsigned 48,8
+Var=TracErrCodeHB3 unsigned 40,8
+Var=TracErrCodeLB3 unsigned 32,8
+Var=TracErrCodeHB2 unsigned 24,8
+Var=TracErrCodeLB2 unsigned 16,8
+Var=TracErrCodeHB1 unsigned 8,8
+Var=TracErrCodeLB1 unsigned 0,8
+
+[LiftPDO1]
+ID=182h
+DLC=8
+Var=RI_L_reserved_b5_4bits unsigned 44,4
+Var=RI_L_PumpActivation bit 42,1
+Var=RI_L_InitialLiftingUp bit 43,1
+Var=RI_L_InitialLowering bit 41,1
+Var=RI_L_InitialLifting bit 40,1
+Var=LiftPDO1_reserved_b4 unsigned 32,8
+Var=LiftPDO1_reserved_b2_4bits unsigned 20,4
+Var=BatterySOC unsigned 24,8 /u:%
+Var=HourMeter unsigned 0,20 /u:0.1
+Var=LiftPDO1Checksum unsigned 56,8
+Var=LiftPDO1Counter unsigned 48,4
+Var=LiftFetOverTemp bit 52,1
+Var=LiftMotorOverTemp bit 53,1
+Var=LiftPumpOilLevel bit 54,1
+Var=LiftHourCountingREQ bit 55,1
+
+[DDiagReq]
+ID=722h	// Development debug purpose
+DLC=1
+Var=DDiagReqData unsigned 0,8
+
+[SteerPDO4]
+ID=483h	// Steering Transmit PDO #4
+DLC=8
+Var=SteerBrandID unsigned 52,2 /e:VtSig_SteerBrandID
+Var=SteerPDO4_reserved_b6_2bits unsigned 54,2
+Var=SteerPDO4_reserved_b2_b5 unsigned 16,32
+Var=SteerPDO4Counter unsigned 48,4
+Var=SteerPDO4Checksum unsigned 56,8
+Var=SteerTruckID signed 0,16
+
+[FuncPDO4]
+ID=481h	// Traction Transmit PDO #4
+DLC=8
+Var=FuncPDO4Counter unsigned 48,4
+Var=FuncPDO4Checksum unsigned 56,8
+Var=FuncPDO4_reserved_b6_4bits unsigned 52,4
+Var=FuncPDO4_reserved_b2_b5 unsigned 16,32
+Var=TracTruckID signed 0,16
+
+[DiagReqDisp]
+ID=784h	// Display Diagnostic Request, physical addressed
+DLC=8
+Var=DispRqData unsigned 8,56
+Var=DispRqPCI unsigned 0,8
+
+[DiagReqSteer]
+ID=783h	// Steering Diagnostic Request, physical addressed
+DLC=8
+Var=SteerRqData unsigned 8,56
+Var=SteerRqPCI unsigned 0,8
+
+[DiagReqFunc]
+ID=781h	// Traction Diagnostic Request, physical addressed
+DLC=8
+Var=TracRqData unsigned 8,56
+Var=TracRqPCI unsigned 0,8
+
+[DiagReqFuncAll]
+ID=780h	// Diagnostic Request, functioal addressed
+DLC=8
+Var=FuncRqData unsigned 8,56
+Var=FuncRqPCI unsigned 0,8
+
+[HeartbtDisp]
+ID=704h	// Network Management, Error Control, Display Heartbeat
+DLC=1
+Var=stateDisp unsigned 0,7 /e:VtSig_stateBms
+
+[HeartbtSteer]
+ID=703h	// Network Management, Error Control, Steering Heartbeat
+DLC=1
+Var=stateSteer unsigned 0,7 /e:VtSig_stateBms
+
+[HeartbtLift]
+ID=702h	// Network Management, Error Control, Lift Heartbeat
+DLC=1
+Var=stateLift unsigned 0,7 /e:VtSig_stateBms
+
+[HeartbtFunc]
+ID=701h	// Network Management, Error Control, Traction Heartbeat
+DLC=1
+Var=stateFunction unsigned 0,7 /e:VtSig_stateBms
+
+[DispPDO1]
+ID=184h	// Display Transmit PDO #1
+DLC=8
+Var=DispBiometry unsigned 57,2 /e:VtSig_DispBiometry
+Var=DispStatus bit 63,1
+Var=DispHourCountingStatus bit 56,1
+Var=DispBatterySOC unsigned 48,8 /u:%
+Var=DispDay unsigned 43,5
+Var=DispMonth unsigned 39,4
+Var=DispYear unsigned 33,6
+Var=DispHour unsigned 28,5
+Var=DispMinutes unsigned 22,6
+Var=DispSeconds unsigned 16,6
+Var=DispHourMeterValue unsigned 0,16 /u:0.1
+
+[SteerPDO1]
+ID=183h	// Steering Transmit PDO #1
+DLC=8
+Var=SteerSetAng signed 24,16 /u:� /f:0.1
+Var=SteerPDO1Checksum unsigned 56,8
+Var=SteerPDO1Counter unsigned 48,4
+Var=SteerPDO1_reserved_b5 unsigned 40,8
+Var=SteerSRWSDig bit 52,1
+Var=SteerFetsOverTemp bit 53,1
+Var=SteerMotorOverTemp bit 54,1
+Var=SteerHourCountingReq bit 55,1
+Var=SteerSpeedStatus signed 16,8 /e:VtSig_SteerSpeedStatus
+Var=SteerActAng signed 0,16 /u:� /f:0.1
+
+[FuncPDO1]
+ID=181h	// Traction Transmit PDO #1
+DLC=8
+Var=RI_T_MotorActivated bit 36,1
+Var=RI_T_CreepSpeed bit 37,1
+Var=RI_T_BrakeApplied bit 38,1
+Var=FuncPDO1Checksum unsigned 56,8
+Var=FuncPDO1Counter unsigned 48,4
+Var=BatWarn bit 39,1
+Var=TracGuard180cm bit 35,1
+Var=TracTurtleHare bit 34,1
+Var=FuncPDO1_reserved_b2_b3 unsigned 16,16
+Var=TracDriverPres_13x bit 54,1
+Var=TruckID bit 41,1	// idendifier (trucktype P30,P50) for Dashboard
+Var=TracBrkWarn bit 32,1
+Var=TracFetsOverTemp bit 52,1
+Var=TracMotorOverTemp bit 53,1
+Var=TracActivStabOilLevel bit 33,1
+Var=TracHourCountingReq bit 55,1
+Var=TracBatteryLock bit 40,1
+Var=TracRightGuard bit 42,1
+Var=TracLeftGuard bit 43,1
+Var=TracPlatfmPosition bit 44,1
+Var=TracSeatSw bit 45,1
+Var=TracFootPlatfmSw bit 47,1
+Var=TracTillerFootSw bit 46,1
+Var=TrSpeed signed 0,16 /u:km/h /f:0.001
+
+[AfeTaskPerformance1]
+ID=050h
+DLC=8
+Var=maxCycle unsigned 0,32 -m
+Var=minCycle unsigned 32,32
+
+[AfeTaskPerformance2]
+ID=051h
+DLC=8
+Var=avgCycle unsigned 0,32 -m
+Var=numCycle unsigned 32,32 -m
+
+{SENDRECEIVE}
+
+[Steer2PDO3]
+ID=38Ah	// SteerSafe Transmit PDO #3
+DLC=8
+Var=Steer2ErrCodeHB4 unsigned 56,8
+Var=Steer2ErrCodeLB4 unsigned 48,8
+Var=Steer2ErrCodeHB3 unsigned 40,8
+Var=Steer2ErrCodeLB3 unsigned 32,8
+Var=Steer2ErrCodeHB2 unsigned 24,8
+Var=Steer2ErrCodeLB2 unsigned 16,8
+Var=Steer2ErrCodeHB1 unsigned 8,8
+Var=Steer2ErrCodeLB1 unsigned 0,8
+

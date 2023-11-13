@@ -1,0 +1,894 @@
+VERSION ""
+
+
+NS_ :
+
+BS_:
+
+BU_: Vector__XXX
+
+BO_ 32 EMV_14S_ADC_Terminals: 8 Vector__XXX
+SG_ ADC_IN_3V3 : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_IN_5V : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_IN_Kl30 : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+
+BO_ 33 EMV_14S_ADC_Values1: 8 Vector__XXX
+SG_ ADC_IN_SbcMux : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_IN_TempSens : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ TempSens_Value : 48|8@1+ (1,0) [0|255] "�C" Vector__XXX
+SG_ ADC_IN_HWVersion : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+
+BO_ 34 EMV_14S_CurrentSensorValues: 8 Vector__XXX
+SG_ ADC_CurrentS1Ch2 : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_CurrentS2Ch2 : 48|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_CurrentS2Ch1 : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_CurrentS1Ch1 : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+
+BO_ 35 EMV_14S_ADC_IMeas_Lss_coc: 8 Vector__XXX
+SG_ ADC_LSS_COC_K1 : 7|16@0+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_LSS_COC_K2 : 23|16@0+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_LSS_COC_K3 : 39|16@0+ (1,0) [0|65535] "mV" Vector__XXX
+
+
+BO_ 64 EMV_14S_CSC_debugValues1: 8 Vector__XXX
+SG_ CellVoltageMax : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ CellVoltageMin : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ CellTemperatureMax : 32|8@1- (1,0) [-128|127] "�C" Vector__XXX
+SG_ CellTemperatureMin : 40|8@1- (1,0) [-128|127] "�C" Vector__XXX
+SG_ RelaySupplyVoltageMin : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+
+BO_ 80 EMV_14S_CSC1_cellVoltages1: 8 Vector__XXX
+SG_ Cell1 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell2 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell3 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell4 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 36 EMV_14S_ADC_HV1: 8 Vector__XXX
+SG_ ADC_HV1 : 0|32@1- (1,0) [-2147483648|2147483647] "mV" Vector__XXX
+
+
+BO_ 37 EMV_14S_ADC_HV2: 8 Vector__XXX
+SG_ ADC_HV2 : 0|32@1- (1,0) [-2147483648|2147483647] "mV" Vector__XXX
+
+
+BO_ 38 EMV_14S_ADC_HV3: 8 Vector__XXX
+SG_ ADC_HV3 : 0|32@1- (1,0) [-2147483648|2147483647] "mV" Vector__XXX
+SG_ ADC_HV3_RAW : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+
+BO_ 272 EMV_14S_CSC1_debugValues4: 8 Vector__XXX
+SG_ ISENSE_Value : 0|32@1- (1,0) [-2147483648|2147483647] "mA" Vector__XXX
+SG_ ENA_5V_State : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ ENA_HEATER_State : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 39 EMV_14S_ADC_Contactor_Supply: 8 Vector__XXX
+SG_ ADC_CONTACTOR_SUPPLY_1 : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_CONTACTOR_SUPPLY_2 : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_CONTACTOR_SUPPLY_3 : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+
+BO_ 48 EMV_14S_CSC1_Control_Values: 8 Vector__XXX
+SG_ Enable_CSC_5V : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_CSC_Heater : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Contactor_1 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Contactor_2 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Fan : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Balancing : 40|8@1+ (1,0) [0|1] "" Vector__XXX
+
+
+BO_ 81 EMV_14S_CSC2_cellVoltages1: 8 Vector__XXX
+SG_ Cell1 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell2 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell3 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell4 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 273 EMV_14S_CSC2_debugValues4: 8 Vector__XXX
+SG_ ISENSE_Value : 0|32@1- (1,0) [-2147483648|2147483647] "mA" Vector__XXX
+SG_ ENA_5V_State : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ ENA_HEATER_State : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 49 EMV_14S_CSC2_Control_Values: 8 Vector__XXX
+SG_ Enable_CSC_5V : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_CSC_Heater : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Contactor_1 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Contactor_2 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Fan : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Blancing : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 40 EMV_14S_IO_IOValues_TX: 8 Vector__XXX
+SG_ highsideSwitchStatus2 : 2|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ ext_Input_3 : 16|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ bcm_nReady : 20|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ ext_Input_4 : 18|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ cpsSensWakeUp : 22|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ buttonSensWakeUp : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ sbc_Fault : 26|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ isoOk : 28|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ slaveInterrupt : 30|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ highsideSwitchStatus3 : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ contactorAlarm1 : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ contactorAlarm2 : 8|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ contactorAlarm3 : 10|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ ext_Input_1 : 12|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ ext_Input_2 : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ highsideSwitchStatus1 : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ bcm3V3Ready : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ relayAux_1 : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ relayAux_2 : 36|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ relayAux_3 : 38|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ SpeedFanFrequency : 40|16@1+ (1,0) [0|1] "" Vector__XXX
+SG_ bcmReady_dutyCycle : 56|8@1+ (1,0) [0|1] "" Vector__XXX
+
+
+BO_ 50 EMV_14S_IO_IOValues_RX: 8 Vector__XXX
+SG_ eeprom_nHoldEnable : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ slaveEnable : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ ext_Output_4 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorFaultline1 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorFaultline2 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorFaultline3 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorReset1 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorReset2 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorReset3 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ eeprom_nWriteProtect : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ iCDCurrentSensorSupplyEnable : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ io_13VBatEnable : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ latchEnable : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ bcmEnable : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ bcmPrechargeControl : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ bcmWakeUp : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ dssWakeUp : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ cpsEnableWakeUp : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ can1WakeUp : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ LED1 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ LED2 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ LED3 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ ext_Output_1 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ ext_Output_2 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ ext_Output_3 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ SPI_AFE_Wakeup : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorControl1 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorControl2 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorControl3 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ SBC_Assert_Faultline : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ SBC_Release_Faultline : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ SBC_SLEEP : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+
+
+BO_ 258 EMV_14S_CSC_debugValues5: 8 Vector__XXX
+SG_ canSensorCurrentIntern : 0|32@1- (1,0) [-2147483648|2147483647] "mA" Vector__XXX
+SG_ canSensorCurrentExtern : 32|32@1- (1,0) [-2147483648|2147483647] "mA" Vector__XXX
+
+
+BO_ 259 EMV_14S_CSC_debugValues6: 8 Vector__XXX
+SG_ contactor1State : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ contactor2State : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ fanState : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ contactor1ControlActivated : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ contactor2ControlActivated : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ fanControlActivated : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 96 EMV_14S_CSC1_cellVoltages2: 8 Vector__XXX
+SG_ Cell5 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell6 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell7 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell8 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 97 EMV_14S_CSC2_cellVoltages2: 8 Vector__XXX
+SG_ Cell5 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell6 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell7 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell8 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 112 EMV_14S_CSC1_cellVoltages3: 8 Vector__XXX
+SG_ Cell9 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell10 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell11 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell12 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 113 EMV_14S_CSC2_cellVoltages3: 8 Vector__XXX
+SG_ Cell9 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell10 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell11 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell12 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 288 EMV_14S_CSC1_cellVoltages4: 8 Vector__XXX
+SG_ Cell13 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell14 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell15 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ ActiveCommBreak : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 289 EMV_14S_CSC2_cellVoltages4: 8 Vector__XXX
+SG_ Cell13 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell14 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell15 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ ActiveCommBreak : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 144 EMV_14S_CSC1_temperatures1: 8 Vector__XXX
+SG_ TempSensor1 : 0|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor2 : 16|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor3 : 32|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor4 : 48|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+
+
+BO_ 145 EMV_14S_CSC2_temperatures1: 8 Vector__XXX
+SG_ TempSensor1 : 0|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor2 : 16|16@1+ (1,0) [0|65535] "�C" Vector__XXX
+SG_ TempSensor3 : 32|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor4 : 48|16@1+ (1,0) [0|65535] "�C" Vector__XXX
+
+
+BO_ 16 EMV_14S_CSC1_temperatures2: 8 Vector__XXX
+SG_ TempSensor5 : 0|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor6 : 16|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor7 : 32|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ BalancingTempSensor : 48|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+
+
+BO_ 17 EMV_14S_CSC2_temperatures2: 8 Vector__XXX
+SG_ TempSensor5 : 0|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor6 : 16|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor7 : 32|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ BalancingTempSensor : 48|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+
+
+BO_ 544 EMV_15S_ADC_Terminals: 8 Vector__XXX
+SG_ ADC_IN_3V3 : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_IN_5V : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_IN_Kl30 : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+
+BO_ 545 EMV_15S_ADC_Values1: 8 Vector__XXX
+SG_ ADC_IN_SbcMux : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_IN_TempSens : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ TempSens_Value : 48|8@1+ (1,0) [0|255] "�C" Vector__XXX
+SG_ ADC_IN_HWVersion : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+
+BO_ 546 EMV_15S_CurrentSensorValues: 8 Vector__XXX
+SG_ ADC_CurrentS1Ch2 : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_CurrentS2Ch2 : 48|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_CurrentS2Ch1 : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_CurrentS1Ch1 : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+
+BO_ 547 EMV_15S_ADC_IMeas_Lss_coc: 8 Vector__XXX
+SG_ ADC_LSS_COC_K1 : 7|16@0+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_LSS_COC_K2 : 23|16@0+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_LSS_COC_K3 : 39|16@0+ (1,0) [0|65535] "mV" Vector__XXX
+
+
+BO_ 576 EMV_15S_CSC_debugValues1: 8 Vector__XXX
+SG_ CellVoltageMax : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ CellVoltageMin : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ CellTemperatureMax : 32|8@1- (1,0) [-128|127] "�C" Vector__XXX
+SG_ CellTemperatureMin : 40|8@1- (1,0) [-128|127] "�C" Vector__XXX
+SG_ RelaySupplyVoltageMin : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+
+BO_ 592 EMV_15S_CSC1_cellVoltages1: 8 Vector__XXX
+SG_ Cell1 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell2 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell3 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell4 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 548 EMV_15S_ADC_HV1_Values: 8 Vector__XXX
+SG_ ADC_HV1 : 0|32@1- (1,0) [-2147483648|2147483647] "mV" Vector__XXX
+
+
+BO_ 549 EMV_15S_ADC_HV2_Values: 8 Vector__XXX
+SG_ ADC_HV2 : 0|32@1- (1,0) [-2147483648|2147483647] "mV" Vector__XXX
+
+
+BO_ 550 EMV_15S_ADC_HV3_Values: 8 Vector__XXX
+SG_ ADC_HV3 : 0|32@1- (1,0) [-2147483648|2147483647] "mV" Vector__XXX
+
+
+BO_ 784 EMV_15S_CSC1_debugValues4: 8 Vector__XXX
+SG_ ISENSE_Value : 0|32@1- (1,0) [-2147483648|2147483647] "mA" Vector__XXX
+SG_ ENA_5V_State : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ ENA_HEATER_State : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 551 EMV_15S_ADC_Contactor_Supply: 8 Vector__XXX
+SG_ ADC_CONTACTOR_SUPPLY_1 : 0|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_CONTACTOR_SUPPLY_2 : 16|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+SG_ ADC_CONTACTOR_SUPPLY_3 : 32|16@1+ (1,0) [0|65535] "mV" Vector__XXX
+
+
+BO_ 560 EMV_15S_CSC1_Control_Values: 8 Vector__XXX
+SG_ Enable_CSC_5V : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_CSC_Heater : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Contactor_1 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Contactor_2 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Fan : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_Balancing : 40|8@1+ (1,0) [0|1] "" Vector__XXX
+
+
+BO_ 593 EMV_15S_CSC2_cellVoltages1: 8 Vector__XXX
+SG_ Cell1 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell2 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell3 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell4 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 785 EMV_15S_CSC2_debugValues4: 8 Vector__XXX
+SG_ ISENSE_Value : 0|32@1- (1,0) [-2147483648|2147483647] "mA" Vector__XXX
+SG_ ENA_5V_State : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ ENA_HEATER_State : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 561 EMV_15S_CSC2_Control_Values: 8 Vector__XXX
+SG_ Enable_CSC_5V : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ Enable_CSC_Heater : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 552 EMV_15S_IO_IOValues_TX: 8 Vector__XXX
+SG_ highsideSwitchStatus2 : 2|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ ext_Input_3 : 16|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ bcm_nReady : 20|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ ext_Input_4 : 18|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ cpsSensWakeUp : 22|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ buttonSensWakeUp : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ sbc_Fault : 26|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ isoOk : 28|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ slaveInterrupt : 30|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ highsideSwitchStatus3 : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ contactorAlarm1 : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ contactorAlarm2 : 8|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ contactorAlarm3 : 10|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ ext_Input_1 : 12|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ ext_Input_2 : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ highsideSwitchStatus1 : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ bcm3V3Ready : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ relayAux_1 : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ relayAux_2 : 36|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ relayAux_3 : 38|2@1+ (1,0) [0|3] "" Vector__XXX
+SG_ SpeedFanFrequency : 40|16@1+ (1,0) [0|1] "" Vector__XXX
+SG_ bcmReady_dutyCycle : 56|8@1+ (1,0) [0|1] "" Vector__XXX
+
+
+BO_ 562 EMV_15S_IO_IOValues_RX: 8 Vector__XXX
+SG_ eeprom_nHoldEnable : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ slaveEnable : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ ext_Output_4 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorFaultline1 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorFaultline2 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorFaultline3 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorReset1 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorReset2 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorReset3 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ eeprom_nWriteProtect : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ iCDCurrentSensorSupplyEnable : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ io_13VBatEnable : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ latchEnable : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ bcmEnable : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ bcmPrechargeControl : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ bcmWakeUp : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ dssWakeUp : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ cpsEnableWakeUp : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ can1WakeUp : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ LED1 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ LED2 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ LED3 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ ext_Output_1 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ ext_Output_2 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ ext_Output_3 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ SPI_AFE_Wakeup : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorControl1 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorControl2 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ contactorControl3 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ SBC_Assert_Faultline : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ SBC_Release_Faultline : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ SBC_SLEEP : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+
+
+BO_ 770 EMV_15S_CSC_debugValues5: 8 Vector__XXX
+SG_ canSensorCurrentIntern : 0|32@1- (1,0) [-2147483648|2147483647] "mA" Vector__XXX
+SG_ canSensorCurrentExtern : 32|32@1- (1,0) [-2147483648|2147483647] "mA" Vector__XXX
+
+
+BO_ 771 EMV_15S_CSC_debugValues6: 8 Vector__XXX
+SG_ contactor1State : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ contactor2State : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ fanState : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ contactor1ControlActivated : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ contactor2ControlActivated : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+SG_ fanControlActivated : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 608 EMV_15S_CSC1_cellVoltages2: 8 Vector__XXX
+SG_ Cell5 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell6 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell7 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell8 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 609 EMV_15S_CSC2_cellVoltages2: 8 Vector__XXX
+SG_ Cell5 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell6 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell7 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell8 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 624 EMV_15S_CSC1_cellVoltages3: 8 Vector__XXX
+SG_ Cell9 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell10 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell11 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell12 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 625 EMV_15S_CSC2_cellVoltages3: 8 Vector__XXX
+SG_ Cell9 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell10 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell11 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell12 : 48|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+
+
+BO_ 800 EMV_15S_CSC1_cellVoltages4: 8 Vector__XXX
+SG_ Cell13 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell14 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell15 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ ActiveCommBreak : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 641 EMV_15S_CSC2_cellVoltages4: 8 Vector__XXX
+SG_ Cell13 : 0|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell14 : 16|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ Cell15 : 32|16@1+ (10,0) [0|655350] "mV" Vector__XXX
+SG_ ActiveCommBreak : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+
+
+BO_ 656 EMV_15S_CSC1_temperatures1: 8 Vector__XXX
+SG_ TempSensor1 : 0|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor2 : 16|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor3 : 32|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor4 : 48|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+
+
+BO_ 657 EMV_15S_CSC2_temperatures1: 8 Vector__XXX
+SG_ TempSensor1 : 0|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor2 : 16|16@1+ (1,0) [0|65535] "�C" Vector__XXX
+SG_ TempSensor3 : 32|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor4 : 48|16@1+ (1,0) [0|65535] "�C" Vector__XXX
+
+
+BO_ 528 EMV_15S_CSC1_temperatures2: 8 Vector__XXX
+SG_ TempSensor5 : 0|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor6 : 16|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor7 : 32|16@1+ (1,0) [0|65535] "�C" Vector__XXX
+SG_ BalancingTempSensor : 48|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+
+
+BO_ 769 EMV_15S_CSC2_temperatures2: 8 Vector__XXX
+SG_ TempSensor5 : 0|16@1- (1,0) [-32768|32767] "�C" Vector__XXX
+SG_ TempSensor6 : 16|16@1+ (1,0) [0|65535] "�C" Vector__XXX
+SG_ TempSensor7 : 32|16@1+ (1,0) [0|65535] "�C" Vector__XXX
+
+
+BO_ 21 EMV_14S_CSC1_heaterCurrent: 8 Vector__XXX
+SG_ HeaterCurrent : 0|32@1- (1,0) [-2147483648|2147483647] "mA" Vector__XXX
+
+
+BO_ 22 EMV_14S_CSC2_heaterCurrent: 8 Vector__XXX
+SG_ HeaterCurrent : 0|32@1- (1,0) [-2147483648|2147483647] "mA" Vector__XXX
+
+
+BO_ 533 EMV_15S_CSC1_heaterCurrent: 8 Vector__XXX
+SG_ HeaterCurrent : 0|32@1+ (1,0) [0|4294967295] "mA" Vector__XXX
+
+
+BO_ 41 EMV_14_SdRamCheck: 8 Vector__XXX
+SG_ ReadError_Counter : 0|16@1+ (1,0) [0|1] "" Vector__XXX
+SG_ WriteError_Counter : 16|16@1+ (1,0) [0|1] "" Vector__XXX
+SG_ ReadErrorOverflow : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ WriteErrorOverflow : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ Subroutine : 48|8@1+ (1,0) [0|1] "" Vector__XXX
+SG_ FullTested_Counter : 56|8@1+ (1,0) [0|1] "" Vector__XXX
+
+
+BO_ 553 EMV_15_SdRamCheck: 8 Vector__XXX
+SG_ ReadError_Counter : 0|16@1+ (1,0) [0|1] "" Vector__XXX
+SG_ WriteError_Counter : 16|16@1+ (1,0) [0|1] "" Vector__XXX
+SG_ ReadErrorOverflow : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ WriteErrorOverflow : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ Subroutine : 48|8@1+ (1,0) [0|1] "" Vector__XXX
+SG_ FullTested_Counter : 56|8@1+ (1,0) [0|1] "" Vector__XXX
+
+
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ SG_  "GenSigStartValue" FLOAT -3.4E+038 3.4E+038;
+
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+
+BA_ "BusType" "CAN";
+
+BA_ "GenSigStartValue" SG_ 32 ADC_IN_3V3 0;
+BA_ "GenSigStartValue" SG_ 32 ADC_IN_5V 0;
+BA_ "GenSigStartValue" SG_ 32 ADC_IN_Kl30 0;
+BA_ "GenSigStartValue" SG_ 33 ADC_IN_SbcMux 0;
+BA_ "GenSigStartValue" SG_ 33 ADC_IN_TempSens 0;
+BA_ "GenSigStartValue" SG_ 33 TempSens_Value 0;
+BA_ "GenSigStartValue" SG_ 33 ADC_IN_HWVersion 0;
+BA_ "GenSigStartValue" SG_ 34 ADC_CurrentS1Ch2 0;
+BA_ "GenSigStartValue" SG_ 34 ADC_CurrentS2Ch2 0;
+BA_ "GenSigStartValue" SG_ 34 ADC_CurrentS2Ch1 0;
+BA_ "GenSigStartValue" SG_ 34 ADC_CurrentS1Ch1 0;
+BA_ "GenSigStartValue" SG_ 35 ADC_LSS_COC_K1 0;
+BA_ "GenSigStartValue" SG_ 35 ADC_LSS_COC_K2 0;
+BA_ "GenSigStartValue" SG_ 35 ADC_LSS_COC_K3 0;
+BA_ "GenSigStartValue" SG_ 64 CellVoltageMax 0;
+BA_ "GenSigStartValue" SG_ 64 CellVoltageMin 0;
+BA_ "GenSigStartValue" SG_ 64 CellTemperatureMax 0;
+BA_ "GenSigStartValue" SG_ 64 CellTemperatureMin 0;
+BA_ "GenSigStartValue" SG_ 64 RelaySupplyVoltageMin 0;
+BA_ "GenSigStartValue" SG_ 80 Cell1 0;
+BA_ "GenSigStartValue" SG_ 80 Cell2 0;
+BA_ "GenSigStartValue" SG_ 80 Cell3 0;
+BA_ "GenSigStartValue" SG_ 80 Cell4 0;
+BA_ "GenSigStartValue" SG_ 36 ADC_HV1 0;
+BA_ "GenSigStartValue" SG_ 37 ADC_HV2 0;
+BA_ "GenSigStartValue" SG_ 38 ADC_HV3 0;
+BA_ "GenSigStartValue" SG_ 38 ADC_HV3_RAW 0;
+BA_ "GenSigStartValue" SG_ 272 ISENSE_Value 0;
+BA_ "GenSigStartValue" SG_ 272 ENA_5V_State 0;
+BA_ "GenSigStartValue" SG_ 272 ENA_HEATER_State 0;
+BA_ "GenSigStartValue" SG_ 39 ADC_CONTACTOR_SUPPLY_1 0;
+BA_ "GenSigStartValue" SG_ 39 ADC_CONTACTOR_SUPPLY_2 0;
+BA_ "GenSigStartValue" SG_ 39 ADC_CONTACTOR_SUPPLY_3 0;
+BA_ "GenSigStartValue" SG_ 48 Enable_CSC_5V 0;
+BA_ "GenSigStartValue" SG_ 48 Enable_CSC_Heater 0;
+BA_ "GenSigStartValue" SG_ 48 Enable_Contactor_1 0;
+BA_ "GenSigStartValue" SG_ 48 Enable_Contactor_2 0;
+BA_ "GenSigStartValue" SG_ 48 Enable_Fan 0;
+BA_ "GenSigStartValue" SG_ 48 Enable_Balancing 0;
+BA_ "GenSigStartValue" SG_ 81 Cell1 0;
+BA_ "GenSigStartValue" SG_ 81 Cell2 0;
+BA_ "GenSigStartValue" SG_ 81 Cell3 0;
+BA_ "GenSigStartValue" SG_ 81 Cell4 0;
+BA_ "GenSigStartValue" SG_ 273 ISENSE_Value 0;
+BA_ "GenSigStartValue" SG_ 273 ENA_5V_State 0;
+BA_ "GenSigStartValue" SG_ 273 ENA_HEATER_State 0;
+BA_ "GenSigStartValue" SG_ 49 Enable_CSC_5V 0;
+BA_ "GenSigStartValue" SG_ 49 Enable_CSC_Heater 0;
+BA_ "GenSigStartValue" SG_ 49 Enable_Contactor_1 0;
+BA_ "GenSigStartValue" SG_ 49 Enable_Contactor_2 0;
+BA_ "GenSigStartValue" SG_ 49 Enable_Fan 0;
+BA_ "GenSigStartValue" SG_ 49 Enable_Blancing 0;
+BA_ "GenSigStartValue" SG_ 40 highsideSwitchStatus2 0;
+BA_ "GenSigStartValue" SG_ 40 ext_Input_3 0;
+BA_ "GenSigStartValue" SG_ 40 bcm_nReady 0;
+BA_ "GenSigStartValue" SG_ 40 ext_Input_4 0;
+BA_ "GenSigStartValue" SG_ 40 cpsSensWakeUp 0;
+BA_ "GenSigStartValue" SG_ 40 buttonSensWakeUp 0;
+BA_ "GenSigStartValue" SG_ 40 sbc_Fault 0;
+BA_ "GenSigStartValue" SG_ 40 isoOk 0;
+BA_ "GenSigStartValue" SG_ 40 slaveInterrupt 0;
+BA_ "GenSigStartValue" SG_ 40 highsideSwitchStatus3 0;
+BA_ "GenSigStartValue" SG_ 40 contactorAlarm1 0;
+BA_ "GenSigStartValue" SG_ 40 contactorAlarm2 0;
+BA_ "GenSigStartValue" SG_ 40 contactorAlarm3 0;
+BA_ "GenSigStartValue" SG_ 40 ext_Input_1 0;
+BA_ "GenSigStartValue" SG_ 40 ext_Input_2 0;
+BA_ "GenSigStartValue" SG_ 40 highsideSwitchStatus1 0;
+BA_ "GenSigStartValue" SG_ 40 bcm3V3Ready 0;
+BA_ "GenSigStartValue" SG_ 40 relayAux_1 0;
+BA_ "GenSigStartValue" SG_ 40 relayAux_2 0;
+BA_ "GenSigStartValue" SG_ 40 relayAux_3 0;
+BA_ "GenSigStartValue" SG_ 40 SpeedFanFrequency 0;
+BA_ "GenSigStartValue" SG_ 40 bcmReady_dutyCycle 0;
+BA_ "GenSigStartValue" SG_ 50 eeprom_nHoldEnable 0;
+BA_ "GenSigStartValue" SG_ 50 slaveEnable 0;
+BA_ "GenSigStartValue" SG_ 50 ext_Output_4 0;
+BA_ "GenSigStartValue" SG_ 50 contactorFaultline1 0;
+BA_ "GenSigStartValue" SG_ 50 contactorFaultline2 0;
+BA_ "GenSigStartValue" SG_ 50 contactorFaultline3 0;
+BA_ "GenSigStartValue" SG_ 50 contactorReset1 0;
+BA_ "GenSigStartValue" SG_ 50 contactorReset2 0;
+BA_ "GenSigStartValue" SG_ 50 contactorReset3 0;
+BA_ "GenSigStartValue" SG_ 50 eeprom_nWriteProtect 0;
+BA_ "GenSigStartValue" SG_ 50 iCDCurrentSensorSupplyEnable 0;
+BA_ "GenSigStartValue" SG_ 50 io_13VBatEnable 0;
+BA_ "GenSigStartValue" SG_ 50 latchEnable 0;
+BA_ "GenSigStartValue" SG_ 50 bcmEnable 0;
+BA_ "GenSigStartValue" SG_ 50 bcmPrechargeControl 0;
+BA_ "GenSigStartValue" SG_ 50 bcmWakeUp 0;
+BA_ "GenSigStartValue" SG_ 50 dssWakeUp 0;
+BA_ "GenSigStartValue" SG_ 50 cpsEnableWakeUp 0;
+BA_ "GenSigStartValue" SG_ 50 can1WakeUp 0;
+BA_ "GenSigStartValue" SG_ 50 LED1 0;
+BA_ "GenSigStartValue" SG_ 50 LED2 0;
+BA_ "GenSigStartValue" SG_ 50 LED3 0;
+BA_ "GenSigStartValue" SG_ 50 ext_Output_1 0;
+BA_ "GenSigStartValue" SG_ 50 ext_Output_2 0;
+BA_ "GenSigStartValue" SG_ 50 ext_Output_3 0;
+BA_ "GenSigStartValue" SG_ 50 SPI_AFE_Wakeup 0;
+BA_ "GenSigStartValue" SG_ 50 contactorControl1 0;
+BA_ "GenSigStartValue" SG_ 50 contactorControl2 0;
+BA_ "GenSigStartValue" SG_ 50 contactorControl3 0;
+BA_ "GenSigStartValue" SG_ 50 SBC_Assert_Faultline 0;
+BA_ "GenSigStartValue" SG_ 50 SBC_Release_Faultline 0;
+BA_ "GenSigStartValue" SG_ 50 SBC_SLEEP 0;
+BA_ "GenSigStartValue" SG_ 258 canSensorCurrentIntern 0;
+BA_ "GenSigStartValue" SG_ 258 canSensorCurrentExtern 0;
+BA_ "GenSigStartValue" SG_ 259 contactor1State 0;
+BA_ "GenSigStartValue" SG_ 259 contactor2State 0;
+BA_ "GenSigStartValue" SG_ 259 fanState 0;
+BA_ "GenSigStartValue" SG_ 259 contactor1ControlActivated 0;
+BA_ "GenSigStartValue" SG_ 259 contactor2ControlActivated 0;
+BA_ "GenSigStartValue" SG_ 259 fanControlActivated 0;
+BA_ "GenSigStartValue" SG_ 96 Cell5 0;
+BA_ "GenSigStartValue" SG_ 96 Cell6 0;
+BA_ "GenSigStartValue" SG_ 96 Cell7 0;
+BA_ "GenSigStartValue" SG_ 96 Cell8 0;
+BA_ "GenSigStartValue" SG_ 97 Cell5 0;
+BA_ "GenSigStartValue" SG_ 97 Cell6 0;
+BA_ "GenSigStartValue" SG_ 97 Cell7 0;
+BA_ "GenSigStartValue" SG_ 97 Cell8 0;
+BA_ "GenSigStartValue" SG_ 112 Cell9 0;
+BA_ "GenSigStartValue" SG_ 112 Cell10 0;
+BA_ "GenSigStartValue" SG_ 112 Cell11 0;
+BA_ "GenSigStartValue" SG_ 112 Cell12 0;
+BA_ "GenSigStartValue" SG_ 113 Cell9 0;
+BA_ "GenSigStartValue" SG_ 113 Cell10 0;
+BA_ "GenSigStartValue" SG_ 113 Cell11 0;
+BA_ "GenSigStartValue" SG_ 113 Cell12 0;
+BA_ "GenSigStartValue" SG_ 288 Cell13 0;
+BA_ "GenSigStartValue" SG_ 288 Cell14 0;
+BA_ "GenSigStartValue" SG_ 288 Cell15 0;
+BA_ "GenSigStartValue" SG_ 288 ActiveCommBreak 0;
+BA_ "GenSigStartValue" SG_ 289 Cell13 0;
+BA_ "GenSigStartValue" SG_ 289 Cell14 0;
+BA_ "GenSigStartValue" SG_ 289 Cell15 0;
+BA_ "GenSigStartValue" SG_ 289 ActiveCommBreak 0;
+BA_ "GenSigStartValue" SG_ 144 TempSensor1 0;
+BA_ "GenSigStartValue" SG_ 144 TempSensor2 0;
+BA_ "GenSigStartValue" SG_ 144 TempSensor3 0;
+BA_ "GenSigStartValue" SG_ 144 TempSensor4 0;
+BA_ "GenSigStartValue" SG_ 145 TempSensor1 0;
+BA_ "GenSigStartValue" SG_ 145 TempSensor2 0;
+BA_ "GenSigStartValue" SG_ 145 TempSensor3 0;
+BA_ "GenSigStartValue" SG_ 145 TempSensor4 0;
+BA_ "GenSigStartValue" SG_ 16 TempSensor5 0;
+BA_ "GenSigStartValue" SG_ 16 TempSensor6 0;
+BA_ "GenSigStartValue" SG_ 16 TempSensor7 0;
+BA_ "GenSigStartValue" SG_ 16 BalancingTempSensor 0;
+BA_ "GenSigStartValue" SG_ 17 TempSensor5 0;
+BA_ "GenSigStartValue" SG_ 17 TempSensor6 0;
+BA_ "GenSigStartValue" SG_ 17 TempSensor7 0;
+BA_ "GenSigStartValue" SG_ 17 BalancingTempSensor 0;
+BA_ "GenSigStartValue" SG_ 544 ADC_IN_3V3 0;
+BA_ "GenSigStartValue" SG_ 544 ADC_IN_5V 0;
+BA_ "GenSigStartValue" SG_ 544 ADC_IN_Kl30 0;
+BA_ "GenSigStartValue" SG_ 545 ADC_IN_SbcMux 0;
+BA_ "GenSigStartValue" SG_ 545 ADC_IN_TempSens 0;
+BA_ "GenSigStartValue" SG_ 545 TempSens_Value 0;
+BA_ "GenSigStartValue" SG_ 545 ADC_IN_HWVersion 0;
+BA_ "GenSigStartValue" SG_ 546 ADC_CurrentS1Ch2 0;
+BA_ "GenSigStartValue" SG_ 546 ADC_CurrentS2Ch2 0;
+BA_ "GenSigStartValue" SG_ 546 ADC_CurrentS2Ch1 0;
+BA_ "GenSigStartValue" SG_ 546 ADC_CurrentS1Ch1 0;
+BA_ "GenSigStartValue" SG_ 547 ADC_LSS_COC_K1 0;
+BA_ "GenSigStartValue" SG_ 547 ADC_LSS_COC_K2 0;
+BA_ "GenSigStartValue" SG_ 547 ADC_LSS_COC_K3 0;
+BA_ "GenSigStartValue" SG_ 576 CellVoltageMax 0;
+BA_ "GenSigStartValue" SG_ 576 CellVoltageMin 0;
+BA_ "GenSigStartValue" SG_ 576 CellTemperatureMax 0;
+BA_ "GenSigStartValue" SG_ 576 CellTemperatureMin 0;
+BA_ "GenSigStartValue" SG_ 576 RelaySupplyVoltageMin 0;
+BA_ "GenSigStartValue" SG_ 592 Cell1 0;
+BA_ "GenSigStartValue" SG_ 592 Cell2 0;
+BA_ "GenSigStartValue" SG_ 592 Cell3 0;
+BA_ "GenSigStartValue" SG_ 592 Cell4 0;
+BA_ "GenSigStartValue" SG_ 548 ADC_HV1 0;
+BA_ "GenSigStartValue" SG_ 549 ADC_HV2 0;
+BA_ "GenSigStartValue" SG_ 550 ADC_HV3 0;
+BA_ "GenSigStartValue" SG_ 784 ISENSE_Value 0;
+BA_ "GenSigStartValue" SG_ 784 ENA_5V_State 0;
+BA_ "GenSigStartValue" SG_ 784 ENA_HEATER_State 0;
+BA_ "GenSigStartValue" SG_ 551 ADC_CONTACTOR_SUPPLY_1 0;
+BA_ "GenSigStartValue" SG_ 551 ADC_CONTACTOR_SUPPLY_2 0;
+BA_ "GenSigStartValue" SG_ 551 ADC_CONTACTOR_SUPPLY_3 0;
+BA_ "GenSigStartValue" SG_ 560 Enable_CSC_5V 0;
+BA_ "GenSigStartValue" SG_ 560 Enable_CSC_Heater 0;
+BA_ "GenSigStartValue" SG_ 560 Enable_Contactor_1 0;
+BA_ "GenSigStartValue" SG_ 560 Enable_Contactor_2 0;
+BA_ "GenSigStartValue" SG_ 560 Enable_Fan 0;
+BA_ "GenSigStartValue" SG_ 560 Enable_Balancing 0;
+BA_ "GenSigStartValue" SG_ 593 Cell1 0;
+BA_ "GenSigStartValue" SG_ 593 Cell2 0;
+BA_ "GenSigStartValue" SG_ 593 Cell3 0;
+BA_ "GenSigStartValue" SG_ 593 Cell4 0;
+BA_ "GenSigStartValue" SG_ 785 ISENSE_Value 0;
+BA_ "GenSigStartValue" SG_ 785 ENA_5V_State 0;
+BA_ "GenSigStartValue" SG_ 785 ENA_HEATER_State 0;
+BA_ "GenSigStartValue" SG_ 561 Enable_CSC_5V 0;
+BA_ "GenSigStartValue" SG_ 561 Enable_CSC_Heater 0;
+BA_ "GenSigStartValue" SG_ 552 highsideSwitchStatus2 0;
+BA_ "GenSigStartValue" SG_ 552 ext_Input_3 0;
+BA_ "GenSigStartValue" SG_ 552 bcm_nReady 0;
+BA_ "GenSigStartValue" SG_ 552 ext_Input_4 0;
+BA_ "GenSigStartValue" SG_ 552 cpsSensWakeUp 0;
+BA_ "GenSigStartValue" SG_ 552 buttonSensWakeUp 0;
+BA_ "GenSigStartValue" SG_ 552 sbc_Fault 0;
+BA_ "GenSigStartValue" SG_ 552 isoOk 0;
+BA_ "GenSigStartValue" SG_ 552 slaveInterrupt 0;
+BA_ "GenSigStartValue" SG_ 552 highsideSwitchStatus3 0;
+BA_ "GenSigStartValue" SG_ 552 contactorAlarm1 0;
+BA_ "GenSigStartValue" SG_ 552 contactorAlarm2 0;
+BA_ "GenSigStartValue" SG_ 552 contactorAlarm3 0;
+BA_ "GenSigStartValue" SG_ 552 ext_Input_1 0;
+BA_ "GenSigStartValue" SG_ 552 ext_Input_2 0;
+BA_ "GenSigStartValue" SG_ 552 highsideSwitchStatus1 0;
+BA_ "GenSigStartValue" SG_ 552 bcm3V3Ready 0;
+BA_ "GenSigStartValue" SG_ 552 relayAux_1 0;
+BA_ "GenSigStartValue" SG_ 552 relayAux_2 0;
+BA_ "GenSigStartValue" SG_ 552 relayAux_3 0;
+BA_ "GenSigStartValue" SG_ 552 SpeedFanFrequency 0;
+BA_ "GenSigStartValue" SG_ 552 bcmReady_dutyCycle 0;
+BA_ "GenSigStartValue" SG_ 562 eeprom_nHoldEnable 0;
+BA_ "GenSigStartValue" SG_ 562 slaveEnable 0;
+BA_ "GenSigStartValue" SG_ 562 ext_Output_4 0;
+BA_ "GenSigStartValue" SG_ 562 contactorFaultline1 0;
+BA_ "GenSigStartValue" SG_ 562 contactorFaultline2 0;
+BA_ "GenSigStartValue" SG_ 562 contactorFaultline3 0;
+BA_ "GenSigStartValue" SG_ 562 contactorReset1 0;
+BA_ "GenSigStartValue" SG_ 562 contactorReset2 0;
+BA_ "GenSigStartValue" SG_ 562 contactorReset3 0;
+BA_ "GenSigStartValue" SG_ 562 eeprom_nWriteProtect 0;
+BA_ "GenSigStartValue" SG_ 562 iCDCurrentSensorSupplyEnable 0;
+BA_ "GenSigStartValue" SG_ 562 io_13VBatEnable 0;
+BA_ "GenSigStartValue" SG_ 562 latchEnable 0;
+BA_ "GenSigStartValue" SG_ 562 bcmEnable 0;
+BA_ "GenSigStartValue" SG_ 562 bcmPrechargeControl 0;
+BA_ "GenSigStartValue" SG_ 562 bcmWakeUp 0;
+BA_ "GenSigStartValue" SG_ 562 dssWakeUp 0;
+BA_ "GenSigStartValue" SG_ 562 cpsEnableWakeUp 0;
+BA_ "GenSigStartValue" SG_ 562 can1WakeUp 0;
+BA_ "GenSigStartValue" SG_ 562 LED1 0;
+BA_ "GenSigStartValue" SG_ 562 LED2 0;
+BA_ "GenSigStartValue" SG_ 562 LED3 0;
+BA_ "GenSigStartValue" SG_ 562 ext_Output_1 0;
+BA_ "GenSigStartValue" SG_ 562 ext_Output_2 0;
+BA_ "GenSigStartValue" SG_ 562 ext_Output_3 0;
+BA_ "GenSigStartValue" SG_ 562 SPI_AFE_Wakeup 0;
+BA_ "GenSigStartValue" SG_ 562 contactorControl1 0;
+BA_ "GenSigStartValue" SG_ 562 contactorControl2 0;
+BA_ "GenSigStartValue" SG_ 562 contactorControl3 0;
+BA_ "GenSigStartValue" SG_ 562 SBC_Assert_Faultline 0;
+BA_ "GenSigStartValue" SG_ 562 SBC_Release_Faultline 0;
+BA_ "GenSigStartValue" SG_ 562 SBC_SLEEP 0;
+BA_ "GenSigStartValue" SG_ 770 canSensorCurrentIntern 0;
+BA_ "GenSigStartValue" SG_ 770 canSensorCurrentExtern 0;
+BA_ "GenSigStartValue" SG_ 771 contactor1State 0;
+BA_ "GenSigStartValue" SG_ 771 contactor2State 0;
+BA_ "GenSigStartValue" SG_ 771 fanState 0;
+BA_ "GenSigStartValue" SG_ 771 contactor1ControlActivated 0;
+BA_ "GenSigStartValue" SG_ 771 contactor2ControlActivated 0;
+BA_ "GenSigStartValue" SG_ 771 fanControlActivated 0;
+BA_ "GenSigStartValue" SG_ 608 Cell5 0;
+BA_ "GenSigStartValue" SG_ 608 Cell6 0;
+BA_ "GenSigStartValue" SG_ 608 Cell7 0;
+BA_ "GenSigStartValue" SG_ 608 Cell8 0;
+BA_ "GenSigStartValue" SG_ 609 Cell5 0;
+BA_ "GenSigStartValue" SG_ 609 Cell6 0;
+BA_ "GenSigStartValue" SG_ 609 Cell7 0;
+BA_ "GenSigStartValue" SG_ 609 Cell8 0;
+BA_ "GenSigStartValue" SG_ 624 Cell9 0;
+BA_ "GenSigStartValue" SG_ 624 Cell10 0;
+BA_ "GenSigStartValue" SG_ 624 Cell11 0;
+BA_ "GenSigStartValue" SG_ 624 Cell12 0;
+BA_ "GenSigStartValue" SG_ 625 Cell9 0;
+BA_ "GenSigStartValue" SG_ 625 Cell10 0;
+BA_ "GenSigStartValue" SG_ 625 Cell11 0;
+BA_ "GenSigStartValue" SG_ 625 Cell12 0;
+BA_ "GenSigStartValue" SG_ 800 Cell13 0;
+BA_ "GenSigStartValue" SG_ 800 Cell14 0;
+BA_ "GenSigStartValue" SG_ 800 Cell15 0;
+BA_ "GenSigStartValue" SG_ 800 ActiveCommBreak 0;
+BA_ "GenSigStartValue" SG_ 641 Cell13 0;
+BA_ "GenSigStartValue" SG_ 641 Cell14 0;
+BA_ "GenSigStartValue" SG_ 641 Cell15 0;
+BA_ "GenSigStartValue" SG_ 641 ActiveCommBreak 0;
+BA_ "GenSigStartValue" SG_ 656 TempSensor1 0;
+BA_ "GenSigStartValue" SG_ 656 TempSensor2 0;
+BA_ "GenSigStartValue" SG_ 656 TempSensor3 0;
+BA_ "GenSigStartValue" SG_ 656 TempSensor4 0;
+BA_ "GenSigStartValue" SG_ 657 TempSensor1 0;
+BA_ "GenSigStartValue" SG_ 657 TempSensor2 0;
+BA_ "GenSigStartValue" SG_ 657 TempSensor3 0;
+BA_ "GenSigStartValue" SG_ 657 TempSensor4 0;
+BA_ "GenSigStartValue" SG_ 528 TempSensor5 0;
+BA_ "GenSigStartValue" SG_ 528 TempSensor6 0;
+BA_ "GenSigStartValue" SG_ 528 TempSensor7 0;
+BA_ "GenSigStartValue" SG_ 528 BalancingTempSensor 0;
+BA_ "GenSigStartValue" SG_ 769 TempSensor5 0;
+BA_ "GenSigStartValue" SG_ 769 TempSensor6 0;
+BA_ "GenSigStartValue" SG_ 769 TempSensor7 0;
+BA_ "GenSigStartValue" SG_ 21 HeaterCurrent 0;
+BA_ "GenSigStartValue" SG_ 22 HeaterCurrent 0;
+BA_ "GenSigStartValue" SG_ 533 HeaterCurrent 0;
+BA_ "GenSigStartValue" SG_ 41 ReadError_Counter 0;
+BA_ "GenSigStartValue" SG_ 41 WriteError_Counter 0;
+BA_ "GenSigStartValue" SG_ 41 ReadErrorOverflow 0;
+BA_ "GenSigStartValue" SG_ 41 WriteErrorOverflow 0;
+BA_ "GenSigStartValue" SG_ 41 Subroutine 0;
+BA_ "GenSigStartValue" SG_ 41 FullTested_Counter 0;
+BA_ "GenSigStartValue" SG_ 553 ReadError_Counter 0;
+BA_ "GenSigStartValue" SG_ 553 WriteError_Counter 0;
+BA_ "GenSigStartValue" SG_ 553 ReadErrorOverflow 0;
+BA_ "GenSigStartValue" SG_ 553 WriteErrorOverflow 0;
+BA_ "GenSigStartValue" SG_ 553 Subroutine 0;
+BA_ "GenSigStartValue" SG_ 553 FullTested_Counter 0;
+
+VAL_ 40 highsideSwitchStatus2 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 ext_Input_3 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 bcm_nReady 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 ext_Input_4 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 cpsSensWakeUp 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 buttonSensWakeUp 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 sbc_Fault 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 isoOk 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 slaveInterrupt 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 highsideSwitchStatus3 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 contactorAlarm1 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 contactorAlarm2 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 contactorAlarm3 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 ext_Input_1 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 ext_Input_2 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 highsideSwitchStatus1 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 bcm3V3Ready 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 relayAux_1 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 relayAux_2 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 40 relayAux_3 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 259 contactor1State 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 259 contactor2State 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 259 fanState 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 259 contactor1ControlActivated 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 259 contactor2ControlActivated 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 259 fanControlActivated 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 highsideSwitchStatus2 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 ext_Input_3 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 bcm_nReady 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 ext_Input_4 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 cpsSensWakeUp 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 buttonSensWakeUp 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 sbc_Fault 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 isoOk 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 slaveInterrupt 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 highsideSwitchStatus3 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 contactorAlarm1 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 contactorAlarm2 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 contactorAlarm3 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 ext_Input_1 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 ext_Input_2 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 highsideSwitchStatus1 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 bcm3V3Ready 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 relayAux_1 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 relayAux_2 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 552 relayAux_3 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 771 contactor1State 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 771 contactor2State 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 771 fanState 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 771 contactor1ControlActivated 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 771 contactor2ControlActivated 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+VAL_ 771 fanControlActivated 3 "signal not available" 2 "signal error" 1 "true/on" 0 "false/off" ;
+

@@ -1,0 +1,20 @@
+FormatVersion=5.0 // Do not edit this line!
+Title="PerformanceMeasurement"
+IDMask=FFFh
+
+{RECEIVE}
+
+[PerfData1]
+ID=050h
+DLC=8
+Var=numCycles unsigned 0,16 -m
+Var=maxCycle unsigned 16,16 -m
+Var=currCycle unsigned 32,16 -m
+Var=avgCycle unsigned 48,16 -m
+
+[PerfData2]
+ID=051h
+DLC=6
+Var=maxRuntime unsigned 0,16 -m
+Var=currRuntime unsigned 16,16 -m
+Var=avgRuntime unsigned 32,16 -m

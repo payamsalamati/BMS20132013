@@ -1,0 +1,761 @@
+FormatVersion=5.0 // Do not edit this line!
+Title="kionCAN"
+
+{ENUMS}
+enum VtSig_isotp_n_ta(254="functional address", 95="cps", 81="obc", 80="knc", 
+  72="kwc_b", 70="tpi", 68="kap_r", 39="lib", 38="tu", 37="kec", 33="kcs", 
+  32="kcu", 31="kap_k", 22="dou", 20="rpb", 19="kwc_a", 18="kae", 16="ksc", 
+  13="kpc_l2", 12="kpc_l1", 11="kpc_tr", 10="kpc_tl", 9="kpc_u", 5="kbc", 
+  1="kmc/kwpc", 0="dtu")
+enum VtSig_isotp_fs(15="reserved 13", 14="reserved 12", 13="reserved 11", 
+  12="reserved 10", 11="reserved 9", 10="reserved 8", 9="reserved 7", 
+  8="reserved 6", 7="reserved 5", 6="reserved 4", 5="reserved 3", 
+  4="reserved 2", 3="reserved 1", 2="overflow", 1="wait", 0="continue to send")
+enum VtSig_canopen_sdo_abort_code(134217764="no data available", 
+  134217763="object dictionary dynamic generation fails or no dictionary present", 
+  134217762="data cannot be stored to the application because of the present device state", 
+  134217761="data cannot be stored to the application because of local control", 
+  134217760="data cannot be stored to the application", 
+  134217728="general error", 
+  101318691="resource not available: SDO connection", 
+  101253174="maximum value is less than minimum value", 
+  101253170="value of parameter written too low", 
+  101253169="value of parameter written too high", 
+  101253168="invalid value for parameter", 101253137="subindex does not exist", 
+  101122067="data type mismatch, length of parameter too low", 
+  101122066="data type mismatch, length of parameter too high", 
+  101122064="data type mismatch, length of parameter does not match", 
+  101056512="access failed due to an hardware error", 
+  100925511="general internal incompatibility in the device", 
+  100925507="general parameter incompatibility reason", 
+  100925506="PDO length exceeded by mapping", 
+  100925505="object cannot be mapped to the PDO", 
+  100794368="object does not exist in the object dictionary", 
+  100728834="attempt to write a read only object", 
+  100728833="attempt to read a write only object", 
+  100728832="unsupported access to an object", 84148229="out of memory", 
+  84148228="CRC error", 84148227="invalid sequence number", 
+  84148226="invalid block size", 
+  84148225="client/server command specifier not valid or unknown", 
+  84148224="SDO protocol timed out", 84082688="toggle bit not alternated")
+enum VtSig_canopen_sdo_continue(1="no more segments to be downloaded", 
+  0="more segments to be downloaded")
+enum VtSig_canopen_sdo_number_of_byte(7="data length 0 byte", 
+  6="data length 1 byte", 5="data length 2 byte", 4="data length 3 byte", 
+  3="data length 4 byte", 2="data length 5 byte", 1="data length 6 byte", 
+  0="data length 7 byte")
+enum VtSig_canopen_sdo_size_indicator(1="data set size is indicated", 
+  0="data set size is not indicated")
+enum VtSig_canopen_sdo_transfer_type(1="expedited transfer", 
+  0="normal transfer")
+enum VtSig_canopen_sdo_number_of_byt1(3="data length 1 byte", 
+  2="data length 2 byte", 1="data length 3 byte", 0="data length 4 byte")
+enum VtSig_lib_powerpath_ok(3="signal not available", 2="signal error", 
+  1="true/on", 0="false/off")
+enum VtSig_lib_max_charging_current_2(262143="signal not available", 
+  262142="signal error", 262141="reserved 2", 262140="reserved 1")
+enum VtSig_lib_max_charging_power_100(524287="signal not available", 
+  524286="signal error", 524285="reserved 2", 524284="reserved 1")
+enum VtSig_lib_soc_without_soh(255="signal not available", 254="signal error", 
+  253="reserved 2", 252="reserved 1")
+enum VtSig_lib_power(1048575="signal not available", 1048574="signal error", 
+  1048573="reserved 2", 1048572="reserved 1")
+enum VtSig_canopen_state_lib(127="pre-operational", 5="operational", 
+  4="stopped", 0="bootup")
+enum VtSig_stateBms(127="PREOPERATIONAL", 5="OPERATIONAL", 4="STOPPED", 
+  0="BOOTUP")
+enum VtSig_FaultBatteryCode_3(7="fault code status n� 24", 
+  6="fault code status n� 23", 5="fault code status n� 22", 
+  4="fault code status n� 21", 3="fault code status n� 20", 
+  2="fault code status n� 19", 1="fault code status n� 18", 
+  0="fault code status n� 17")
+enum VtSig_FaultBatteryCode_6(7="fault code status n� 48", 
+  6="fault code status n� 47", 5="fault code status n� 46", 
+  4="fault code status n� 45", 3="fault code status n� 44", 
+  2="fault code status n� 43", 1="fault code status n� 42", 
+  0="fault code status n� 41")
+enum VtSig_FaultBatteryCode_2(7="fault code status n� 16", 
+  6="fault code status n� 15", 5="fault code status n� 14", 
+  4="fault code status n� 13", 3="fault code status n� 12", 
+  2="fault code status n� 11", 1="fault code status n� 10", 
+  0="fault code status n� 9")
+enum VtSig_FaultBatteryCode_1(7="fault code status n� 8", 
+  6="fault code status n� 7", 5="fault code status n� 6", 
+  4="fault code status n� 5", 3="fault code status n� 4", 
+  2="fault code status n� 3", 1="fault code status n� 2", 
+  0="fault code status n� 1")
+enum VtSig_FaultBatteryCode_5(7="fault code status n� 40", 
+  6="fault code status n� 39", 5="fault code status n� 38", 
+  4="fault code status n� 37", 3="fault code status n� 36", 
+  2="fault code status n� 35", 1="fault code status n� 34", 
+  0="fault code status n� 33")
+enum VtSig_FaultBatteryCode_4(7="fault code status n� 32", 
+  6="fault code status n� 31", 5="fault code status n� 30", 
+  4="fault code status n� 29", 3="fault code status n� 28", 
+  2="fault code status n� 27", 1="fault code status n� 26", 
+  0="fault code status n� 25")
+enum VtSig_BmsBatStat(9="-> 0xFF reserved", 8="Charge mode in regeneration", 
+  7="Charge- or On-board charge-mode", 6="After run mode (self-test)", 
+  5="Safe mode (system disconnected)", 4="Init mode (before precharge)", 
+  3="Standby mode", 2="Pre-charge mode  ", 1="Nominal mode ", 0="Reserved")
+enum VtSig_canopen_nmt_command_specif(130="reset communication", 
+  129="reset node", 128="enter pre-operational", 2="stop remote node", 
+  1="start remote node")
+enum VtSig_canopen_node_id(81="obc", 80="knc", 76="tci", 74="exc", 70="tpi", 
+  68="kap_r", 39="lib", 38="tu", 37="kec", 33="kcs", 32="kcu", 31="kap_k", 
+  29="lhs_r_b", 28="lhs_r_a", 22="dou", 20="rpb", 18="kae", 16="ksc", 
+  13="kpc_l2", 12="kpc_l1", 11="kpc_tr", 10="kpc_tl", 9="kpc_u", 5="kbc", 
+  1="kmc", 0="all nodes")
+enum VtSig_lib_power_consumption_aver(4095="signal not available", 
+  4094="signal error", 4093="reserved 2", 4092="reserved 1")
+enum VtSig_truck_operating_hours_mode(15="signal not available", 
+  14="signal error", 13="reserved 2", 12="reserved 1", 
+  8="LIB charger operating hours", 7="mode h engine running", 
+  6="mode g traction or lift motor active except lowering", 
+  5="mode f more than 50 W", 4="mode e traction or lift motor active", 
+  3="mode d lift motor active", 2="mode c traction motor active", 
+  1="mode b key switch", 0="mode a key and seat switch")
+enum VtSig_truck_operating_hours(-1="signal not available", -2="signal error", 
+  -3="reserved 2", -4="reserved 1")
+enum VtSig_lib_charging_current(65535="signal not available", 
+  65534="signal error", 65533="reserved 2", 65532="reserved 1")
+
+{SENDRECEIVE}
+
+[EMV_14S_ADC_Terminals]
+ID=020h
+DLC=8
+Var=ADC_IN_3V3 unsigned 0,16 /u:mV
+Var=ADC_IN_5V unsigned 16,16 /u:mV
+Var=ADC_IN_Kl30 unsigned 32,16 /u:mV
+
+[EMV_14S_ADC_Values1]
+ID=021h
+DLC=8
+Var=ADC_IN_SbcMux unsigned 0,16 /u:mV
+Var=ADC_IN_TempSens unsigned 16,16 /u:mV
+Var=TempSens_Value unsigned 48,8 /u:°C
+Var=ADC_IN_HWVersion unsigned 32,16 /u:mV
+
+[EMV_14S_CurrentSensorValues]
+ID=022h
+DLC=8
+Var=ADC_CurrentS1Ch2 unsigned 16,16 /u:mV
+Var=ADC_CurrentS2Ch2 unsigned 48,16 /u:mV
+Var=ADC_CurrentS2Ch1 unsigned 32,16 /u:mV
+Var=ADC_CurrentS1Ch1 unsigned 0,16 /u:mV
+
+[EMV_14S_ADC_IMeas_Lss_coc]
+ID=023h
+DLC=8
+Var=ADC_LSS_COC_K1 unsigned 0,16 /u:mV
+Var=ADC_LSS_COC_K2 unsigned 16,16 /u:mV
+Var=ADC_LSS_COC_K3 unsigned 32,16 /u:mV
+
+[EMV_14S_CSC_debugValues1]
+ID=040h
+DLC=8
+Var=CellVoltageMax unsigned 0,16 /u:mV
+Var=CellVoltageMin unsigned 16,16 /u:mV
+Var=CellTemperatureMax signed 32,8 /u:°C
+Var=CellTemperatureMin signed 40,8 /u:°C
+Var=RelaySupplyVoltageMin unsigned 48,16
+
+[EMV_14S_CSC1_cellVoltages1]
+ID=050h
+DLC=8
+Var=Cell1 unsigned 0,16 /u:mV /f:10 /d:0
+Var=Cell2 unsigned 16,16 /u:mV /f:10 /d:0
+Var=Cell3 unsigned 32,16 /u:mV /f:10 /d:0
+Var=Cell4 unsigned 48,16 /u:mV /f:10 /d:0
+
+[EMV_14S_ADC_HV1]
+ID=024h
+DLC=8
+Var=ADC_HV1 signed 0,32 /u:mV
+
+[EMV_14S_ADC_HV2]
+ID=025h
+DLC=8
+Var=ADC_HV2 signed 0,32 /u:mV
+
+[EMV_14S_ADC_HV3]
+ID=026h
+DLC=8
+Var=ADC_HV3 signed 0,32 /u:mV
+
+[EMV_14S_CSC1_debugValues4]
+ID=110h
+DLC=8
+Var=ISENSE_Value signed 0,32 /u:mA
+Var=ENA_5V_State unsigned 32,8
+Var=ENA_HEATER_State unsigned 40,8
+
+[EMV_14S_CSC3_debugValues4]
+ID=112h
+DLC=8
+Var=ISENSE_Value signed 0,32 /u:mA
+Var=ENA_5V_State unsigned 32,8
+Var=ENA_HEATER_State unsigned 40,8
+
+[EMV_14S_ADC_Contactor_Supply]
+ID=027h
+DLC=8
+Var=ADC_CONTACTOR_SUPPLY_1 unsigned 0,16 /u:mV
+Var=ADC_CONTACTOR_SUPPLY_2 unsigned 16,16 /u:mV
+Var=ADC_CONTACTOR_SUPPLY_3 unsigned 32,16 /u:mV
+
+[EMV_14S_CSC1_Control_Values]
+ID=030h
+DLC=8
+Var=Enable_CSC_5V unsigned 0,8
+Var=Enable_CSC_Heater unsigned 8,8
+Var=Enable_Contactor_1 unsigned 16,8
+Var=Enable_Contactor_2 unsigned 24,8
+Var=Enable_Fan unsigned 32,8
+Var=Enable_Balancing unsigned 40,8 /max:1
+
+[EMV_14S_CSC2_cellVoltages1]
+ID=051h
+DLC=8
+Var=Cell1 unsigned 0,16 /u:mV /f:10
+Var=Cell2 unsigned 16,16 /u:mV /f:10
+Var=Cell3 unsigned 32,16 /u:mV /f:10
+Var=Cell4 unsigned 48,16 /u:mV /f:10
+
+[EMV_14S_CSC3_cellVoltages1]
+ID=052h
+DLC=8
+Var=Cell1 unsigned 0,16 /u:mV /f:10
+Var=Cell2 unsigned 16,16 /u:mV /f:10
+Var=Cell3 unsigned 32,16 /u:mV /f:10
+Var=Cell4 unsigned 48,16 /u:mV /f:10
+
+[EMV_14S_CSC2_debugValues4]
+ID=111h
+DLC=8
+Var=ISENSE_Value signed 0,32 /u:mA
+Var=ENA_5V_State unsigned 32,8
+Var=ENA_HEATER_State unsigned 40,8
+
+[EMV_14S_CSC2_Control_Values]
+ID=031h
+DLC=8
+Var=Enable_CSC_5V unsigned 0,8
+Var=Enable_CSC_Heater unsigned 8,8
+Var=Enable_Contactor_1 unsigned 16,8
+Var=Enable_Contactor_2 unsigned 24,8
+Var=Enable_Fan unsigned 32,8
+Var=Enable_Blancing unsigned 40,8
+
+[EMV_14S_CSC3_Control_Values]
+ID=033h
+DLC=8
+Var=Enable_CSC_5V unsigned 0,8
+Var=Enable_CSC_Heater unsigned 8,8
+Var=Enable_Contactor_1 unsigned 16,8
+Var=Enable_Contactor_2 unsigned 24,8
+Var=Enable_Fan unsigned 32,8
+Var=Enable_Blancing unsigned 40,8
+
+[EMV_14S_IO_IOValues_TX]
+ID=028h
+DLC=8
+Var=highsideSwitchStatus2 unsigned 2,2 /e:VtSig_lib_powerpath_ok
+Var=ext_Input_3 unsigned 16,2 /e:VtSig_lib_powerpath_ok
+Var=bcm_nReady unsigned 20,2 /e:VtSig_lib_powerpath_ok
+Var=ext_Input_4 unsigned 18,2 /e:VtSig_lib_powerpath_ok
+Var=cpsSensWakeUp unsigned 22,2 /e:VtSig_lib_powerpath_ok
+Var=buttonSensWakeUp unsigned 24,2 /e:VtSig_lib_powerpath_ok
+Var=sbc_Fault unsigned 26,2 /e:VtSig_lib_powerpath_ok
+Var=isoOk unsigned 28,2 /e:VtSig_lib_powerpath_ok
+Var=slaveInterrupt unsigned 30,2 /e:VtSig_lib_powerpath_ok
+Var=highsideSwitchStatus3 unsigned 4,2 /e:VtSig_lib_powerpath_ok
+Var=contactorAlarm1 unsigned 6,2 /e:VtSig_lib_powerpath_ok
+Var=contactorAlarm2 unsigned 8,2 /e:VtSig_lib_powerpath_ok
+Var=contactorAlarm3 unsigned 10,2 /e:VtSig_lib_powerpath_ok
+Var=ext_Input_1 unsigned 12,2 /e:VtSig_lib_powerpath_ok
+Var=ext_Input_2 unsigned 14,2 /e:VtSig_lib_powerpath_ok
+Var=highsideSwitchStatus1 unsigned 0,2 /e:VtSig_lib_powerpath_ok
+Var=bcm3V3Ready unsigned 32,2 /e:VtSig_lib_powerpath_ok
+Var=relayAux_1 unsigned 34,2 /e:VtSig_lib_powerpath_ok
+Var=relayAux_2 unsigned 36,2 /e:VtSig_lib_powerpath_ok
+Var=relayAux_3 unsigned 38,2 /e:VtSig_lib_powerpath_ok
+Var=SpeedFanFrequency unsigned 40,16 /max:1
+Var=bcmReady_dutyCycle unsigned 56,8 /max:1
+
+[EMV_14S_IO_IOValues_RX]
+ID=032h
+DLC=8
+Var=eeprom_nHoldEnable unsigned 0,1
+Var=slaveEnable unsigned 11,1
+Var=ext_Output_4 unsigned 18,1
+Var=contactorFaultline1 unsigned 19,1
+Var=contactorFaultline2 unsigned 20,1
+Var=contactorFaultline3 unsigned 21,1
+Var=contactorReset1 unsigned 22,1
+Var=contactorReset2 unsigned 23,1
+Var=contactorReset3 unsigned 24,1
+Var=eeprom_nWriteProtect unsigned 1,1
+Var=iCDCurrentSensorSupplyEnable unsigned 2,1
+Var=io_13VBatEnable unsigned 3,1
+Var=latchEnable unsigned 4,1
+Var=bcmEnable unsigned 5,1
+Var=bcmPrechargeControl unsigned 6,1
+Var=bcmWakeUp unsigned 7,1
+Var=dssWakeUp unsigned 8,1
+Var=cpsEnableWakeUp unsigned 9,1
+Var=can1WakeUp unsigned 10,1
+Var=LED1 unsigned 12,1
+Var=LED2 unsigned 13,1
+Var=LED3 unsigned 14,1
+Var=ext_Output_1 unsigned 15,1
+Var=ext_Output_2 unsigned 16,1
+Var=ext_Output_3 unsigned 17,1
+Var=SPI_AFE_Wakeup unsigned 25,1
+Var=contactorControl1 unsigned 26,1
+Var=contactorControl2 unsigned 27,1
+Var=contactorControl3 unsigned 28,1
+Var=SBC_Assert_Faultline unsigned 40,1
+Var=SBC_Release_Faultline unsigned 48,1
+Var=SBC_SLEEP unsigned 32,1
+
+[EMV_14S_CSC_debugValues5]
+ID=102h
+DLC=8
+Var=canSensorCurrentIntern signed 0,32 /u:mA
+Var=canSensorCurrentExtern signed 32,32 /u:mA
+
+[EMV_14S_CSC_debugValues6]
+ID=103h
+DLC=8
+Var=contactor1State unsigned 0,8 /e:VtSig_lib_powerpath_ok
+Var=contactor2State unsigned 8,8 /e:VtSig_lib_powerpath_ok
+Var=fanState unsigned 16,8 /e:VtSig_lib_powerpath_ok
+Var=contactor1ControlActivated unsigned 24,8 /e:VtSig_lib_powerpath_ok
+Var=contactor2ControlActivated unsigned 32,8 /e:VtSig_lib_powerpath_ok
+Var=fanControlActivated unsigned 40,8 /e:VtSig_lib_powerpath_ok
+
+[EMV_14S_CSC1_cellVoltages2]
+ID=060h
+DLC=8
+Var=Cell5 unsigned 0,16 /u:mV /f:10
+Var=Cell6 unsigned 16,16 /u:mV /f:10
+Var=Cell7 unsigned 32,16 /u:mV /f:10
+Var=Cell8 unsigned 48,16 /u:mV /f:10
+
+[EMV_14S_CSC2_cellVoltages2]
+ID=061h
+DLC=8
+Var=Cell5 unsigned 0,16 /u:mV /f:10
+Var=Cell6 unsigned 16,16 /u:mV /f:10
+Var=Cell7 unsigned 32,16 /u:mV /f:10
+Var=Cell8 unsigned 48,16 /u:mV /f:10
+
+[EMV_14S_CSC3_cellVoltages2]
+ID=062h
+DLC=8
+Var=Cell5 unsigned 0,16 /u:mV /f:10
+Var=Cell6 unsigned 16,16 /u:mV /f:10
+Var=Cell7 unsigned 32,16 /u:mV /f:10
+Var=Cell8 unsigned 48,16 /u:mV /f:10
+
+[EMV_14S_CSC1_cellVoltages3]
+ID=070h
+DLC=8
+Var=Cell9 unsigned 0,16 /u:mV /f:10
+Var=Cell10 unsigned 16,16 /u:mV /f:10
+Var=Cell11 unsigned 32,16 /u:mV /f:10
+Var=Cell12 unsigned 48,16 /u:mV /f:10
+
+[EMV_14S_CSC2_cellVoltages3]
+ID=071h
+DLC=8
+Var=Cell9 unsigned 0,16 /u:mV /f:10
+Var=Cell10 unsigned 16,16 /u:mV /f:10
+Var=Cell11 unsigned 32,16 /u:mV /f:10
+Var=Cell12 unsigned 48,16 /u:mV /f:10
+
+[EMV_14S_CSC3_cellVoltages3]
+ID=072h
+DLC=8
+Var=Cell9 unsigned 0,16 /u:mV /f:10
+Var=Cell10 unsigned 16,16 /u:mV /f:10
+Var=Cell11 unsigned 32,16 /u:mV /f:10
+Var=Cell12 unsigned 48,16 /u:mV /f:10
+
+[EMV_14S_CSC1_cellVoltages4]
+ID=120h
+DLC=8
+Var=Cell13 unsigned 0,16 /u:mV /f:10
+Var=Cell14 unsigned 16,16 /u:mV /f:10
+Var=Cell15 unsigned 32,16 /u:mV /f:10
+Var=ActiveCommBreak unsigned 48,8
+
+[EMV_14S_CSC2_cellVoltages4]
+ID=121h
+DLC=8
+Var=Cell13 unsigned 0,16 /u:mV /f:10
+Var=Cell14 unsigned 16,16 /u:mV /f:10
+Var=Cell15 unsigned 32,16 /u:mV /f:10
+Var=ActiveCommBreak unsigned 48,8
+
+[EMV_14S_CSC3_cellVoltages4]
+ID=122h
+DLC=8
+Var=Cell13 unsigned 0,16 /u:mV /f:10
+Var=Cell14 unsigned 16,16 /u:mV /f:10
+Var=Cell15 unsigned 32,16 /u:mV /f:10
+Var=ActiveCommBreak unsigned 48,8
+
+[EMV_14S_CSC1_temperatures1]
+ID=090h
+DLC=8
+Var=TempSensor1 signed 0,16 /u:°C
+Var=TempSensor2 signed 16,16 /u:°C
+Var=TempSensor3 signed 32,16 /u:°C
+Var=TempSensor4 signed 48,16 /u:°C
+
+[EMV_14S_CSC2_temperatures1]
+ID=091h
+DLC=8
+Var=TempSensor1 signed 0,16 /u:°C
+Var=TempSensor2 unsigned 16,16 /u:°C
+Var=TempSensor3 signed 32,16 /u:°C
+Var=TempSensor4 unsigned 48,16 /u:°C
+
+[EMV_14S_CSC3_temperatures1]
+ID=092h
+DLC=8
+Var=TempSensor1 signed 0,16 /u:°C
+Var=TempSensor2 unsigned 16,16 /u:°C
+Var=TempSensor3 signed 32,16 /u:°C
+Var=TempSensor4 unsigned 48,16 /u:°C
+
+[EMV_14S_CSC1_temperatures2]
+ID=010h
+DLC=8
+Var=TempSensor5 signed 0,16 /u:°C
+Var=TempSensor6 signed 16,16 /u:°C
+Var=TempSensor7 signed 32,16 /u:°C
+Var=BalancingTempSensor signed 48,16 /u:°C
+
+[EMV_14S_CSC2_temperatures2]
+ID=011h
+DLC=8
+Var=TempSensor5 signed 0,16 /u:°C
+Var=TempSensor6 signed 16,16 /u:°C
+Var=TempSensor7 signed 32,16 /u:°C
+Var=BalancingTempSensor signed 48,16 /u:°C
+
+[EMV_14S_CSC3_temperatures2]
+ID=012h
+DLC=8
+Var=TempSensor5 signed 0,16 /u:°C
+Var=TempSensor6 signed 16,16 /u:°C
+Var=TempSensor7 signed 32,16 /u:°C
+Var=BalancingTempSensor signed 48,16 /u:°C
+
+[EMV_15S_ADC_Terminals]
+ID=220h
+DLC=8
+Var=ADC_IN_3V3 unsigned 0,16 /u:mV
+Var=ADC_IN_5V unsigned 16,16 /u:mV
+Var=ADC_IN_Kl30 unsigned 32,16 /u:mV
+
+[EMV_15S_ADC_Values1]
+ID=221h
+DLC=8
+Var=ADC_IN_SbcMux unsigned 0,16 /u:mV
+Var=ADC_IN_TempSens unsigned 16,16 /u:mV
+Var=TempSens_Value unsigned 48,8 /u:°C
+Var=ADC_IN_HWVersion unsigned 32,16 /u:mV
+
+[EMV_15S_CurrentSensorValues]
+ID=222h
+DLC=8
+Var=ADC_CurrentS1Ch2 unsigned 16,16 /u:mV
+Var=ADC_CurrentS2Ch2 unsigned 48,16 /u:mV
+Var=ADC_CurrentS2Ch1 unsigned 32,16 /u:mV
+Var=ADC_CurrentS1Ch1 unsigned 0,16 /u:mV
+
+[EMV_15S_ADC_IMeas_Lss_coc]
+ID=223h
+DLC=8
+Var=ADC_LSS_COC_K1 unsigned 0,16 -m /u:mV
+Var=ADC_LSS_COC_K2 unsigned 16,16 -m /u:mV
+Var=ADC_LSS_COC_K3 unsigned 32,16 -m /u:mV
+
+[EMV_15S_CSC_debugValues1]
+ID=240h
+DLC=8
+Var=CellVoltageMax unsigned 0,16 /u:mV
+Var=CellVoltageMin unsigned 16,16 /u:mV
+Var=CellTemperatureMax signed 32,8 /u:°C
+Var=CellTemperatureMin signed 40,8 /u:°C
+Var=RelaySupplyVoltageMin unsigned 48,16
+
+[EMV_15S_CSC1_cellVoltages1]
+ID=250h
+DLC=8
+Var=Cell1 unsigned 0,16 /u:mV /f:10 /d:0
+Var=Cell2 unsigned 16,16 /u:mV /f:10 /d:0
+Var=Cell3 unsigned 32,16 /u:mV /f:10 /d:0
+Var=Cell4 unsigned 48,16 /u:mV /f:10 /d:0
+
+[EMV_15S_ADC_HV1_Values]
+ID=224h
+DLC=8
+Var=ADC_HV1 signed 0,32 /u:mV
+
+[EMV_15S_ADC_HV2_Values]
+ID=225h
+DLC=8
+Var=ADC_HV2 signed 0,32 /u:mV
+
+[EMV_15S_ADC_HV3_Values]
+ID=226h
+DLC=8
+Var=ADC_HV3 signed 0,32 /u:mV
+
+[EMV_15S_CSC1_debugValues4]
+ID=310h
+DLC=8
+Var=ISENSE_Value signed 0,32 /u:mA
+Var=ENA_5V_State unsigned 32,8
+Var=ENA_HEATER_State unsigned 40,8
+
+[EMV_15S_ADC_Contactor_Supply]
+ID=227h
+DLC=8
+Var=ADC_CONTACTOR_SUPPLY_1 unsigned 0,16 /u:mV
+Var=ADC_CONTACTOR_SUPPLY_2 unsigned 16,16 /u:mV
+Var=ADC_CONTACTOR_SUPPLY_3 unsigned 32,16 /u:mV
+
+[EMV_15S_CSC1_Control_Values]
+ID=230h
+DLC=8
+Var=Enable_CSC_5V unsigned 0,8
+Var=Enable_CSC_Heater unsigned 8,8
+Var=Enable_Contactor_1 unsigned 16,8
+Var=Enable_Contactor_2 unsigned 24,8
+Var=Enable_Fan unsigned 32,8
+Var=Enable_Balancing unsigned 40,8 /max:1
+
+[EMV_15S_CSC2_cellVoltages1]
+ID=251h
+DLC=8
+Var=Cell1 unsigned 0,16 /u:mV /f:10
+Var=Cell2 unsigned 16,16 /u:mV /f:10
+Var=Cell3 unsigned 32,16 /u:mV /f:10
+Var=Cell4 unsigned 48,16 /u:mV /f:10
+
+[EMV_15S_CSC2_debugValues4]
+ID=311h
+DLC=8
+Var=ISENSE_Value signed 0,32 /u:mA
+Var=ENA_5V_State unsigned 32,8
+Var=ENA_HEATER_State unsigned 40,8
+
+[EMV_15S_CSC2_Control_Values]
+ID=231h
+DLC=8
+Var=Enable_CSC_5V unsigned 0,8
+Var=Enable_CSC_Heater unsigned 8,8
+
+[EMV_15S_IO_IOValues_TX]
+ID=228h
+DLC=8
+Var=highsideSwitchStatus2 unsigned 2,2 /e:VtSig_lib_powerpath_ok
+Var=ext_Input_3 unsigned 16,2 /e:VtSig_lib_powerpath_ok
+Var=bcm_nReady unsigned 20,2 /e:VtSig_lib_powerpath_ok
+Var=ext_Input_4 unsigned 18,2 /e:VtSig_lib_powerpath_ok
+Var=cpsSensWakeUp unsigned 22,2 /e:VtSig_lib_powerpath_ok
+Var=buttonSensWakeUp unsigned 24,2 /e:VtSig_lib_powerpath_ok
+Var=sbc_Fault unsigned 26,2 /e:VtSig_lib_powerpath_ok
+Var=isoOk unsigned 28,2 /e:VtSig_lib_powerpath_ok
+Var=slaveInterrupt unsigned 30,2 /e:VtSig_lib_powerpath_ok
+Var=highsideSwitchStatus3 unsigned 4,2 /e:VtSig_lib_powerpath_ok
+Var=contactorAlarm1 unsigned 6,2 /e:VtSig_lib_powerpath_ok
+Var=contactorAlarm2 unsigned 8,2 /e:VtSig_lib_powerpath_ok
+Var=contactorAlarm3 unsigned 10,2 /e:VtSig_lib_powerpath_ok
+Var=ext_Input_1 unsigned 12,2 /e:VtSig_lib_powerpath_ok
+Var=ext_Input_2 unsigned 14,2 /e:VtSig_lib_powerpath_ok
+Var=highsideSwitchStatus1 unsigned 0,2 /e:VtSig_lib_powerpath_ok
+Var=bcm3V3Ready unsigned 32,2 /e:VtSig_lib_powerpath_ok
+Var=relayAux_1 unsigned 34,2 /e:VtSig_lib_powerpath_ok
+Var=relayAux_2 unsigned 36,2 /e:VtSig_lib_powerpath_ok
+Var=relayAux_3 unsigned 38,2 /e:VtSig_lib_powerpath_ok
+Var=SpeedFanFrequency unsigned 40,16 /max:1
+Var=bcmReady_dutyCycle unsigned 56,8 /max:1
+
+[EMV_15S_IO_IOValues_RX]
+ID=232h
+DLC=8
+Var=eeprom_nHoldEnable unsigned 0,1
+Var=slaveEnable unsigned 11,1
+Var=ext_Output_4 unsigned 18,1
+Var=contactorFaultline1 unsigned 19,1
+Var=contactorFaultline2 unsigned 20,1
+Var=contactorFaultline3 unsigned 21,1
+Var=contactorReset1 unsigned 22,1
+Var=contactorReset2 unsigned 23,1
+Var=contactorReset3 unsigned 24,1
+Var=eeprom_nWriteProtect unsigned 1,1
+Var=iCDCurrentSensorSupplyEnable unsigned 2,1
+Var=io_13VBatEnable unsigned 3,1
+Var=latchEnable unsigned 4,1
+Var=bcmEnable unsigned 5,1
+Var=bcmPrechargeControl unsigned 6,1
+Var=bcmWakeUp unsigned 7,1
+Var=dssWakeUp unsigned 8,1
+Var=cpsEnableWakeUp unsigned 9,1
+Var=can1WakeUp unsigned 10,1
+Var=LED1 unsigned 12,1
+Var=LED2 unsigned 13,1
+Var=LED3 unsigned 14,1
+Var=ext_Output_1 unsigned 15,1
+Var=ext_Output_2 unsigned 16,1
+Var=ext_Output_3 unsigned 17,1
+Var=SPI_AFE_Wakeup unsigned 25,1
+Var=contactorControl1 unsigned 26,1
+Var=contactorControl2 unsigned 27,1
+Var=contactorControl3 unsigned 28,1
+Var=SBC_Assert_Faultline unsigned 40,1
+Var=SBC_Release_Faultline unsigned 48,1
+Var=SBC_SLEEP unsigned 32,1
+
+[EMV_15S_CSC_debugValues5]
+ID=302h
+DLC=8
+Var=canSensorCurrentIntern signed 0,32 /u:mA
+Var=canSensorCurrentExtern signed 32,32 /u:mA
+
+[EMV_15S_CSC_debugValues6]
+ID=303h
+DLC=8
+Var=contactor1State unsigned 0,8 /e:VtSig_lib_powerpath_ok
+Var=contactor2State unsigned 8,8 /e:VtSig_lib_powerpath_ok
+Var=fanState unsigned 16,8 /e:VtSig_lib_powerpath_ok
+Var=contactor1ControlActivated unsigned 24,8 /e:VtSig_lib_powerpath_ok
+Var=contactor2ControlActivated unsigned 32,8 /e:VtSig_lib_powerpath_ok
+Var=fanControlActivated unsigned 40,8 /e:VtSig_lib_powerpath_ok
+
+[EMV_15S_CSC1_cellVoltages2]
+ID=260h
+DLC=8
+Var=Cell5 unsigned 0,16 /u:mV /f:10
+Var=Cell6 unsigned 16,16 /u:mV /f:10
+Var=Cell7 unsigned 32,16 /u:mV /f:10
+Var=Cell8 unsigned 48,16 /u:mV /f:10
+
+[EMV_15S_CSC2_cellVoltages2]
+ID=261h
+DLC=8
+Var=Cell5 unsigned 0,16 /u:mV /f:10
+Var=Cell6 unsigned 16,16 /u:mV /f:10
+Var=Cell7 unsigned 32,16 /u:mV /f:10
+Var=Cell8 unsigned 48,16 /u:mV /f:10
+
+[EMV_15S_CSC1_cellVoltages3]
+ID=270h
+DLC=8
+Var=Cell9 unsigned 0,16 /u:mV /f:10
+Var=Cell10 unsigned 16,16 /u:mV /f:10
+Var=Cell11 unsigned 32,16 /u:mV /f:10
+Var=Cell12 unsigned 48,16 /u:mV /f:10
+
+[EMV_15S_CSC2_cellVoltages3]
+ID=271h
+DLC=8
+Var=Cell9 unsigned 0,16 /u:mV /f:10
+Var=Cell10 unsigned 16,16 /u:mV /f:10
+Var=Cell11 unsigned 32,16 /u:mV /f:10
+Var=Cell12 unsigned 48,16 /u:mV /f:10
+
+[EMV_15S_CSC1_cellVoltages4]
+ID=320h
+DLC=8
+Var=Cell13 unsigned 0,16 /u:mV /f:10
+Var=Cell14 unsigned 16,16 /u:mV /f:10
+Var=Cell15 unsigned 32,16 /u:mV /f:10
+Var=ActiveCommBreak unsigned 48,8
+
+[EMV_15S_CSC2_cellVoltages4]
+ID=281h
+DLC=8
+Var=Cell13 unsigned 0,16 /u:mV /f:10
+Var=Cell14 unsigned 16,16 /u:mV /f:10
+Var=Cell15 unsigned 32,16 /u:mV /f:10
+Var=ActiveCommBreak unsigned 48,8
+
+[EMV_15S_CSC1_temperatures1]
+ID=290h
+DLC=8
+Var=TempSensor1 signed 0,16 /u:°C
+Var=TempSensor2 signed 16,16 /u:°C
+Var=TempSensor3 signed 32,16 /u:°C
+Var=TempSensor4 signed 48,16 /u:°C
+
+[EMV_15S_CSC2_temperatures1]
+ID=291h
+DLC=8
+Var=TempSensor1 signed 0,16 /u:°C
+Var=TempSensor2 unsigned 16,16 /u:°C
+Var=TempSensor3 signed 32,16 /u:°C
+Var=TempSensor4 unsigned 48,16 /u:°C
+
+[EMV_15S_CSC1_temperatures2]
+ID=210h
+DLC=8
+Var=TempSensor5 signed 0,16 /u:°C
+Var=TempSensor6 signed 16,16 /u:°C
+Var=TempSensor7 unsigned 32,16 /u:°C
+Var=BalancingTempSensor signed 48,16 /u:°C
+
+[EMV_15S_CSC2_temperatures2]
+ID=301h
+DLC=8
+Var=TempSensor5 signed 0,16 /u:°C
+Var=TempSensor6 unsigned 16,16 /u:°C
+Var=TempSensor7 unsigned 32,16 /u:°C
+
+[EMV_14S_CSC1_heaterCurrent]
+ID=015h
+DLC=8
+Var=HeaterCurrent signed 0,32 /u:mA
+
+[EMV_14S_CSC2_heaterCurrent]
+ID=016h
+DLC=8
+Var=HeaterCurrent signed 0,32 /u:mA
+
+[EMV_14S_CSC3_heaterCurrent]
+ID=017h
+DLC=8
+Var=HeaterCurrent signed 0,32 /u:mA
+
+[EMV_15S_CSC1_heaterCurrent]
+ID=215h
+DLC=8
+Var=HeaterCurrent unsigned 0,32 /u:mA
+
+[EMV_14_SdRamCheck]
+ID=029h
+DLC=8
+Var=ReadError_Counter unsigned 0,16 /max:1
+Var=WriteError_Counter unsigned 16,16 /max:1
+Var=ReadErrorOverflow unsigned 32,1
+Var=WriteErrorOverflow unsigned 40,1
+Var=Subroutine unsigned 48,8 /max:1
+Var=FullTested_Counter unsigned 56,8 /max:1
+
+[EMV_15_SdRamCheck]
+ID=229h
+DLC=8
+Var=ReadError_Counter unsigned 0,16 /max:1
+Var=WriteError_Counter unsigned 16,16 /max:1
+Var=ReadErrorOverflow unsigned 32,1
+Var=WriteErrorOverflow unsigned 40,1
+Var=Subroutine unsigned 48,8 /max:1
+Var=FullTested_Counter unsigned 56,8 /max:1

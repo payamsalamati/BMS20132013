@@ -1,0 +1,636 @@
+FormatVersion=5.0 // Do not edit this line!
+Title="kionCAN"
+
+{ENUMS}
+enum VtSig_isotp_n_ta(254="functional address", 95="cps", 81="obc", 80="knc", 
+  72="kwc_b", 70="tpi", 68="kap_r", 39="lib", 38="tu", 37="kec", 33="kcs", 
+  32="kcu", 31="kap_k", 22="dou", 20="rpb", 19="kwc_a", 18="kae", 16="ksc", 
+  13="kpc_l2", 12="kpc_l1", 11="kpc_tr", 10="kpc_tl", 9="kpc_u", 5="kbc", 
+  1="kmc/kwpc", 0="dtu")
+enum VtSig_isotp_fs(15="reserved 13", 14="reserved 12", 13="reserved 11", 
+  12="reserved 10", 11="reserved 9", 10="reserved 8", 9="reserved 7", 
+  8="reserved 6", 7="reserved 5", 6="reserved 4", 5="reserved 3", 
+  4="reserved 2", 3="reserved 1", 2="overflow", 1="wait", 0="continue to send")
+enum VtSig_canopen_sdo_abort_code(134217764="no data available", 
+  134217763="object dictionary dynamic generation fails or no dictionary present", 
+  134217762="data cannot be stored to the application because of the present device state", 
+  134217761="data cannot be stored to the application because of local control", 
+  134217760="data cannot be stored to the application", 
+  134217728="general error", 
+  101318691="resource not available: SDO connection", 
+  101253174="maximum value is less than minimum value", 
+  101253170="value of parameter written too low", 
+  101253169="value of parameter written too high", 
+  101253168="invalid value for parameter", 101253137="subindex does not exist", 
+  101122067="data type mismatch, length of parameter too low", 
+  101122066="data type mismatch, length of parameter too high", 
+  101122064="data type mismatch, length of parameter does not match", 
+  101056512="access failed due to an hardware error", 
+  100925511="general internal incompatibility in the device", 
+  100925507="general parameter incompatibility reason", 
+  100925506="PDO length exceeded by mapping", 
+  100925505="object cannot be mapped to the PDO", 
+  100794368="object does not exist in the object dictionary", 
+  100728834="attempt to write a read only object", 
+  100728833="attempt to read a write only object", 
+  100728832="unsupported access to an object", 84148229="out of memory", 
+  84148228="CRC error", 84148227="invalid sequence number", 
+  84148226="invalid block size", 
+  84148225="client/server command specifier not valid or unknown", 
+  84148224="SDO protocol timed out", 84082688="toggle bit not alternated")
+enum VtSig_canopen_sdo_continue(1="no more segments to be downloaded", 
+  0="more segments to be downloaded")
+enum VtSig_canopen_sdo_number_of_byte(7="data length 0 byte", 
+  6="data length 1 byte", 5="data length 2 byte", 4="data length 3 byte", 
+  3="data length 4 byte", 2="data length 5 byte", 1="data length 6 byte", 
+  0="data length 7 byte")
+enum VtSig_canopen_sdo_size_indicator(1="data set size is indicated", 
+  0="data set size is not indicated")
+enum VtSig_canopen_sdo_transfer_type(1="expedited transfer", 
+  0="normal transfer")
+enum VtSig_canopen_sdo_number_of_byt1(3="data length 1 byte", 
+  2="data length 2 byte", 1="data length 3 byte", 0="data length 4 byte")
+enum VtSig_lib_powerpath_ok(3="signal not available", 2="signal error", 
+  1="true/on", 0="false/off")
+enum VtSig_lib_max_charging_current_2(262143="signal not available", 
+  262142="signal error", 262141="reserved 2", 262140="reserved 1")
+enum VtSig_lib_max_charging_power_100(524287="signal not available", 
+  524286="signal error", 524285="reserved 2", 524284="reserved 1")
+enum VtSig_lib_soc_without_soh(255="signal not available", 254="signal error", 
+  253="reserved 2", 252="reserved 1")
+enum VtSig_lib_power(1048575="signal not available", 1048574="signal error", 
+  1048573="reserved 2", 1048572="reserved 1")
+enum VtSig_canopen_state_lib(127="pre-operational", 5="operational", 
+  4="stopped", 0="bootup")
+enum VtSig_stateBms(127="PREOPERATIONAL", 5="OPERATIONAL", 4="STOPPED", 
+  0="BOOTUP")
+enum VtSig_FaultBatteryCode_3(7="fault code status n� 24", 
+  6="fault code status n� 23", 5="fault code status n� 22", 
+  4="fault code status n� 21", 3="fault code status n� 20", 
+  2="fault code status n� 19", 1="fault code status n� 18", 
+  0="fault code status n� 17")
+enum VtSig_FaultBatteryCode_6(7="fault code status n� 48", 
+  6="fault code status n� 47", 5="fault code status n� 46", 
+  4="fault code status n� 45", 3="fault code status n� 44", 
+  2="fault code status n� 43", 1="fault code status n� 42", 
+  0="fault code status n� 41")
+enum VtSig_FaultBatteryCode_2(7="fault code status n� 16", 
+  6="fault code status n� 15", 5="fault code status n� 14", 
+  4="fault code status n� 13", 3="fault code status n� 12", 
+  2="fault code status n� 11", 1="fault code status n� 10", 
+  0="fault code status n� 9")
+enum VtSig_FaultBatteryCode_1(7="fault code status n� 8", 
+  6="fault code status n� 7", 5="fault code status n� 6", 
+  4="fault code status n� 5", 3="fault code status n� 4", 
+  2="fault code status n� 3", 1="fault code status n� 2", 
+  0="fault code status n� 1")
+enum VtSig_FaultBatteryCode_5(7="fault code status n� 40", 
+  6="fault code status n� 39", 5="fault code status n� 38", 
+  4="fault code status n� 37", 3="fault code status n� 36", 
+  2="fault code status n� 35", 1="fault code status n� 34", 
+  0="fault code status n� 33")
+enum VtSig_FaultBatteryCode_4(7="fault code status n� 32", 
+  6="fault code status n� 31", 5="fault code status n� 30", 
+  4="fault code status n� 29", 3="fault code status n� 28", 
+  2="fault code status n� 27", 1="fault code status n� 26", 
+  0="fault code status n� 25")
+enum VtSig_BmsBatStat(9="-> 0xFF reserved", 8="Charge mode in regeneration", 
+  7="Charge- or On-board charge-mode", 6="After run mode (self-test)", 
+  5="Safe mode (system disconnected)", 4="Init mode (before precharge)", 
+  3="Standby mode", 2="Pre-charge mode  ", 1="Nominal mode ", 0="Reserved")
+enum VtSig_canopen_nmt_command_specif(130="reset communication", 
+  129="reset node", 128="enter pre-operational", 2="stop remote node", 
+  1="start remote node")
+enum VtSig_canopen_node_id(81="obc", 80="knc", 76="tci", 74="exc", 70="tpi", 
+  68="kap_r", 39="lib", 38="tu", 37="kec", 33="kcs", 32="kcu", 31="kap_k", 
+  29="lhs_r_b", 28="lhs_r_a", 22="dou", 20="rpb", 18="kae", 16="ksc", 
+  13="kpc_l2", 12="kpc_l1", 11="kpc_tr", 10="kpc_tl", 9="kpc_u", 5="kbc", 
+  1="kmc", 0="all nodes")
+enum VtSig_lib_power_consumption_aver(4095="signal not available", 
+  4094="signal error", 4093="reserved 2", 4092="reserved 1")
+enum VtSig_truck_operating_hours_mode(15="signal not available", 
+  14="signal error", 13="reserved 2", 12="reserved 1", 
+  8="LIB charger operating hours", 7="mode h engine running", 
+  6="mode g traction or lift motor active except lowering", 
+  5="mode f more than 50 W", 4="mode e traction or lift motor active", 
+  3="mode d lift motor active", 2="mode c traction motor active", 
+  1="mode b key switch", 0="mode a key and seat switch")
+enum VtSig_truck_operating_hours(-1="signal not available", -2="signal error", 
+  -3="reserved 2", -4="reserved 1")
+enum VtSig_lib_charging_current(65535="signal not available", 
+  65534="signal error", 65533="reserved 2", 65532="reserved 1")
+enum VtSig_MutexSource(0="ADC_REQUEST_VOLTAGE", 1="ADC_GET_RESULT", 
+  2="EEPROM_READ", 3="EEPROM_WRITE", 4="EEPROM_SUB_WRITE", 
+  5="EEPROM_BLOCK_PROTECT", 6="EEPROM_READ_IDENTIFICATION_PAGE", 
+  7="EEPROM_WRITE_IDENTIFICATION_PAGE", 
+  8="EEPROM_SUB_WRITE_IDENTIFICATION_PAGE", 
+  9="EEPROM_LOCK_IDENTIFICATION_PAGE", 10="IO_SEND_FRAME", 
+  11="SBC_REFRESH_WATCHDOG", 12="RESERVED_1", 13="RESERVED_2", 14="RESERVED_3")
+
+{SENDRECEIVE}
+
+[debugDTC]
+ID=014h
+DLC=5
+Var=DTC unsigned 0,32
+Var=severity unsigned 32,8
+
+[lib_uds]
+ID=6A7h	// UDS responses from LIB with KION protocol
+DLC=8
+Mux="flow control" 8,4 3  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_bs unsigned 16,8 -m	// FlowControl BlockSize (ISO-TP extended addressing)
+Var=isotp_fs unsigned 12,4 -m /e:VtSig_isotp_fs	// FlowControl FlowStatus (ISO-TP extended addressing)
+Var=isotp_n_data_fc unsigned 32,32 -m	// FlowControl Data Field (ISO-TP extended addressing)
+Var=isotp_stmin unsigned 24,8 -m /u:ms	// FlowControl SeparationTime minimum (ISO-TP extended addressing)
+
+[lib_uds]
+DLC=8
+Mux="consecutive frame" 8,4 2  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_sn unsigned 12,4 -m	// ConsecutiveFrame SequenceNumber (ISO-TP extended addressing)
+Var=isotp_n_data_cf unsigned 16,48 -m	// Consecutive Frame Data Field (ISO-TP extended addressing)
+
+[lib_uds]
+DLC=8
+Mux="first frame" 8,4 1  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_ff_dl unsigned 12,12 -m	// FirstFrame DataLength (ISO-TP extended addressing)
+Var=isotp_n_data_ff unsigned 24,40 -m	// FirstFrame Data Field (ISO-TP extended addressing)
+
+[lib_uds]
+DLC=8
+Mux="single frame" 8,4 0  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_n_data_sf unsigned 16,48 -m	// SingleFrame Data Field (ISO-TP extended addressing)
+Var=isotp_sf_dl unsigned 12,4 -m	// SingleFrame DataLength (ISO-TP extended addressing)
+
+[lib_uds]
+DLC=8
+Mux="reserved 4" 8,4 7  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[lib_uds]
+DLC=8
+Mux="reserved 3" 8,4 6  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[lib_uds]
+DLC=8
+Mux="reserved 2" 8,4 5  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[lib_uds]
+DLC=8
+Mux="reserved 1" 8,4 4  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[lib_sdo_tx]
+ID=5A7h	// SDO Tx, node 0x27 (LIB with KION protocol), SDO clients: KMC, OBC, EXC
+DLC=8
+Mux="abort transfer request" 5,3 4 
+Var=canopen_sdo_abort_code unsigned 32,32 /e:VtSig_canopen_sdo_abort_code
+Var=canopen_sdo_abort_index unsigned 8,16
+Var=canopen_sdo_abort_subindex unsigned 24,8
+
+[lib_sdo_tx]
+DLC=8
+Mux="upload segment response" 5,3 0 
+Var=canopen_sdo_upload_toggle_bit bit 4,1
+Var=canopen_sdo_seg_data unsigned 8,56 /max:7.20575940379279E016
+Var=canopen_sdo_continue bit 0,1 /e:VtSig_canopen_sdo_continue
+Var=canopen_sdo_number_of_bytes_3 unsigned 1,3 /e:VtSig_canopen_sdo_number_of_byte
+
+[lib_sdo_tx]
+DLC=8
+Mux="initiate download response" 5,3 3 
+Var=canopen_sdo_download_index unsigned 8,16
+Var=canopen_sdo_download_subindex unsigned 24,8
+
+[lib_sdo_tx]
+DLC=8
+Mux="initiate upload response" 5,3 2 
+Var=canopen_sdo_upload_index unsigned 8,16
+Var=canopen_sdo_size_indicator bit 0,1 /e:VtSig_canopen_sdo_size_indicator
+Var=canopen_sdo_data unsigned 32,32
+Var=canopen_sdo_transfer_type bit 1,1 /e:VtSig_canopen_sdo_transfer_type
+Var=canopen_sdo_number_of_bytes_2 unsigned 2,2 /e:VtSig_canopen_sdo_number_of_byt1
+Var=canopen_sdo_upload_subindex unsigned 24,8
+
+[lib_sdo_tx]
+DLC=8
+Mux="download segment response" 5,3 1 
+Var=canopen_sdo_download_toggle_bit bit 4,1
+
+[lib_sdo_tx]
+DLC=8
+Mux=reserved 5,3 7 
+
+[lib_sdo_tx]
+DLC=8
+Mux="block upload" 5,3 6 
+
+[lib_sdo_tx]
+DLC=8
+Mux="block download" 5,3 5 
+
+[lib_pdo_tx7]
+ID=3F7h	// PDO 7 (Tx), node 0x77 (LIB with KION protocol)
+DLC=8
+Var=lib_pdo_tx7_checksum unsigned 48,16
+Var=lib_pdo_tx7_message_counter unsigned 44,4
+Var=lib_powerpath_ok unsigned 0,2 /e:VtSig_lib_powerpath_ok /d:3
+
+[lib_pdo_tx6]
+ID=2F7h	// PDO 6 (Tx), node 0x77 (LIB with KION protocol)
+DLC=8
+Var=lib_max_charging_current_2s unsigned 0,18 /u:A /f:0.01 /max:2621.39 /e:VtSig_lib_max_charging_current_2 /d:0
+Var=lib_max_charging_current_100s unsigned 18,18 /u:A /f:0.01 /max:2621.39 /e:VtSig_lib_max_charging_current_2 /d:0
+
+[lib_pdo_tx5]
+ID=1F7h	// PDO 5 (Tx), node 0x77 (LIB with KION protocol)
+DLC=8
+Var=lib_max_discharging_current_2s unsigned 0,18 /u:A /f:0.01 /max:2621.39 /e:VtSig_lib_max_charging_current_2 /d:0
+Var=lib_max_discharging_current_100s unsigned 18,18 /u:A /f:0.01 /max:2621.39 /e:VtSig_lib_max_charging_current_2 /d:0
+
+[lib_pdo_tx4]
+ID=4A7h	// PDO 4 (Tx), node 0x27 (LIB with KION protocol)
+DLC=8
+Var=lib_max_charging_power_100s unsigned 37,19 /u:W /max:524283 /e:VtSig_lib_max_charging_power_100
+Var=lib_max_charging_power_2s unsigned 18,19 /u:W /max:524283 /e:VtSig_lib_max_charging_power_100
+Var=lib_soc_without_soh unsigned 56,8 /u:% /f:0.5 /max:100 /e:VtSig_lib_soc_without_soh /d:0
+Var=lib_max_charging_voltage unsigned 0,18 /u:V /f:0.01 /max:2621.39 /e:VtSig_lib_max_charging_current_2 /d:0
+
+[lib_pdo_tx3]
+ID=3A7h	// PDO 3 (Tx), node 0x27 (LIB with KION protocol)
+DLC=8
+Var=lib_max_discharging_power_2s unsigned 18,19 /u:W /max:524283 /e:VtSig_lib_max_charging_power_100
+Var=lib_max_discharging_power_100s unsigned 37,19 /u:W /max:524283 /e:VtSig_lib_max_charging_power_100
+Var=lib_min_discharging_voltage unsigned 0,18 /u:V /f:0.01 /max:2621.39 /e:VtSig_lib_max_charging_current_2 /d:0
+Var=lib_soc_with_soh unsigned 56,8 /u:% /f:0.5 /max:100 /e:VtSig_lib_soc_without_soh /d:0
+
+[lib_pdo_tx2]
+ID=2A7h	// PDO 2 (Tx), node 0x27 (LIB with KION protocol)
+DLC=8
+Var=lib_power unsigned 36,20 /u:W /o:-524286 /max:524285 /e:VtSig_lib_power /d:0	// positive values = charging, negative values = discharging
+Var=lib_voltage_after_contactor unsigned 18,18 /u:V /f:0.01 /max:2621.39 /e:VtSig_lib_max_charging_current_2 /d:0	// voltage after battery contactor (as seen from battery), i.e. truck side of contactor
+Var=lib_state_of_health unsigned 56,8 /u:% /f:0.5 /max:100 /e:VtSig_lib_soc_without_soh /d:0
+Var=lib_voltage_in_front_of_contacto unsigned 0,18 /u:V /f:0.01 /max:2621.39 /e:VtSig_lib_max_charging_current_2 /d:0	// voltage in front of battery contactor (as seen from battery), i.e. battery side of contactor
+
+[lib_pdo_tx1]
+ID=1A7h // PDO 1 (Tx), node 0x27 (LIB with KION protocol)
+DLC=8
+Var=lib_current unsigned 32,19 /u:A /f:0.01 /o:-2621.42 /max:2621.41 /e:VtSig_lib_max_charging_power_100 // positive values = charging, negative values = discharging
+Var=lib_tempering_complete unsigned 28,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_in_charging_mode unsigned 6,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_fatal_error unsigned 16,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_in_driving_mode unsigned 4,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_error unsigned 8,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_temperature_too_high unsigned 20,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_emergency_operation unsigned 12,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_ready unsigned 2,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_temperature_too_low unsigned 18,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_current_limited unsigned 10,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_cps_output_deactivation_inhi unsigned 26,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_init_complete unsigned 0,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_service_required unsigned 22,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_shock_warning unsigned 14,2 /e:VtSig_lib_powerpath_ok /d:3
+Var=lib_cps_output_active unsigned 24,2 /e:VtSig_lib_powerpath_ok /d:3
+
+[lib_heartbeat]
+ID=727h	// heartbeat (NMT error control), node 0x27 (LIB with KION protocol)
+DLC=1
+Var=canopen_state_lib unsigned 0,7 /e:VtSig_canopen_state_lib /d:127	// CANopen node status of lithium-ion battery (KION protocol)
+
+[lib_emergency]
+ID=0A7h	// emergency (EMCY), node 0x27 (LIB with KION protocol)
+DLC=8
+Var=error_register_object_lib unsigned 16,8
+Var=uds_dtc_lib unsigned 24,24
+Var=emergency_error_code_lib unsigned 0,16
+
+[cps_uds]
+ID=6DFh	// UDS responses from CPS in LIB with KION protocol
+DLC=8
+Mux="flow control" 8,4 3  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_fs unsigned 12,4 -m /e:VtSig_isotp_fs	// FlowControl FlowStatus (ISO-TP extended addressing)
+Var=isotp_bs unsigned 16,8 -m	// FlowControl BlockSize (ISO-TP extended addressing)
+Var=isotp_n_data_fc unsigned 32,32 -m	// FlowControl Data Field (ISO-TP extended addressing)
+Var=isotp_stmin unsigned 24,8 -m /u:ms	// FlowControl SeparationTime minimum (ISO-TP extended addressing)
+
+[cps_uds]
+DLC=8
+Mux="first frame" 8,4 1  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_ff_dl unsigned 12,12 -m	// FirstFrame DataLength (ISO-TP extended addressing)
+Var=isotp_n_data_ff unsigned 24,40 -m	// FirstFrame Data Field (ISO-TP extended addressing)
+
+[cps_uds]
+DLC=8
+Mux="single frame" 8,4 0  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_sf_dl unsigned 12,4 -m	// SingleFrame DataLength (ISO-TP extended addressing)
+Var=isotp_n_data_sf unsigned 16,48 -m	// SingleFrame Data Field (ISO-TP extended addressing)
+
+[cps_uds]
+DLC=8
+Mux="consecutive frame" 8,4 2  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_n_data_cf unsigned 16,48 -m	// Consecutive Frame Data Field (ISO-TP extended addressing)
+Var=isotp_sn unsigned 12,4 -m	// ConsecutiveFrame SequenceNumber (ISO-TP extended addressing)
+
+[cps_uds]
+DLC=8
+Mux="reserved 4" 8,4 7  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[cps_uds]
+DLC=8
+Mux="reserved 3" 8,4 6  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[cps_uds]
+DLC=8
+Mux="reserved 2" 8,4 5  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[cps_uds]
+DLC=8
+Mux="reserved 1" 8,4 4  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[HeartbtBms]
+ID=70Dh	// Network Management, Error Control, Battery management system Heartbeat
+DLC=1
+Var=stateBms unsigned 0,7 /e:VtSig_stateBms
+
+[DiagRespBms]
+ID=79Dh
+DLC=8
+Var=BmsRsData unsigned 8,56 /max:7.20575940379279E016
+Var=BmsRsPCI unsigned 0,8
+
+[BmsSDOtx]
+ID=58Dh	// CAN Open: Data for Service data object (SDO) send by BMS
+DLC=8
+Var=BmsSDOtxData unsigned 0,64	// CAN Open: Data for Service data object (SDO) send by BMS
+
+[BmsPDO5]
+ID=301h
+DLC=8
+Var=FaultBatteryCode_3 unsigned 32,8 /e:VtSig_FaultBatteryCode_3	// Fault Battery Code # 3
+Var=FaultBatteryCode_6 unsigned 56,8 /e:VtSig_FaultBatteryCode_6	// Fault Battery Code # 6
+Var=FaultBatteryCode_2 unsigned 24,8 /e:VtSig_FaultBatteryCode_2	// Fault Battery Code # 2
+Var=FaultBatteryCode_1 unsigned 16,8 /e:VtSig_FaultBatteryCode_1	// Fault Battery Code # 1
+Var=FaultBatteryCode_5 unsigned 48,8 /e:VtSig_FaultBatteryCode_5	// Fault Battery Code # 5
+Var=FaultBatteryCode_4 unsigned 40,8 /e:VtSig_FaultBatteryCode_4	// Fault Battery Code # 4
+Var=BmsBatStat unsigned 0,8 /e:VtSig_BmsBatStat
+Var=BmsPDO5_fillbyte1 unsigned 8,8	// place holder to reserve signal position for future use   
+
+[BmsPDO4]
+ID=48Dh
+DLC=8
+Var=BmsDisVoltMin unsigned 0,16 /u:mV /f:25 /d:0	// Minimum allowed voltage during discharge
+Var=BmsSoh unsigned 48,8 /u:% /max:100
+Var=BmsSocWoutSoh unsigned 32,8 /u:% /max:100
+Var=BmsPDO4_fillbyte7 signed 56,8	// place holder to reserve signal position for future use   
+Var=BmsCharVoltHigh unsigned 16,16 /u:mV /f:25 /d:0	// Highest allowed voltage during charging
+Var=BmsSocWithSoh unsigned 40,8 /u:% /max:100
+
+[BmsPDO3]
+ID=38Dh
+DLC=8
+Var=BmsErrCodeLB3 unsigned 32,8	// BmsErrorCode3 (unsigned16, low byte)
+Var=BmsErrCodeLB4 unsigned 48,8	// BmsErrorCode4 (unsigned16, low byte)
+Var=BmsErrCodeHB1 unsigned 8,8	// BmsErrorCode1 (unsigned16, high byte)
+Var=BmsErrCodeHB4 unsigned 56,8	// BmsErrorCode4 (unsigned16, high byte)
+Var=BmsErrCodeLB2 unsigned 16,8	// BmsErrorCode2 (unsigned16, low byte)
+Var=BmsErrCodeLB1 unsigned 0,8	// BmsErrorCode1 (unsigned16, low byte)
+Var=BmsErrCodeHB2 unsigned 24,8	// BmsErrorCode2 (unsigned16, high byte)
+Var=BmsErrCodeHB3 unsigned 40,8	// BmsErrorCode3 (unsigned16, high byte)
+
+[BmsPDO2]
+ID=28Dh
+DLC=8
+Var=BmsPowForChar unsigned 32,16 /u:W /f:10 /d:0	// Power forecasting: charging [W] = BmsPowForChar * 10
+Var=BmsPowForDis unsigned 48,16 /u:W /f:10 /d:0	// Power forecasting: charging [W] = BmsPowForChar * 10
+Var=BmsNormCharCurr unsigned 16,16 /u:A /f:0.25 /d:0	// Normal charge current [A] = BmsNormCharCurr * 0.25
+Var=BmsMaxCharCurr unsigned 0,16 /u:A /f:0.25 /d:0	// Maximal charge current [A] = BmsMaxCharCurr * 0.25
+
+[BmsPDO1]
+ID=18Dh
+DLC=8
+Var=BmsMaxDirCurr unsigned 48,16 /u:A /f:0.25 /d:0
+Var=BmsBatCurr signed 0,32 /u:mA /min:-4000000 /max:4000000
+Var=BmsBatVolt unsigned 32,16 /u:mV /f:2 /d:0
+
+[dtu_uds]
+ID=680h	// UDS requests from DTU
+DLC=8
+Mux="flow control" 8,4 3  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_n_data_fc unsigned 32,32 -m	// FlowControl Data Field (ISO-TP extended addressing)
+Var=isotp_fs unsigned 12,4 -m /e:VtSig_isotp_fs	// FlowControl FlowStatus (ISO-TP extended addressing)
+Var=isotp_stmin unsigned 24,8 -m /u:ms	// FlowControl SeparationTime minimum (ISO-TP extended addressing)
+Var=isotp_bs unsigned 16,8 -m	// FlowControl BlockSize (ISO-TP extended addressing)
+
+[dtu_uds]
+DLC=8
+Mux="single frame" 8,4 0  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_sf_dl unsigned 12,4 -m	// SingleFrame DataLength (ISO-TP extended addressing)
+Var=isotp_n_data_sf unsigned 16,48 -m	// SingleFrame Data Field (ISO-TP extended addressing)
+
+[dtu_uds]
+DLC=8
+Mux="consecutive frame" 8,4 2  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_sn unsigned 12,4 -m	// ConsecutiveFrame SequenceNumber (ISO-TP extended addressing)
+Var=isotp_n_data_cf unsigned 16,48 -m	// Consecutive Frame Data Field (ISO-TP extended addressing)
+
+[dtu_uds]
+DLC=8
+Mux="first frame" 8,4 1  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+Var=isotp_n_data_ff unsigned 24,40 -m	// FirstFrame Data Field (ISO-TP extended addressing)
+Var=isotp_ff_dl unsigned 12,12 -m	// FirstFrame DataLength (ISO-TP extended addressing)
+
+[dtu_uds]
+DLC=8
+Mux="reserved 4" 8,4 7  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[dtu_uds]
+DLC=8
+Mux="reserved 3" 8,4 6  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[dtu_uds]
+DLC=8
+Mux="reserved 2" 8,4 5  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[dtu_uds]
+DLC=8
+Mux="reserved 1" 8,4 4  -m	// network protocol control information type (ISO-TP extended addressing)
+Var=isotp_n_ta unsigned 0,8 -m /e:VtSig_isotp_n_ta	// network target address (ISO-TP extended addressing)
+
+[time]
+ID=100h	// time stamp (TIME)
+DLC=6
+Var=canopen_time_of_day_ms unsigned 0,28 /u:ms
+Var=canopen_time_of_day_days unsigned 32,16 /u:d
+
+[obc_heartbeat]
+ID=751h	// heartbeat (NMT error control), node 0x51 (OBC)
+DLC=1
+Var=canopen_state_obc unsigned 1,7 /e:VtSig_canopen_state_lib	// CANopen node status of on-board charger
+
+[module_control]
+ID=000h	// network management (NMT)
+DLC=2
+Var=canopen_nmt_command_specifier unsigned 0,8 /e:VtSig_canopen_nmt_command_specif
+Var=canopen_node_id unsigned 8,8 /max:127 /e:VtSig_canopen_node_id
+
+[lib_sdo_rx]
+ID=627h	// SDO Rx, node 0x27 (LIB with KION protocol), SDO clients: KMC, OBC, EXC
+DLC=8
+Mux="initiate download request" 5,3 1 
+Var=canopen_sdo_size_indicator bit 0,1 /e:VtSig_canopen_sdo_size_indicator
+Var=canopen_sdo_number_of_bytes_2 unsigned 2,2 /e:VtSig_canopen_sdo_number_of_byt1
+Var=canopen_sdo_download_index unsigned 8,16
+Var=canopen_sdo_transfer_type bit 1,1 /e:VtSig_canopen_sdo_transfer_type
+Var=canopen_sdo_data unsigned 32,32
+Var=canopen_sdo_download_subindex unsigned 24,8
+
+[lib_sdo_rx]
+DLC=8
+Mux="abort transfer request" 5,3 4 
+Var=canopen_sdo_abort_code unsigned 32,32 /e:VtSig_canopen_sdo_abort_code
+Var=canopen_sdo_abort_index unsigned 8,16
+Var=canopen_sdo_abort_subindex unsigned 24,8
+
+[lib_sdo_rx]
+DLC=8
+Mux="initiate upload request" 5,3 2 
+Var=canopen_sdo_upload_index unsigned 8,16
+Var=canopen_sdo_upload_subindex unsigned 24,8
+
+[lib_sdo_rx]
+DLC=8
+Mux="download segment request" 5,3 0 
+Var=canopen_sdo_seg_data unsigned 8,56 /max:7.20575940379279E016
+Var=canopen_sdo_number_of_bytes_3 unsigned 1,3 /e:VtSig_canopen_sdo_number_of_byte
+Var=canopen_sdo_continue bit 0,1 /e:VtSig_canopen_sdo_continue
+Var=canopen_sdo_download_toggle_bit bit 4,1
+
+[lib_sdo_rx]
+DLC=8
+Mux="upload segment request" 5,3 3 
+Var=canopen_sdo_upload_toggle_bit bit 4,1
+
+[lib_sdo_rx]
+DLC=8
+Mux=reserved 5,3 7 
+
+[lib_sdo_rx]
+DLC=8
+Mux="block download" 5,3 6 
+
+[lib_sdo_rx]
+DLC=8
+Mux="block upload" 5,3 5 
+
+[lib_pdo_rx4]
+ID=527h	// PDO 4 (Rx), node 0x27 (LIB with KION protocol)
+DLC=8
+Var=lib_power_consumption_average unsigned 36,12 /u:kW /f:0.05 /o:-102.3 /max:102.25 /e:VtSig_lib_power_consumption_aver /d:1.4210854715202E-014	// for estimation of remaining charging time until end of shift
+Var=truck_operating_hours_mode unsigned 32,4 /e:VtSig_truck_operating_hours_mode /d:15	// main truck hour meter counting mode
+Var=truck_operating_hours unsigned 0,32 /u:s /o:-36000 /e:VtSig_truck_operating_hours /d:0	// main truck hour meter
+
+[lib_pdo_rx1]
+ID=227h	// PDO 1 (Rx), node 0x27 (LIB with KION protocol)
+DLC=8
+Var=lib_charging_voltage unsigned 16,18 /u:V /f:0.01 /max:2621.39 /e:VtSig_lib_max_charging_current_2 /d:0	// output voltage of charger
+Var=lib_charging_current unsigned 0,16 /u:A /f:0.01 /max:655.31 /e:VtSig_lib_charging_current /d:0	// output current of charger
+Var=lib_charging_power unsigned 34,19 /u:W /max:524283 /e:VtSig_lib_max_charging_power_100	// output power of charger
+
+[kwpc_heartbeat]
+ID=701h	// heartbeat (NMT error control), node 0x01 (KWPC)
+DLC=1
+Var=canopen_state_kwpc unsigned 1,7 /e:VtSig_canopen_state_lib	// CANopen node status of KION Motion Controller
+
+[exc_heartbeat]
+ID=74Ah	// heartbeat (NMT error control), node 0x4A (EXC)
+DLC=1
+Var=canopen_state_exc unsigned 0,7 /e:VtSig_canopen_state_lib	// CANopen node status of the external battery charger
+
+[TimeStamp]
+ID=0FFh	// Linde proprietary timestamp message (for LIB with Linde SAFT protocol)
+DLC=4
+Var=DateTime unsigned 0,32 /u:s
+
+[SYNC]
+ID=080h	// CANopen SYNC message (for LIB with Linde BMZ protocol)
+DLC=0
+
+[HeartbtLiionCharger]
+ID=705h	// Network Management, Error Control,  liion battery charger Heartbeat
+DLC=1
+Var=stateLiionCharger unsigned 0,7 /e:VtSig_stateBms
+
+[DiagReqBms]
+ID=78Dh
+DLC=8
+Var=BmsRqData unsigned 8,56 /max:7.20575940379279E016
+Var=BmsRqPCI unsigned 0,8
+
+[BmsSDOrx]
+ID=60Dh	// CAN Open: Service data object (SDO) send by KWPC
+DLC=8
+Var=BmsSDOrxData unsigned 0,64	// CAN Open: Data for Service data object (SDO) send by LAC
+
+[current_task_times]
+ID=078h	// shows times of every task in taskAliveMonitor
+DLC=8
+CycleTime=10
+Var=currentSafetyTaskTime unsigned 0,10 /u:cs /ln:"maxSafetyTaskTime"	// current cycle time of safety task
+Var=currentAfeTaskTime unsigned 10,10 /u:cs /ln:"maxAfeTaskTime"	// current cycle time of afe task
+Var=currentNVMTaskTime unsigned 20,10 /u:cs /ln:"maxNVMTaskTime"	// current cycle time of nvm task
+Var=currentLimitCheckTaskTime unsigned 30,10 /u:cs /ln:"maxLimitCheckTaskTime"	// current cycle time of limitCheck task
+Var=currentCANSendTaskTime unsigned 40,10 /u:cs /ln:"currentAfeTaskTime"	// current cycle time of can send task
+Var=currentCanReceiveTaskTime unsigned 50,10 /ln:"sbcComFailCounter"	// current cycle time of can receive task
+
+[max_task_times]
+ID=079h
+DLC=8
+Var=maxSafetyTaskTime unsigned 0,10 /u:cs	// max cycle time of safety task
+Var=maxAfeTaskTime unsigned 10,10 /u:cs	// max cycle time of afe task
+Var=maxNVMTaskTime unsigned 20,10 /u:cs	// max cycle time of NVM task
+Var=maxLimitCheckTaskTime unsigned 30,10 /u:cs	// max cycle time of limitCheck task
+Var=maxCanSendTaskTime unsigned 40,10 /u:cs	// max cycle time of can send task
+Var=maxCanReceiveTaskTime unsigned 50,10 /u:cs	// max cycle time of can receive task
+
+[sbc_status]
+ID=07Ah
+DLC=3
+Var=watchdogRefreshState unsigned 0,8	// state of watchdog during SW reset call
+Var=wdCounter unsigned 8,8	// watchdog counter
+Var=idCounter unsigned 16,8	// idCounter of failed task in taskAliveMonitor
+
+[mutexPendingFailed]
+ID=07Bh	// mutex analysis data
+DLC=8
+Var=mutexPendingSource unsigned 0,8 /e:VtSig_MutexSource	// source of mutex that is currently pending
+Var=mutexRequestingSource unsigned 8,8 /e:VtSig_MutexSource	// source of mutex pend request that is currently unsuccessful
+Var=mutexPendingDuration unsigned 16,32 /u:ms	// duration of current pending time of the mutex in ms
+Var=osError signed 48,16	// osError that was returned during mutex pend request
+
+[mutexPostFailed]
+ID=07Ch	// failed mutex post analysis Signal
+DLC=3
+Var=mutexPostSource unsigned 0,8 /e:VtSig_MutexSource	// source of mutex post request
+Var=osError signed 8,16	// OS error that was thrown during mutex post request
+
